@@ -50,9 +50,9 @@
             this.barcode = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.upload = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.Sortee = new Guna.UI.WinForms.GunaGradientButton();
@@ -367,27 +367,6 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // progresbar
-            // 
-            this.progresbar.Animated = true;
-            this.progresbar.AnimationSpeed = 1.5F;
-            this.progresbar.BackColor = System.Drawing.Color.Transparent;
-            this.progresbar.BaseColor = System.Drawing.Color.White;
-            this.progresbar.IdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.progresbar.IdleOffset = 20;
-            this.progresbar.IdleThickness = 10;
-            this.progresbar.Image = null;
-            this.progresbar.ImageSize = new System.Drawing.Size(52, 52);
-            this.progresbar.Location = new System.Drawing.Point(468, 20);
-            this.progresbar.Name = "progresbar";
-            this.progresbar.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.progresbar.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.progresbar.ProgressOffset = 20;
-            this.progresbar.ProgressThickness = 10;
-            this.progresbar.Size = new System.Drawing.Size(60, 60);
-            this.progresbar.TabIndex = 16;
-            this.progresbar.Value = 20;
-            // 
             // upload
             // 
             this.upload.AnimationHoverSpeed = 0.07F;
@@ -443,6 +422,27 @@
             this.gunaGradientButton1.TabIndex = 10;
             this.gunaGradientButton1.Text = "Ajoutter";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
+            // 
+            // progresbar
+            // 
+            this.progresbar.Animated = true;
+            this.progresbar.AnimationSpeed = 1.5F;
+            this.progresbar.BackColor = System.Drawing.Color.Transparent;
+            this.progresbar.BaseColor = System.Drawing.Color.White;
+            this.progresbar.IdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.progresbar.IdleOffset = 20;
+            this.progresbar.IdleThickness = 10;
+            this.progresbar.Image = null;
+            this.progresbar.ImageSize = new System.Drawing.Size(52, 52);
+            this.progresbar.Location = new System.Drawing.Point(468, 20);
+            this.progresbar.Name = "progresbar";
+            this.progresbar.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.progresbar.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.progresbar.ProgressOffset = 20;
+            this.progresbar.ProgressThickness = 10;
+            this.progresbar.Size = new System.Drawing.Size(60, 60);
+            this.progresbar.TabIndex = 16;
+            this.progresbar.Value = 20;
             // 
             // gunaGradientButton4
             // 
@@ -567,6 +567,7 @@
             this.view_data.Size = new System.Drawing.Size(995, 441);
             this.view_data.TabIndex = 0;
             this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
+            this.view_data.SelectionChanged += new System.EventHandler(this.view_data_SelectionChanged);
             // 
             // Container
             // 
@@ -642,6 +643,7 @@
             this.valide.Radius = 20;
             this.valide.Size = new System.Drawing.Size(44, 44);
             this.valide.TabIndex = 17;
+            this.valide.Click += new System.EventHandler(this.valide_Click);
             // 
             // articlee
             // 

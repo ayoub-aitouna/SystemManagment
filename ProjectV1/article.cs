@@ -17,6 +17,7 @@ namespace ProjectV1
         private const int Mode_Sortee = 100;
         private const int MOde_entree = 200;
         private const int Mode_search = 300;
+        List<article_model> selectedRows = new List<article_model>();
         sql.sqlcn remplire = new sql.sqlcn();
         public articlee()
         {
@@ -165,7 +166,7 @@ namespace ProjectV1
             List<EventHandler> events = new List<EventHandler>();
             events.Add(new EventHandler(this.gunaGradientButton1_Click));
             events.Add(new EventHandler(this.sortee_event));
-            events.Add(new EventHandler(this.sortee_event));
+            events.Add(new EventHandler(this.search_event));
 
             switch (_mode_)
             {
@@ -389,6 +390,54 @@ namespace ProjectV1
         {
             mode(Mode_search);
             hideAll(Add);
+
+        }
+
+        private void valide_Click(object sender, EventArgs e)
+        {
+            if (selectedRows.Count > 0)
+            {
+                foreach (var item in selectedRows)
+                {
+                    MessageBox.Show("data is " + item.Id);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please selecte at less an item ");
+            }
+        }
+
+        private void view_data_SelectionChanged(object sender, EventArgs e)
+        {
+          
+            if (view_data.SelectedRows.Count > 0)
+            {
+                selectedRows.Clear();
+                for (int i = 0; i < view_data.SelectedRows.Count; i++)
+                {
+                    DataGridViewCellCollection a = view_data.SelectedRows[i].Cells;
+                    string value = a[2].Value.ToString(); 
+                    article_model model = new article_model();
+                    model.Id = int.Parse(a[0].Value.ToString());
+                    model.Barcode1 = a[1].Value.ToString();
+                    model.Nom = a[2].Value.ToString();
+                    model.Description_inter = a[3].Value.ToString();
+                    model.Descroption_fabrication = a[4].Value.ToString();
+                    model.Code_fabrication = a[5].Value.ToString();
+                    model.Prix = double.Parse(a[6].Value.ToString());
+                    model.Quontitier1 = int.Parse(a[7].Value.ToString());
+                    model.Date_entre = DateTime.Parse(a[8].Value.ToString());
+                    model.Img = (byte[])a[9].Value;
+                    selectedRows.Add(model);
+
+                }
+
+            }
+            else
+            {
+                selectedRows.Clear();
+            }
 
         }
     }
