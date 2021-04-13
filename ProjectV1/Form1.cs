@@ -107,12 +107,12 @@ namespace ProjectV1
 
         private void gunaGradientButton3_Click(object sender, EventArgs e)
         {
-            hideAll(null,equipment);
+            hideAll(equipe1,equipment);
         }
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
-            hideAll(null,forneseur);
+            hideAll(fourni1,forneseur);
         }
 
         private void articlee1_Load(object sender, EventArgs e)

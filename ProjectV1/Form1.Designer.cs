@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MENU = new System.Windows.Forms.Panel();
-            this.exite = new Guna.UI.WinForms.GunaGradientButton();
             this.LOGO = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.forneseur = new Guna.UI.WinForms.GunaGradientButton();
@@ -40,6 +39,8 @@
             this.article = new Guna.UI.WinForms.GunaGradientButton();
             this.dashboard_button = new Guna.UI.WinForms.GunaGradientButton();
             this.homa_container = new System.Windows.Forms.Panel();
+            this.equipe1 = new ProjectV1.equipe();
+            this.fourni1 = new ProjectV1.fourni();
             this.articlee1 = new ProjectV1.articlee();
             this.MENU.SuspendLayout();
             this.LOGO.SuspendLayout();
@@ -50,7 +51,6 @@
             // MENU
             // 
             this.MENU.BackColor = System.Drawing.Color.White;
-            this.MENU.Controls.Add(this.exite);
             this.MENU.Controls.Add(this.LOGO);
             this.MENU.Controls.Add(this.forneseur);
             this.MENU.Controls.Add(this.equipment);
@@ -63,36 +63,6 @@
             this.MENU.Name = "MENU";
             this.MENU.Size = new System.Drawing.Size(172, 588);
             this.MENU.TabIndex = 0;
-            // 
-            // exite
-            // 
-            this.exite.AnimationHoverSpeed = 0.07F;
-            this.exite.AnimationSpeed = 0.03F;
-            this.exite.BackColor = System.Drawing.Color.Transparent;
-            this.exite.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(42)))), ((int)(((byte)(84)))));
-            this.exite.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(181)))), ((int)(((byte)(42)))), ((int)(((byte)(84)))));
-            this.exite.BorderColor = System.Drawing.Color.Black;
-            this.exite.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.exite.FocusedColor = System.Drawing.Color.Empty;
-            this.exite.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.exite.ForeColor = System.Drawing.Color.White;
-            this.exite.Image = null;
-            this.exite.ImageSize = new System.Drawing.Size(20, 20);
-            this.exite.Location = new System.Drawing.Point(11, 540);
-            this.exite.Name = "exite";
-            this.exite.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(42)))), ((int)(((byte)(70)))));
-            this.exite.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(201)))), ((int)(((byte)(42)))), ((int)(((byte)(70)))));
-            this.exite.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.exite.OnHoverForeColor = System.Drawing.Color.White;
-            this.exite.OnHoverImage = null;
-            this.exite.OnPressedColor = System.Drawing.Color.Black;
-            this.exite.Radius = 20;
-            this.exite.Size = new System.Drawing.Size(145, 42);
-            this.exite.TabIndex = 4;
-            this.exite.Text = "EXITE";
-            this.exite.TextOffsetX = 50;
-            this.exite.Visible = false;
-            this.exite.Click += new System.EventHandler(this.gunaGradientButton5_Click);
             // 
             // LOGO
             // 
@@ -129,7 +99,7 @@
             this.forneseur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.forneseur.Image = ((System.Drawing.Image)(resources.GetObject("forneseur.Image")));
             this.forneseur.ImageSize = new System.Drawing.Size(20, 20);
-            this.forneseur.Location = new System.Drawing.Point(20, 170);
+            this.forneseur.Location = new System.Drawing.Point(20, 154);
             this.forneseur.Name = "forneseur";
             this.forneseur.OnHoverBaseColor1 = System.Drawing.Color.Transparent;
             this.forneseur.OnHoverBaseColor2 = System.Drawing.Color.Transparent;
@@ -138,7 +108,7 @@
             this.forneseur.OnHoverImage = null;
             this.forneseur.OnPressedColor = System.Drawing.Color.Black;
             this.forneseur.Radius = 15;
-            this.forneseur.Size = new System.Drawing.Size(130, 30);
+            this.forneseur.Size = new System.Drawing.Size(140, 40);
             this.forneseur.TabIndex = 4;
             this.forneseur.Text = "Forneseur";
             this.forneseur.Click += new System.EventHandler(this.gunaGradientButton4_Click);
@@ -157,7 +127,7 @@
             this.equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.equipment.Image = ((System.Drawing.Image)(resources.GetObject("equipment.Image")));
             this.equipment.ImageSize = new System.Drawing.Size(20, 20);
-            this.equipment.Location = new System.Drawing.Point(20, 230);
+            this.equipment.Location = new System.Drawing.Point(20, 239);
             this.equipment.Name = "equipment";
             this.equipment.OnHoverBaseColor1 = System.Drawing.Color.Transparent;
             this.equipment.OnHoverBaseColor2 = System.Drawing.Color.Transparent;
@@ -166,7 +136,7 @@
             this.equipment.OnHoverImage = null;
             this.equipment.OnPressedColor = System.Drawing.Color.Black;
             this.equipment.Radius = 15;
-            this.equipment.Size = new System.Drawing.Size(130, 30);
+            this.equipment.Size = new System.Drawing.Size(140, 40);
             this.equipment.TabIndex = 4;
             this.equipment.Text = "Equipment";
             this.equipment.Click += new System.EventHandler(this.gunaGradientButton3_Click);
@@ -185,7 +155,7 @@
             this.settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
             this.settings.ImageSize = new System.Drawing.Size(20, 20);
-            this.settings.Location = new System.Drawing.Point(20, 290);
+            this.settings.Location = new System.Drawing.Point(20, 331);
             this.settings.Name = "settings";
             this.settings.OnHoverBaseColor1 = System.Drawing.Color.Transparent;
             this.settings.OnHoverBaseColor2 = System.Drawing.Color.Transparent;
@@ -194,7 +164,7 @@
             this.settings.OnHoverImage = null;
             this.settings.OnPressedColor = System.Drawing.Color.Black;
             this.settings.Radius = 15;
-            this.settings.Size = new System.Drawing.Size(130, 30);
+            this.settings.Size = new System.Drawing.Size(140, 40);
             this.settings.TabIndex = 4;
             this.settings.Text = "Settings";
             this.settings.Click += new System.EventHandler(this.settings_Click);
@@ -213,7 +183,7 @@
             this.users.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.users.Image = ((System.Drawing.Image)(resources.GetObject("users.Image")));
             this.users.ImageSize = new System.Drawing.Size(20, 20);
-            this.users.Location = new System.Drawing.Point(20, 260);
+            this.users.Location = new System.Drawing.Point(20, 285);
             this.users.Name = "users";
             this.users.OnHoverBaseColor1 = System.Drawing.Color.Transparent;
             this.users.OnHoverBaseColor2 = System.Drawing.Color.Transparent;
@@ -222,7 +192,7 @@
             this.users.OnHoverImage = null;
             this.users.OnPressedColor = System.Drawing.Color.Black;
             this.users.Radius = 15;
-            this.users.Size = new System.Drawing.Size(130, 30);
+            this.users.Size = new System.Drawing.Size(140, 40);
             this.users.TabIndex = 4;
             this.users.Text = "Users";
             this.users.Click += new System.EventHandler(this.users_Click);
@@ -250,7 +220,7 @@
             this.article.OnHoverImage = null;
             this.article.OnPressedColor = System.Drawing.Color.Black;
             this.article.Radius = 15;
-            this.article.Size = new System.Drawing.Size(130, 30);
+            this.article.Size = new System.Drawing.Size(140, 40);
             this.article.TabIndex = 4;
             this.article.Text = "Article";
             this.article.Click += new System.EventHandler(this.gunaGradientButton2_Click);
@@ -269,7 +239,7 @@
             this.dashboard_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.dashboard_button.Image = ((System.Drawing.Image)(resources.GetObject("dashboard_button.Image")));
             this.dashboard_button.ImageSize = new System.Drawing.Size(20, 20);
-            this.dashboard_button.Location = new System.Drawing.Point(20, 140);
+            this.dashboard_button.Location = new System.Drawing.Point(20, 107);
             this.dashboard_button.Name = "dashboard_button";
             this.dashboard_button.OnHoverBaseColor1 = System.Drawing.Color.Transparent;
             this.dashboard_button.OnHoverBaseColor2 = System.Drawing.Color.Transparent;
@@ -278,19 +248,37 @@
             this.dashboard_button.OnHoverImage = null;
             this.dashboard_button.OnPressedColor = System.Drawing.Color.Black;
             this.dashboard_button.Radius = 15;
-            this.dashboard_button.Size = new System.Drawing.Size(130, 30);
+            this.dashboard_button.Size = new System.Drawing.Size(140, 40);
             this.dashboard_button.TabIndex = 4;
             this.dashboard_button.Text = "Dashboard";
             this.dashboard_button.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // homa_container
             // 
+            this.homa_container.Controls.Add(this.equipe1);
+            this.homa_container.Controls.Add(this.fourni1);
             this.homa_container.Controls.Add(this.articlee1);
             this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homa_container.Location = new System.Drawing.Point(172, 0);
             this.homa_container.Name = "homa_container";
             this.homa_container.Size = new System.Drawing.Size(1060, 588);
             this.homa_container.TabIndex = 1;
+            // 
+            // equipe1
+            // 
+            this.equipe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.equipe1.Location = new System.Drawing.Point(0, 0);
+            this.equipe1.Name = "equipe1";
+            this.equipe1.Size = new System.Drawing.Size(1060, 588);
+            this.equipe1.TabIndex = 2;
+            // 
+            // fourni1
+            // 
+            this.fourni1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fourni1.Location = new System.Drawing.Point(0, 0);
+            this.fourni1.Name = "fourni1";
+            this.fourni1.Size = new System.Drawing.Size(1060, 588);
+            this.fourni1.TabIndex = 1;
             // 
             // articlee1
             // 
@@ -299,13 +287,13 @@
             this.articlee1.Location = new System.Drawing.Point(0, 0);
             this.articlee1.Name = "articlee1";
             this.articlee1.Size = new System.Drawing.Size(1060, 588);
-            this.articlee1.TabIndex = 1;
+            this.articlee1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1232, 588);
             this.Controls.Add(this.homa_container);
             this.Controls.Add(this.MENU);
@@ -328,15 +316,16 @@
         private System.Windows.Forms.Panel MENU;
         private Guna.UI.WinForms.GunaGradientButton equipment;
         private Guna.UI.WinForms.GunaGradientButton dashboard_button;
-        private Guna.UI.WinForms.GunaGradientButton exite;
         private Guna.UI.WinForms.GunaGradientButton forneseur;
         private System.Windows.Forms.Panel LOGO;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel homa_container;
-        private articlee articlee1;
         private Guna.UI.WinForms.GunaGradientButton settings;
         private Guna.UI.WinForms.GunaGradientButton users;
         private Guna.UI.WinForms.GunaGradientButton article;
+        private articlee articlee1;
+        private fourni fourni1;
+        private equipe equipe1;
     }
 }
 
