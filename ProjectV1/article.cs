@@ -39,6 +39,7 @@ namespace ProjectV1
             desination.AutoCompleteMode = AutoCompleteMode.Suggest;
             desination.AutoCompleteSource = AutoCompleteSource.CustomSource;
             desination.AutoCompleteCustomSource = coll;
+            StyleDatagridview();
             setview_data(data);
 
         }
@@ -46,7 +47,6 @@ namespace ProjectV1
          * When a user clicks on add button this method get exuted 
          * what is does is it get the input and asinge them to an 
          * model class and run a background aysnc 
-
               */
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
@@ -187,6 +187,9 @@ namespace ProjectV1
                     break;
             }
         }
+        /*
+         * clear all the event of the button
+         */
         void ClearEvents(Control c,List<EventHandler> events)
         {
             foreach (var item in events)
@@ -195,9 +198,13 @@ namespace ProjectV1
             }
         }
         /*
-         * on sortee button click 
+         *    /*
+         * when the user chose the entree mode 
+         * it shows the panel named add 
+         * and chande the event of the button to 
+         * serve the purpose 
          * get data that matches the user input 
-         * 
+         * then list them as solled items
          */
         private void sortee_event(object sender, EventArgs e)
         {
@@ -209,7 +216,12 @@ namespace ProjectV1
         }
 
 
-
+        /*
+      * when the user chose the entree mode 
+      * it shows the panel named add 
+      * and chande the event of the button to 
+      * serve the purpose of searching for data on database 
+      */
         private void search_event(object sender, EventArgs e)
         {
             List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
@@ -220,7 +232,12 @@ namespace ProjectV1
         }
 
 
-
+        /*
+         * when the user chose the entree mode 
+         * it shows the panel named add 
+         * and chande the event of the button to 
+         * serve the purpose of adding data to database 
+         */
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(Add);
@@ -329,7 +346,9 @@ namespace ProjectV1
             progresbar.Hide();
             setview_data((List<article_model>)e.Result);
         }
-
+        /*
+         * start an async task to add data to database 
+         */
         private void add_data_worker_DoWork(object sender, DoWorkEventArgs e)
         {
 
@@ -374,7 +393,9 @@ namespace ProjectV1
             e.Result = i;
 
         }
-
+        /*
+         * when the ayscn task of adding data complete 
+         */
         private void add_data_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             int RUN_CODE = (int)e.Result;
@@ -393,6 +414,32 @@ namespace ProjectV1
 
         }
 
+        void StyleDatagridview()
+        {
+            view_data.BorderStyle = BorderStyle.None;
+            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            view_data.BackgroundColor = Color.FromArgb(30, 30, 30);
+            view_data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            view_data.EnableHeadersVisualStyles = false;
+            view_data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            view_data.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            view_data.ColumnHeadersHeight = 40;
+            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+
+        }
+
+
+        /*
+         * when the user click on button validate 
+         * it checks the selectedrow list 
+         * if it got an item in it 
+         * if dowsnot it show a message box asking the user to selected the wanted rows
+         */
         private void valide_Click(object sender, EventArgs e)
         {
             if (selectedRows.Count > 0)
@@ -407,7 +454,11 @@ namespace ProjectV1
                 MessageBox.Show("Please selecte at less an item ");
             }
         }
-
+        /*
+         * when the user select a row o multiple rows of data grid view 
+         * it get stored in list of arcticle model 
+         * and if it unselected them the list get cleared 
+         */
         private void view_data_SelectionChanged(object sender, EventArgs e)
         {
           
