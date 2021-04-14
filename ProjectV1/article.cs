@@ -11,6 +11,9 @@ using ProjectV1.sql;
 using Guna.UI.WinForms;
 namespace ProjectV1
 {
+    /*
+     * acrticle user control
+     */
     public partial class articlee : UserControl
     {
 
@@ -351,7 +354,7 @@ namespace ProjectV1
          */
         private void add_data_worker_DoWork(object sender, DoWorkEventArgs e)
         {
-
+            
             article_model item = (article_model)e.Argument;
             SqlParameter[] param = new SqlParameter[9];
             param[0] = new SqlParameter("@barcode", SqlDbType.VarChar, 40);
@@ -399,6 +402,7 @@ namespace ProjectV1
         private void add_data_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             int RUN_CODE = (int)e.Result;
+          
             progresbar.Hide();
             if (RUN_CODE == -1)
             {
