@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(equipe));
-            this.Entree = new Guna.UI.WinForms.GunaGradientButton();
-            this.Sortee = new Guna.UI.WinForms.GunaGradientButton();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton6 = new Guna.UI.WinForms.GunaGradientButton();
-            this.valide = new Guna.UI.WinForms.GunaGradientButton();
             this.add = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,63 +39,10 @@
             this.matricule_equipe = new Guna.UI.WinForms.GunaTextBox();
             this.nom_equipe = new Guna.UI.WinForms.GunaTextBox();
             this.code_equipemnt = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.ajouterequipe = new Guna.UI.WinForms.GunaGradientButton();
+            this.working_back = new System.ComponentModel.BackgroundWorker();
             this.add.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // Entree
-            // 
-            this.Entree.AnimationHoverSpeed = 0.07F;
-            this.Entree.AnimationSpeed = 0.03F;
-            this.Entree.BackColor = System.Drawing.Color.Transparent;
-            this.Entree.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Entree.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Entree.BorderColor = System.Drawing.Color.Transparent;
-            this.Entree.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Entree.FocusedColor = System.Drawing.Color.Empty;
-            this.Entree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Entree.ForeColor = System.Drawing.Color.White;
-            this.Entree.Image = ((System.Drawing.Image)(resources.GetObject("Entree.Image")));
-            this.Entree.ImageSize = new System.Drawing.Size(20, 20);
-            this.Entree.Location = new System.Drawing.Point(35, 15);
-            this.Entree.Name = "Entree";
-            this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.Entree.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Entree.OnHoverForeColor = System.Drawing.Color.White;
-            this.Entree.OnHoverImage = null;
-            this.Entree.OnPressedColor = System.Drawing.Color.Black;
-            this.Entree.Radius = 5;
-            this.Entree.Size = new System.Drawing.Size(129, 45);
-            this.Entree.TabIndex = 14;
-            this.Entree.Text = "Entrée";
-            // 
-            // Sortee
-            // 
-            this.Sortee.AnimationHoverSpeed = 0.07F;
-            this.Sortee.AnimationSpeed = 0.03F;
-            this.Sortee.BackColor = System.Drawing.Color.Transparent;
-            this.Sortee.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Sortee.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Sortee.BorderColor = System.Drawing.Color.Transparent;
-            this.Sortee.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Sortee.FocusedColor = System.Drawing.Color.Empty;
-            this.Sortee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Sortee.ForeColor = System.Drawing.Color.White;
-            this.Sortee.Image = ((System.Drawing.Image)(resources.GetObject("Sortee.Image")));
-            this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
-            this.Sortee.Location = new System.Drawing.Point(197, 14);
-            this.Sortee.Name = "Sortee";
-            this.Sortee.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Sortee.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.Sortee.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Sortee.OnHoverForeColor = System.Drawing.Color.White;
-            this.Sortee.OnHoverImage = null;
-            this.Sortee.OnPressedColor = System.Drawing.Color.Black;
-            this.Sortee.Radius = 5;
-            this.Sortee.Size = new System.Drawing.Size(129, 45);
-            this.Sortee.TabIndex = 15;
-            this.Sortee.Text = "Sorte";
             // 
             // progresbar
             // 
@@ -148,6 +92,7 @@
             this.gunaGradientButton4.Radius = 20;
             this.gunaGradientButton4.Size = new System.Drawing.Size(44, 44);
             this.gunaGradientButton4.TabIndex = 18;
+            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // gunaGradientButton6
             // 
@@ -176,33 +121,6 @@
             this.gunaGradientButton6.Size = new System.Drawing.Size(44, 44);
             this.gunaGradientButton6.TabIndex = 19;
             // 
-            // valide
-            // 
-            this.valide.AnimationHoverSpeed = 0.07F;
-            this.valide.AnimationSpeed = 0.03F;
-            this.valide.BackColor = System.Drawing.Color.Transparent;
-            this.valide.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.valide.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.valide.BorderColor = System.Drawing.Color.Transparent;
-            this.valide.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.valide.FocusedColor = System.Drawing.Color.Empty;
-            this.valide.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valide.ForeColor = System.Drawing.Color.White;
-            this.valide.Image = ((System.Drawing.Image)(resources.GetObject("valide.Image")));
-            this.valide.ImageOffsetX = -1;
-            this.valide.ImageSize = new System.Drawing.Size(25, 25);
-            this.valide.Location = new System.Drawing.Point(913, 17);
-            this.valide.Name = "valide";
-            this.valide.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.valide.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.valide.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.valide.OnHoverForeColor = System.Drawing.Color.White;
-            this.valide.OnHoverImage = null;
-            this.valide.OnPressedColor = System.Drawing.Color.Black;
-            this.valide.Radius = 20;
-            this.valide.Size = new System.Drawing.Size(44, 44);
-            this.valide.TabIndex = 20;
-            // 
             // add
             // 
             this.add.Controls.Add(this.label3);
@@ -211,11 +129,12 @@
             this.add.Controls.Add(this.matricule_equipe);
             this.add.Controls.Add(this.nom_equipe);
             this.add.Controls.Add(this.code_equipemnt);
-            this.add.Controls.Add(this.gunaGradientButton1);
+            this.add.Controls.Add(this.ajouterequipe);
             this.add.Location = new System.Drawing.Point(3, 66);
             this.add.Name = "add";
             this.add.Size = new System.Drawing.Size(992, 458);
             this.add.TabIndex = 21;
+            this.add.Paint += new System.Windows.Forms.PaintEventHandler(this.add_Paint);
             // 
             // label3
             // 
@@ -307,46 +226,49 @@
             this.code_equipemnt.TabIndex = 29;
             this.code_equipemnt.TextOffsetX = 10;
             // 
-            // gunaGradientButton1
+            // ajouterequipe
             // 
-            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton1.AnimationSpeed = 0.03F;
-            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
-            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(32, 383);
-            this.gunaGradientButton1.Name = "gunaGradientButton1";
-            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.OnHoverImage = null;
-            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Radius = 5;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(129, 45);
-            this.gunaGradientButton1.TabIndex = 19;
-            this.gunaGradientButton1.Text = "Ajoutter";
+            this.ajouterequipe.AnimationHoverSpeed = 0.07F;
+            this.ajouterequipe.AnimationSpeed = 0.03F;
+            this.ajouterequipe.BackColor = System.Drawing.Color.Transparent;
+            this.ajouterequipe.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.ajouterequipe.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.ajouterequipe.BorderColor = System.Drawing.Color.Transparent;
+            this.ajouterequipe.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ajouterequipe.FocusedColor = System.Drawing.Color.Empty;
+            this.ajouterequipe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ajouterequipe.ForeColor = System.Drawing.Color.White;
+            this.ajouterequipe.Image = ((System.Drawing.Image)(resources.GetObject("ajouterequipe.Image")));
+            this.ajouterequipe.ImageSize = new System.Drawing.Size(20, 20);
+            this.ajouterequipe.Location = new System.Drawing.Point(32, 383);
+            this.ajouterequipe.Name = "ajouterequipe";
+            this.ajouterequipe.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.ajouterequipe.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.ajouterequipe.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.ajouterequipe.OnHoverForeColor = System.Drawing.Color.White;
+            this.ajouterequipe.OnHoverImage = null;
+            this.ajouterequipe.OnPressedColor = System.Drawing.Color.Black;
+            this.ajouterequipe.Radius = 5;
+            this.ajouterequipe.Size = new System.Drawing.Size(129, 45);
+            this.ajouterequipe.TabIndex = 19;
+            this.ajouterequipe.Text = "Ajoutter";
+            this.ajouterequipe.Click += new System.EventHandler(this.gunaGradientButton1_Click);
+            // 
+            // working_back
+            // 
+            this.working_back.DoWork += new System.ComponentModel.DoWorkEventHandler(this.working_back_DoWork);
             // 
             // equipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.add);
-            this.Controls.Add(this.valide);
             this.Controls.Add(this.gunaGradientButton6);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.progresbar);
-            this.Controls.Add(this.Sortee);
-            this.Controls.Add(this.Entree);
             this.Name = "equipe";
             this.Size = new System.Drawing.Size(995, 524);
+            this.Load += new System.EventHandler(this.equipe_Load);
             this.add.ResumeLayout(false);
             this.add.PerformLayout();
             this.ResumeLayout(false);
@@ -354,13 +276,9 @@
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaGradientButton Entree;
-        private Guna.UI.WinForms.GunaGradientButton Sortee;
         private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton6;
-        private Guna.UI.WinForms.GunaGradientButton valide;
         private System.Windows.Forms.Panel add;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -368,6 +286,7 @@
         private Guna.UI.WinForms.GunaTextBox matricule_equipe;
         private Guna.UI.WinForms.GunaTextBox nom_equipe;
         private Guna.UI.WinForms.GunaTextBox code_equipemnt;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientButton ajouterequipe;
+        private System.ComponentModel.BackgroundWorker working_back;
     }
 }
