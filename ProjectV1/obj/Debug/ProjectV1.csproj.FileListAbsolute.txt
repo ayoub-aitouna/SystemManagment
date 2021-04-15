@@ -66,3 +66,4 @@ C:\Users\ayoub\Desktop\SystemManagment-ysfbranch\ProjectV1\obj\Debug\ProjectV1.p
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.equipe.resources
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.fourni.resources
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.add_success.resources
+C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.dialog.details_Sortee.resources

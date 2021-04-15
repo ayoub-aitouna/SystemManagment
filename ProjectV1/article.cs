@@ -8,19 +8,24 @@ using System.Data.SqlClient;
 using System.IO;
 using ProjectV1.model;
 using ProjectV1.sql;
+using ProjectV1.dialog;
 using Guna.UI.WinForms;
+using System.Threading.Tasks;
+using System.Threading;
 namespace ProjectV1
+  
 {
     /*
      * acrticle user control
 	*youssef
      */
-    public partial class articlee : UserControl
+    public partial class articlee : UserControl , Icloseall
     {
 
         private const int Mode_Sortee = 100;
         private const int MOde_entree = 200;
         private const int Mode_search = 300;
+        private int Breake =1;
         List<article_model> selectedRows = new List<article_model>();
         sql.sqlcn remplire = new sql.sqlcn();
         public articlee()
@@ -55,28 +60,59 @@ namespace ProjectV1
               */
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-
-            progresbar.Show();
-            MemoryStream ms = new MemoryStream();
-            pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-            byte[] imag = ms.ToArray();
-
-            article_model item = new article_model();
-            item.Barcode1 = barcode.Text;
-            item.Nom = desination.Text;
-            item.Description_inter = reference_intrene.Text;
-            item.Descroption_fabrication = reference_fabricant.Text;
-            item.Code_fabrication = code_ean.Text;
-            item.Prix = Double.Parse(prix.Text);
-            item.Quontitier1 = int.Parse(quantitier.Text);
-            item.Date_entre = DateTime.Parse(date.Value.ToShortDateString());
-            item.Img = imag;
-            if (!add_data_worker.IsBusy)
+            if (checkInputs(Add))
             {
-                add_data_worker.RunWorkerAsync(item);
+                MessageBox.Show("error de input");
             }
+            else
+            {
+                progresbar.Show();
+                MemoryStream ms = new MemoryStream();
+                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                byte[] imag = ms.ToArray();
+
+                article_model item = new article_model();
+                item.Barcode1 = barcode.Text;
+                item.Nom = desination.Text;
+                item.Description_inter = reference_intrene.Text;
+                item.Descroption_fabrication = reference_fabricant.Text;
+                item.Code_fabrication = code_ean.Text;
+                item.Prix = Double.Parse(prix.Text);
+                item.Quontitier1 = int.Parse(quantitier.Text);
+                item.Date_entre = DateTime.Parse(date.Value.ToShortDateString());
+                item.Img = imag;
+                if (!add_data_worker.IsBusy)
+                {
+                    add_data_worker.RunWorkerAsync(item);
+                }
 
 
+            }
+        }
+
+        private bool checkInputs(Control C)
+        {
+            bool _check = false;
+            foreach (Control item in Add.Controls)
+            {
+                // MessageBox.Show(item.GetType().ToString());
+                if (item.GetType() == typeof(TextBox))
+                {
+                    return _check = (((TextBox)item).Text == "");
+                }
+                    
+                if (item.GetType() == typeof(GunaTextBox))
+                {
+                    return _check = (((GunaTextBox)item).Text == "");
+                }
+                if (pictureBox1.Image==null||pictureBox1==null)
+                {
+                    return  true;
+                   
+                }
+            }
+            return _check;
+        
         }
 
 
@@ -213,8 +249,10 @@ namespace ProjectV1
          */
         private void sortee_event(object sender, EventArgs e)
         {
-            List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
-            setview_data(data);
+            //List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
+            //setview_data(data);
+            viewData_worker.RunWorkerAsync("select * from Artical where nom like '" + desination.Text + "'");
+
             hideAll(View);
             Controls_clear(Add);
 
@@ -229,8 +267,10 @@ namespace ProjectV1
       */
         private void search_event(object sender, EventArgs e)
         {
-            List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
-            setview_data(data);
+            //List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
+            //setview_data(data);
+
+            viewData_worker.RunWorkerAsync("select * from Artical where nom like '" + desination.Text + "'");
             hideAll(View);
             Controls_clear(Add);
 
@@ -459,11 +499,25 @@ namespace ProjectV1
          */
         private void valide_Click(object sender, EventArgs e)
         {
+            Breake = 1;
             if (selectedRows.Count > 0)
             {
+                /*article_model item = selectedRows[selectedRows.Count - 1];
+              details_Sortee sorteeDialog = new details_Sortee(item);
+*/
                 foreach (var item in selectedRows)
                 {
-                    MessageBox.Show("data is " + item.Id);
+                    if (Breake != -1)
+                    {
+                        Thread.Sleep(200);
+                        details_Sortee sorteeDialog = new details_Sortee(item, this);
+                        sorteeDialog.ShowDialog(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("you had canseled all");
+                        break;
+                    }
                 }
             }
             else
@@ -515,5 +569,16 @@ namespace ProjectV1
         {
 
         }
+
+        public void close(int i)
+        {
+            //throw new NotImplementedException();
+            Breake = i;
+        }
+    }
+    public interface Icloseall
+    {
+        void close(int i);
     }
 }
+
