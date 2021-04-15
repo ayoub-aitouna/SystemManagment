@@ -36,10 +36,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.date = new Guna.UI.WinForms.GunaDateTimePicker();
             this.quantitier = new Guna.UI.WinForms.GunaTextBox();
             this.desination = new Guna.UI.WinForms.GunaTextBox();
@@ -107,10 +107,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(573, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 13);
+            this.label8.Size = new System.Drawing.Size(63, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Date entree";
             // 
@@ -118,10 +118,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(573, 97);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(65, 13);
+            this.label7.Size = new System.Drawing.Size(52, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Quantitier";
             // 
@@ -129,10 +129,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(573, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 13);
+            this.label6.Size = new System.Drawing.Size(55, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "desination";
             // 
@@ -140,21 +140,32 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(103, 307);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(111, 13);
+            this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Reference Interne";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(103, 27);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Barcode";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(103, 237);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 13);
+            this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "Reference Fabricant";
             // 
@@ -162,10 +173,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(103, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.Size = new System.Drawing.Size(24, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Prix";
             // 
@@ -173,23 +184,12 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(103, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Code ean";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(103, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Barcode";
             // 
             // date
             // 
@@ -213,7 +213,7 @@
             this.date.Radius = 19;
             this.date.Size = new System.Drawing.Size(155, 40);
             this.date.TabIndex = 19;
-            this.date.Text = "4/11/2021";
+            this.date.Text = "11/04/2021";
             this.date.Value = new System.DateTime(2021, 4, 11, 22, 17, 2, 539);
             // 
             // quantitier
@@ -387,7 +387,7 @@
             this.upload.BorderColor = System.Drawing.Color.Transparent;
             this.upload.DialogResult = System.Windows.Forms.DialogResult.None;
             this.upload.FocusedColor = System.Drawing.Color.Empty;
-            this.upload.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.upload.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.upload.ForeColor = System.Drawing.Color.White;
             this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
             this.upload.ImageSize = new System.Drawing.Size(20, 20);
@@ -415,7 +415,7 @@
             this.add_button.BorderColor = System.Drawing.Color.Transparent;
             this.add_button.DialogResult = System.Windows.Forms.DialogResult.None;
             this.add_button.FocusedColor = System.Drawing.Color.Empty;
-            this.add_button.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_button.ForeColor = System.Drawing.Color.White;
             this.add_button.Image = ((System.Drawing.Image)(resources.GetObject("add_button.Image")));
             this.add_button.ImageSize = new System.Drawing.Size(20, 20);
@@ -464,7 +464,7 @@
             this.gunaGradientButton4.BorderColor = System.Drawing.Color.Transparent;
             this.gunaGradientButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton4.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton4.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGradientButton4.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton4.Image")));
             this.gunaGradientButton4.ImageOffsetX = 2;
@@ -497,7 +497,7 @@
             this.Sortee.BorderColor = System.Drawing.Color.Transparent;
             this.Sortee.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Sortee.FocusedColor = System.Drawing.Color.Empty;
-            this.Sortee.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sortee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sortee.ForeColor = System.Drawing.Color.White;
             this.Sortee.Image = ((System.Drawing.Image)(resources.GetObject("Sortee.Image")));
             this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
@@ -525,7 +525,7 @@
             this.Entree.BorderColor = System.Drawing.Color.Transparent;
             this.Entree.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Entree.FocusedColor = System.Drawing.Color.Empty;
-            this.Entree.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Entree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Entree.ForeColor = System.Drawing.Color.White;
             this.Entree.Image = ((System.Drawing.Image)(resources.GetObject("Entree.Image")));
             this.Entree.ImageSize = new System.Drawing.Size(20, 20);
@@ -609,7 +609,7 @@
             this.gunaGradientButton6.BorderColor = System.Drawing.Color.Transparent;
             this.gunaGradientButton6.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton6.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton6.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGradientButton6.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton6.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton6.Image")));
             this.gunaGradientButton6.ImageOffsetX = -1;
@@ -637,7 +637,7 @@
             this.valide.BorderColor = System.Drawing.Color.Transparent;
             this.valide.DialogResult = System.Windows.Forms.DialogResult.None;
             this.valide.FocusedColor = System.Drawing.Color.Empty;
-            this.valide.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.valide.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valide.ForeColor = System.Drawing.Color.White;
             this.valide.Image = ((System.Drawing.Image)(resources.GetObject("valide.Image")));
             this.valide.ImageOffsetX = -1;

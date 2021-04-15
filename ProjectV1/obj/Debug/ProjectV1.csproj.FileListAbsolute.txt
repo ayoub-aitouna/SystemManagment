@@ -66,4 +66,26 @@ C:\Users\ayoub\Desktop\SystemManagment-ysfbranch\ProjectV1\obj\Debug\ProjectV1.p
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.equipe.resources
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.fourni.resources
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.add_success.resources
+<<<<<<< HEAD
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.dialog.details_Sortee.resources
+=======
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\bin\Debug\ProjectV1.exe.config
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\bin\Debug\ProjectV1.exe
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\bin\Debug\ProjectV1.pdb
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\bin\Debug\Guna.UI2.dll
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.csprojAssemblyReference.cache
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.add_success.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.articlee.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.dashboard.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.equipe.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.Form1.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.Form2.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.fourni.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.item.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.Properties.Resources.resources
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.csproj.GenerateResource.cache
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.csproj.CoreCompileInputs.cache
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.csproj.CopyComplete
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.exe
+C:\Users\charif\Source\Repos\jrayoub\SystemManagment\ProjectV1\obj\Debug\ProjectV1.pdb
+>>>>>>> 273ec625355ade27d84f9c708060852ffb340e00
