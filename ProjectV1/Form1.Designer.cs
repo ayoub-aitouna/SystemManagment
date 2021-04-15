@@ -95,7 +95,7 @@
             this.forneseur.BorderColor = System.Drawing.Color.Black;
             this.forneseur.DialogResult = System.Windows.Forms.DialogResult.None;
             this.forneseur.FocusedColor = System.Drawing.Color.Empty;
-            this.forneseur.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.forneseur.Font = new System.Drawing.Font("Neometric", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.forneseur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.forneseur.Image = ((System.Drawing.Image)(resources.GetObject("forneseur.Image")));
             this.forneseur.ImageSize = new System.Drawing.Size(20, 20);
@@ -123,7 +123,7 @@
             this.equipment.BorderColor = System.Drawing.Color.Black;
             this.equipment.DialogResult = System.Windows.Forms.DialogResult.None;
             this.equipment.FocusedColor = System.Drawing.Color.Empty;
-            this.equipment.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.equipment.Font = new System.Drawing.Font("Neometric", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.equipment.Image = ((System.Drawing.Image)(resources.GetObject("equipment.Image")));
             this.equipment.ImageSize = new System.Drawing.Size(20, 20);
@@ -151,7 +151,7 @@
             this.settings.BorderColor = System.Drawing.Color.Black;
             this.settings.DialogResult = System.Windows.Forms.DialogResult.None;
             this.settings.FocusedColor = System.Drawing.Color.Empty;
-            this.settings.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.settings.Font = new System.Drawing.Font("Neometric", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
             this.settings.ImageSize = new System.Drawing.Size(20, 20);
@@ -179,7 +179,7 @@
             this.users.BorderColor = System.Drawing.Color.Black;
             this.users.DialogResult = System.Windows.Forms.DialogResult.None;
             this.users.FocusedColor = System.Drawing.Color.Empty;
-            this.users.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.users.Font = new System.Drawing.Font("Neometric", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.users.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.users.Image = ((System.Drawing.Image)(resources.GetObject("users.Image")));
             this.users.ImageSize = new System.Drawing.Size(20, 20);
@@ -207,7 +207,7 @@
             this.article.BorderColor = System.Drawing.Color.Black;
             this.article.DialogResult = System.Windows.Forms.DialogResult.None;
             this.article.FocusedColor = System.Drawing.Color.Empty;
-            this.article.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.article.Font = new System.Drawing.Font("Neometric", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.article.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.article.Image = ((System.Drawing.Image)(resources.GetObject("article.Image")));
             this.article.ImageSize = new System.Drawing.Size(20, 20);
@@ -235,7 +235,7 @@
             this.dashboard_button.BorderColor = System.Drawing.Color.Black;
             this.dashboard_button.DialogResult = System.Windows.Forms.DialogResult.None;
             this.dashboard_button.FocusedColor = System.Drawing.Color.Empty;
-            this.dashboard_button.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.dashboard_button.Font = new System.Drawing.Font("Neometric", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dashboard_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.dashboard_button.Image = ((System.Drawing.Image)(resources.GetObject("dashboard_button.Image")));
             this.dashboard_button.ImageSize = new System.Drawing.Size(20, 20);

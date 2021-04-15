@@ -65,3 +65,4 @@ C:\Users\ayoub\Desktop\SystemManagment-ysfbranch\ProjectV1\obj\Debug\ProjectV1.e
 C:\Users\ayoub\Desktop\SystemManagment-ysfbranch\ProjectV1\obj\Debug\ProjectV1.pdb
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.equipe.resources
 C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.fourni.resources
+C:\Users\ayoub\Desktop\ProjectV1\ProjectV1\obj\Debug\ProjectV1.add_success.resources

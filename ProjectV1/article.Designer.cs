@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(articlee));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Add = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.upload = new Guna.UI.WinForms.GunaGradientButton();
-            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
+            this.add_button = new Guna.UI.WinForms.GunaGradientButton();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
@@ -65,6 +65,8 @@
             this.add_data_worker = new System.ComponentModel.BackgroundWorker();
             this.gunaGradientButton6 = new Guna.UI.WinForms.GunaGradientButton();
             this.valide = new Guna.UI.WinForms.GunaGradientButton();
+            this.entree_print_Document = new System.Drawing.Printing.PrintDocument();
+            this.entree_print_Dialog = new System.Windows.Forms.PrintDialog();
             this.Add.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,10 +82,10 @@
             this.Add.Controls.Add(this.label7);
             this.Add.Controls.Add(this.label6);
             this.Add.Controls.Add(this.label5);
+            this.Add.Controls.Add(this.label1);
             this.Add.Controls.Add(this.label4);
             this.Add.Controls.Add(this.label3);
             this.Add.Controls.Add(this.label2);
-            this.Add.Controls.Add(this.label1);
             this.Add.Controls.Add(this.date);
             this.Add.Controls.Add(this.quantitier);
             this.Add.Controls.Add(this.desination);
@@ -94,7 +96,7 @@
             this.Add.Controls.Add(this.barcode);
             this.Add.Controls.Add(this.gunaElipsePanel1);
             this.Add.Controls.Add(this.upload);
-            this.Add.Controls.Add(this.gunaGradientButton1);
+            this.Add.Controls.Add(this.add_button);
             this.Add.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Add.Location = new System.Drawing.Point(0, 0);
             this.Add.Name = "Add";
@@ -105,9 +107,10 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(573, 167);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.Size = new System.Drawing.Size(77, 13);
             this.label8.TabIndex = 15;
             this.label8.Text = "Date entree";
             // 
@@ -115,9 +118,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(573, 97);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(65, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Quantitier";
             // 
@@ -125,9 +129,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(573, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(68, 13);
             this.label6.TabIndex = 15;
             this.label6.Text = "desination";
             // 
@@ -135,9 +140,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(103, 307);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 13);
+            this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 15;
             this.label5.Text = "Reference Interne";
             // 
@@ -145,9 +151,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(103, 237);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(104, 13);
+            this.label4.Size = new System.Drawing.Size(125, 13);
             this.label4.TabIndex = 15;
             this.label4.Text = "Reference Fabricant";
             // 
@@ -155,9 +162,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(103, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.Size = new System.Drawing.Size(27, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Prix";
             // 
@@ -165,9 +173,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(103, 97);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 15;
             this.label2.Text = "Code ean";
             // 
@@ -175,9 +184,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Neometric Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(103, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.Size = new System.Drawing.Size(58, 13);
             this.label1.TabIndex = 15;
             this.label1.Text = "Barcode";
             // 
@@ -381,7 +391,7 @@
             this.upload.ForeColor = System.Drawing.Color.White;
             this.upload.Image = ((System.Drawing.Image)(resources.GetObject("upload.Image")));
             this.upload.ImageSize = new System.Drawing.Size(20, 20);
-            this.upload.Location = new System.Drawing.Point(756, 169);
+            this.upload.Location = new System.Drawing.Point(765, 169);
             this.upload.Name = "upload";
             this.upload.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.upload.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -390,38 +400,38 @@
             this.upload.OnHoverImage = null;
             this.upload.OnPressedColor = System.Drawing.Color.Black;
             this.upload.Radius = 20;
-            this.upload.Size = new System.Drawing.Size(159, 45);
+            this.upload.Size = new System.Drawing.Size(150, 45);
             this.upload.TabIndex = 9;
             this.upload.Text = "Upload";
             this.upload.Click += new System.EventHandler(this.upload_Click);
             // 
-            // gunaGradientButton1
+            // add_button
             // 
-            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton1.AnimationSpeed = 0.03F;
-            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton1.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
-            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(79, 379);
-            this.gunaGradientButton1.Name = "gunaGradientButton1";
-            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.OnHoverImage = null;
-            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Radius = 5;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(129, 45);
-            this.gunaGradientButton1.TabIndex = 10;
-            this.gunaGradientButton1.Text = "Ajoutter";
-            this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
+            this.add_button.AnimationHoverSpeed = 0.07F;
+            this.add_button.AnimationSpeed = 0.03F;
+            this.add_button.BackColor = System.Drawing.Color.Transparent;
+            this.add_button.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.add_button.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.add_button.BorderColor = System.Drawing.Color.Transparent;
+            this.add_button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.add_button.FocusedColor = System.Drawing.Color.Empty;
+            this.add_button.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.add_button.ForeColor = System.Drawing.Color.White;
+            this.add_button.Image = ((System.Drawing.Image)(resources.GetObject("add_button.Image")));
+            this.add_button.ImageSize = new System.Drawing.Size(20, 20);
+            this.add_button.Location = new System.Drawing.Point(79, 379);
+            this.add_button.Name = "add_button";
+            this.add_button.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.add_button.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.add_button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.add_button.OnHoverForeColor = System.Drawing.Color.White;
+            this.add_button.OnHoverImage = null;
+            this.add_button.OnPressedColor = System.Drawing.Color.Black;
+            this.add_button.Radius = 5;
+            this.add_button.Size = new System.Drawing.Size(129, 45);
+            this.add_button.TabIndex = 10;
+            this.add_button.Text = "Ajoutter";
+            this.add_button.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // progresbar
             // 
@@ -487,7 +497,7 @@
             this.Sortee.BorderColor = System.Drawing.Color.Transparent;
             this.Sortee.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Sortee.FocusedColor = System.Drawing.Color.Empty;
-            this.Sortee.Font = new System.Drawing.Font("Neometric", 9.75F);
+            this.Sortee.Font = new System.Drawing.Font("Neometric", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sortee.ForeColor = System.Drawing.Color.White;
             this.Sortee.Image = ((System.Drawing.Image)(resources.GetObject("Sortee.Image")));
             this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
@@ -536,7 +546,7 @@
             // guna2Elipse2
             // 
             this.guna2Elipse2.BorderRadius = 4;
-            this.guna2Elipse2.TargetControl = this.gunaGradientButton1;
+            this.guna2Elipse2.TargetControl = this.add_button;
             // 
             // View
             // 
@@ -562,8 +572,8 @@
             this.view_data.Location = new System.Drawing.Point(0, 0);
             this.view_data.Name = "view_data";
             this.view_data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.view_data.Size = new System.Drawing.Size(995, 441);
             this.view_data.TabIndex = 0;
             this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
@@ -645,6 +655,15 @@
             this.valide.TabIndex = 17;
             this.valide.Click += new System.EventHandler(this.valide_Click);
             // 
+            // entree_print_Document
+            // 
+            this.entree_print_Document.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.entree_print_Document_PrintPage);
+            // 
+            // entree_print_Dialog
+            // 
+            this.entree_print_Dialog.Document = this.entree_print_Document;
+            this.entree_print_Dialog.UseEXDialog = true;
+            // 
             // articlee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -676,7 +695,7 @@
         private System.Windows.Forms.Panel Add;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaGradientButton upload;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientButton add_button;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
         private Guna.UI.WinForms.GunaGradientButton Sortee;
@@ -707,5 +726,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaGradientButton valide;
+        private System.Drawing.Printing.PrintDocument entree_print_Document;
+        private System.Windows.Forms.PrintDialog entree_print_Dialog;
     }
 }

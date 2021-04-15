@@ -31,6 +31,7 @@ namespace ProjectV1
       */
         private void articlee_Load(object sender, EventArgs e)
         {
+
             progresbar.Visible = false;
             mode(MOde_entree);
             List<article_model> data = loaddata("select * from Artical");
@@ -174,19 +175,19 @@ namespace ProjectV1
             switch (_mode_)
             {
                 case MOde_entree:
-                    gunaGradientButton1.Text = "Entree";
-                    ClearEvents(gunaGradientButton1, events);
-                    gunaGradientButton1.Click += events[0];
+                    add_button.Text = "Entree";
+                    ClearEvents(add_button, events);
+                    add_button.Click += events[0];
                     break;
                 case Mode_Sortee:
-                    gunaGradientButton1.Text = "Sortee";
-                    ClearEvents(gunaGradientButton1, events);
-                    gunaGradientButton1.Click += events[1];
+                    add_button.Text = "Sortee";
+                    ClearEvents(add_button, events);
+                    add_button.Click += events[1];
                     break;
                 case Mode_search:
-                    gunaGradientButton1.Text = "Researche";
-                    ClearEvents(gunaGradientButton1, events);
-                    gunaGradientButton1.Click += events[2];
+                    add_button.Text = "Researche";
+                    ClearEvents(add_button, events);
+                    add_button.Click += events[2];
                     break;
             }
         }
@@ -392,8 +393,11 @@ namespace ProjectV1
             int i = remplire.ExuteCommende("r_Article", param);
 
             remplire.closecnx();
-
-            e.Result = i;
+           
+            List<object> parameters = new List<object>();
+            parameters.Add(i);
+            parameters.Add(item);
+            e.Result = parameters;
 
         }
         /*
@@ -401,12 +405,20 @@ namespace ProjectV1
          */
         private void add_data_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            int RUN_CODE = (int)e.Result;
+            List<object> args = e.Result as List<object>;
+
+            int RUN_CODE = (int)args[0];
+            article_model data = (article_model)args[1];
           
             progresbar.Hide();
             if (RUN_CODE == -1)
             {
                 MessageBox.Show("Error en Entree");
+            }
+            else
+            {            
+                add_success dialog = new add_success(data);       
+                dialog.ShowDialog();
             }
             Controls_clear(Add);
         }
@@ -493,6 +505,13 @@ namespace ProjectV1
             {
                 selectedRows.Clear();
             }
+
+        }
+
+      
+
+        private void entree_print_Document_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
 
         }
     }
