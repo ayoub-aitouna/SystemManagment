@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\CLients.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CLients.Designer.cs">
+      <DependentUpon>CLients.cs</DependentUpon>
+    </Compile>
     <Compile Include="dialog\add_success.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,16 +69,16 @@
       <DependentUpon>add_success.cs</DependentUpon>
     </Compile>
     <Compile Include="ArrayList.cs" />
-    <Compile Include="article.cs">
+    <Compile Include="Controls\article.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="article.Designer.cs">
+    <Compile Include="Controls\article.Designer.cs">
       <DependentUpon>article.cs</DependentUpon>
     </Compile>
-    <Compile Include="dashboard.cs">
+    <Compile Include="Controls\dashboard.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="dashboard.Designer.cs">
+    <Compile Include="Controls\dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="dialog\details_Sortee.cs">
@@ -81,10 +87,10 @@
     <Compile Include="dialog\details_Sortee.Designer.cs">
       <DependentUpon>details_Sortee.cs</DependentUpon>
     </Compile>
-    <Compile Include="equipe.cs">
+    <Compile Include="Controls\equipe.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="equipe.Designer.cs">
+    <Compile Include="Controls\equipe.Designer.cs">
       <DependentUpon>equipe.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -99,10 +105,10 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="fourniseur.cs">
+    <Compile Include="Controls\fourniseur.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="fourniseur.Designer.cs">
+    <Compile Include="Controls\fourniseur.Designer.cs">
       <DependentUpon>fourniseur.cs</DependentUpon>
     </Compile>
     <Compile Include="item.cs">
@@ -117,19 +123,22 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sqln\sqlcn.cs" />
+    <EmbeddedResource Include="Controls\CLients.resx">
+      <DependentUpon>CLients.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="dialog\add_success.resx">
       <DependentUpon>add_success.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="article.resx">
+    <EmbeddedResource Include="Controls\article.resx">
       <DependentUpon>article.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="dashboard.resx">
+    <EmbeddedResource Include="Controls\dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="dialog\details_Sortee.resx">
       <DependentUpon>details_Sortee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="equipe.resx">
+    <EmbeddedResource Include="Controls\equipe.resx">
       <DependentUpon>equipe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
@@ -138,7 +147,7 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fourniseur.resx">
+    <EmbeddedResource Include="Controls\fourniseur.resx">
       <DependentUpon>fourniseur.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="item.resx">

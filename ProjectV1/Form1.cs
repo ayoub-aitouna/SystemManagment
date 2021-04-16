@@ -92,10 +92,6 @@ namespace ProjectV1
             Application.Exit();
         }
 
-        private void loaddata()
-        {
-           
-        }
       
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
@@ -115,19 +111,10 @@ namespace ProjectV1
             hideAll(fourni1,forneseur);
         }
 
-        private void articlee1_Load(object sender, EventArgs e)
-        {
-         
-        }
-
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
 
         private void users_Click(object sender, EventArgs e)
         {
-            hideAll(null, users);
+            hideAll(cLients1, users);
         }
 
         private void settings_Click(object sender, EventArgs e)

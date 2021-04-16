@@ -34,7 +34,7 @@
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.gunaGradientButton3 = new Guna.UI.WinForms.GunaGradientButton();
+            this.CancelAll = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -109,6 +109,7 @@
             this.gunaGradientButton1.Size = new System.Drawing.Size(120, 40);
             this.gunaGradientButton1.TabIndex = 21;
             this.gunaGradientButton1.Text = "Sortee";
+            this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // gunaTextBox2
             // 
@@ -141,33 +142,33 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Quantitie";
             // 
-            // gunaGradientButton3
+            // CancelAll
             // 
-            this.gunaGradientButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton3.AnimationSpeed = 0.03F;
-            this.gunaGradientButton3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton3.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton3.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton3.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton3.Font = new System.Drawing.Font("Neometric", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton3.Image")));
-            this.gunaGradientButton3.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(259, 354);
-            this.gunaGradientButton3.Name = "gunaGradientButton3";
-            this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton3.OnHoverImage = null;
-            this.gunaGradientButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.Radius = 5;
-            this.gunaGradientButton3.Size = new System.Drawing.Size(120, 40);
-            this.gunaGradientButton3.TabIndex = 21;
-            this.gunaGradientButton3.Text = "Annuler tout";
-            this.gunaGradientButton3.Click += new System.EventHandler(this.gunaGradientButton3_Click);
+            this.CancelAll.AnimationHoverSpeed = 0.07F;
+            this.CancelAll.AnimationSpeed = 0.03F;
+            this.CancelAll.BackColor = System.Drawing.Color.Transparent;
+            this.CancelAll.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.CancelAll.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.CancelAll.BorderColor = System.Drawing.Color.Transparent;
+            this.CancelAll.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.CancelAll.FocusedColor = System.Drawing.Color.Empty;
+            this.CancelAll.Font = new System.Drawing.Font("Neometric", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CancelAll.ForeColor = System.Drawing.Color.White;
+            this.CancelAll.Image = ((System.Drawing.Image)(resources.GetObject("CancelAll.Image")));
+            this.CancelAll.ImageSize = new System.Drawing.Size(20, 20);
+            this.CancelAll.Location = new System.Drawing.Point(259, 354);
+            this.CancelAll.Name = "CancelAll";
+            this.CancelAll.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.CancelAll.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.CancelAll.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.CancelAll.OnHoverForeColor = System.Drawing.Color.White;
+            this.CancelAll.OnHoverImage = null;
+            this.CancelAll.OnPressedColor = System.Drawing.Color.Black;
+            this.CancelAll.Radius = 5;
+            this.CancelAll.Size = new System.Drawing.Size(120, 40);
+            this.CancelAll.TabIndex = 21;
+            this.CancelAll.Text = "Annuler tout";
+            this.CancelAll.Click += new System.EventHandler(this.gunaGradientButton3_Click);
             // 
             // gunaElipse1
             // 
@@ -381,7 +382,7 @@
             this.Controls.Add(this.id);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gunaGradientButton1);
-            this.Controls.Add(this.gunaGradientButton3);
+            this.Controls.Add(this.CancelAll);
             this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.gunaTextBox2);
@@ -402,7 +403,7 @@
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton3;
+        private Guna.UI.WinForms.GunaGradientButton CancelAll;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private System.Windows.Forms.Label date;
         private System.Windows.Forms.Label label9;

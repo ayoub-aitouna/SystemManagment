@@ -15,11 +15,13 @@ namespace ProjectV1.dialog
     {
         article_model item;
         Icloseall closeAll;
-        public details_Sortee(article_model item,Icloseall closeAll)
+        int NumberOfDialogs;
+        public details_Sortee(article_model item,Icloseall closeAll,int NumberOfDialogs)
         {
             InitializeComponent();
             this.item = item;
             this.closeAll = closeAll;
+            this.NumberOfDialogs = NumberOfDialogs;
         }
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
@@ -37,6 +39,10 @@ namespace ProjectV1.dialog
             descroption_fabrication.Text = item.Descroption_fabrication;
             codeean.Text = item.Code_fabrication;
             date.Text = item.Date_entre.ToShortDateString();
+            if (NumberOfDialogs == 1)
+            {
+                CancelAll.Hide();
+            }
 
         }
 
@@ -44,6 +50,17 @@ namespace ProjectV1.dialog
         {
             this.Close();
             closeAll.close(-1);
+        }
+
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+
+            add_success added_dialog = new add_success(item);
+            added_dialog.BackColor = Color.FromArgb(250, 250, 250);
+            added_dialog.StartPosition = FormStartPosition.CenterScreen;
+
+            added_dialog.ShowDialog();
+
         }
     }
 }

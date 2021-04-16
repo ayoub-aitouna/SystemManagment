@@ -8,7 +8,6 @@ using System.Data.Common;
 using System.Data;
 using ProjectV1.model;
 using System.Collections;
-using System.Collections.Generic;
 
 namespace ProjectV1.sql
 {

@@ -42,6 +42,7 @@
             this.equipe1 = new ProjectV1.equipe();
             this.fourni1 = new ProjectV1.fourni();
             this.articlee1 = new ProjectV1.articlee();
+            this.cLients1 = new ProjectV1.Controls.CLients();
             this.MENU.SuspendLayout();
             this.LOGO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -258,6 +259,7 @@
             this.homa_container.Controls.Add(this.equipe1);
             this.homa_container.Controls.Add(this.fourni1);
             this.homa_container.Controls.Add(this.articlee1);
+            this.homa_container.Controls.Add(this.cLients1);
             this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homa_container.Location = new System.Drawing.Point(172, 0);
             this.homa_container.Name = "homa_container";
@@ -288,6 +290,15 @@
             this.articlee1.Name = "articlee1";
             this.articlee1.Size = new System.Drawing.Size(1060, 588);
             this.articlee1.TabIndex = 0;
+            // 
+            // cLients1
+            // 
+            this.cLients1.BackColor = System.Drawing.Color.White;
+            this.cLients1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cLients1.Location = new System.Drawing.Point(0, 0);
+            this.cLients1.Name = "cLients1";
+            this.cLients1.Size = new System.Drawing.Size(1060, 588);
+            this.cLients1.TabIndex = 3;
             // 
             // Form1
             // 
@@ -326,6 +337,7 @@
         private articlee articlee1;
         private fourni fourni1;
         private equipe equipe1;
+        private Controls.CLients cLients1;
     }
 }
 

@@ -213,7 +213,7 @@
             this.date.Radius = 19;
             this.date.Size = new System.Drawing.Size(155, 40);
             this.date.TabIndex = 19;
-            this.date.Text = "11/04/2021";
+            this.date.Text = "4/11/2021";
             this.date.Value = new System.DateTime(2021, 4, 11, 22, 17, 2, 539);
             // 
             // quantitier

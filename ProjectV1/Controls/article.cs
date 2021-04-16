@@ -144,6 +144,7 @@ namespace ProjectV1
 
             if (!viewData_worker.IsBusy)
             {
+                view_data.Enabled = false;
                 progresbar.Show();
                 viewData_worker.RunWorkerAsync("select * from Artical");
             }
@@ -389,6 +390,7 @@ namespace ProjectV1
         private void view_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             progresbar.Hide();
+            view_data.Enabled = true;
             setview_data((List<article_model>)e.Result);
         }
         /*
@@ -487,6 +489,11 @@ namespace ProjectV1
             view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            if (this.Width > 1020)
+            {
+                view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+            
 
         }
 
@@ -510,7 +517,7 @@ namespace ProjectV1
                     if (Breake != -1)
                     {
                         Thread.Sleep(200);
-                        details_Sortee sorteeDialog = new details_Sortee(item, this);
+                        details_Sortee sorteeDialog = new details_Sortee(item, this,selectedRows.Count);
                         sorteeDialog.ShowDialog(); 
                     }
                     else
