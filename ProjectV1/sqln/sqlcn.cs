@@ -106,6 +106,7 @@ namespace ProjectV1.sql
         //methode insert ,delet ,update
         public int ExuteCommende(string stored_procedure, SqlParameter[] param)
         {
+            int i=0;
             SqlCommand macommende = new SqlCommand();
             cnn = new SqlConnection(connetionString);
             cnn.Open();
@@ -116,16 +117,11 @@ namespace ProjectV1.sql
       
             if (param !=null)
             {
-               
-                    macommende.Parameters.AddRange(param);
-                    macommende.ExecuteNonQuery();
+                macommende.Parameters.AddRange(param);
+                i =  macommende.ExecuteNonQuery();
                 cnn.Close();
-
-
-
-
             }
-            return 1;
+            return i;
          
         }
 

@@ -229,6 +229,19 @@
   <metadata name="entree_print_Dialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>810, 20</value>
   </metadata>
+  <data name="used_items_button.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAZNJREFUWEfdmIFtgzAQRRmBETpaRugGzQbNBnSDdoOOkG5AN8gI9D/HhJLYpJwJ
+        ueZJJ2HfJX5CGBtXObquqxXPindFq1ga/vNTsVE8xWGvo2LEXhQHxZo0imlRChS3uFt/hbHTkiRiwb1J
+        S8aEF3Cpo1qQ45nzxjbqubt7PUzSGjmmuVc2CDK9vdIguD9eu6RFcO0X8hwOCLrmoQWZXGwmpl5R5Kh5
+        Cy0DVsEmvkL5fW6JpO+0ZOnaJGkV3MVxA2qfS47kQO1tyMzEKpgS6CWncrOxCkJOZDE5KBGEC8nfkIs1
+        ZkoFISlJX8wV8fCCSbkecrHGTInghRztTJ9Z0iqYk6N/Kjcbq+CwHRdqnwukJHchMxOroGWpM22MrYLA
+        gK+Kqf0kkixxnE6YKBFchX8h6H7Ln3rAvbBH0LzbXYHw2en+w53zQI/PIY/e8QBJF6bt+I0ZHR5xFz1N
+        ljaqDaizaNexIDiM1vETJGLBvcjL9VCgMO08CmCSMg+GU9VrqBhRXkEfii/F0nwr+G9OHjJiVfUDDdSG
+        J71zKKgAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>124</value>
   </metadata>

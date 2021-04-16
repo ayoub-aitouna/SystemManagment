@@ -138,16 +138,14 @@ namespace ProjectV1
              */
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
-
-
             hideAll(View);
-
-            if (!viewData_worker.IsBusy)
+            if (viewData_worker.IsBusy)
             {
-                view_data.Enabled = false;
-                progresbar.Show();
-                viewData_worker.RunWorkerAsync("select * from Artical");
+                viewData_worker.CancelAsync();
             }
+            view_data.Enabled = false;
+            progresbar.Show();
+            viewData_worker.RunWorkerAsync("select * from Artical");
 
         }
         /*
@@ -308,7 +306,7 @@ namespace ProjectV1
          */
         private void setview_data(List<article_model> data)
         {
-            view_data.EnableHeadersVisualStyles = false;
+       
             view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 66, 132);
             view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
@@ -381,6 +379,12 @@ namespace ProjectV1
         {
             sqlcn SqlConnection = new sqlcn();
             e.Result = SqlConnection.View(e.Argument.ToString());
+          
+        }
+
+        private void viewData_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+    
         }
         /*
          * when the view background thread complets 
@@ -476,7 +480,7 @@ namespace ProjectV1
         void StyleDatagridview()
         {
             view_data.BorderStyle = BorderStyle.None;
-            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(238, 239, 249);
+            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(226, 226, 226);
             view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
             view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
@@ -488,6 +492,8 @@ namespace ProjectV1
             view_data.ColumnHeadersHeight = 40;
             view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
             view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            view_data.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            view_data.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
             view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             if (this.Width > 1020)
             {
@@ -582,6 +588,18 @@ namespace ProjectV1
             //throw new NotImplementedException();
             Breake = i;
         }
+
+        private void used_items(object sender, EventArgs e)
+        {
+            hideAll(View);
+            if (viewData_worker.IsBusy)
+            {
+                viewData_worker.CancelAsync();
+            }
+            viewData_worker.RunWorkerAsync("select * from Artical_Sortee");
+        }
+
+      
     }
     public interface Icloseall
     {

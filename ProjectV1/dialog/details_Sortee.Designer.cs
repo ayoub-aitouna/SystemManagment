@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(details_Sortee));
             this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
+            this.quantitie = new Guna.UI.WinForms.GunaTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CancelAll = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -53,6 +53,7 @@
             this.prix = new System.Windows.Forms.Label();
             this.date = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Sortee_aysnc = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // gunaGradientButton2
@@ -111,25 +112,26 @@
             this.gunaGradientButton1.Text = "Sortee";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
-            // gunaTextBox2
+            // quantitie
             // 
-            this.gunaTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.BorderSize = 0;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox2.Location = new System.Drawing.Point(449, 259);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.Radius = 5;
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(176, 50);
-            this.gunaTextBox2.TabIndex = 20;
-            this.gunaTextBox2.TextOffsetX = 10;
+            this.quantitie.BackColor = System.Drawing.Color.Transparent;
+            this.quantitie.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.quantitie.BorderColor = System.Drawing.Color.Silver;
+            this.quantitie.BorderSize = 0;
+            this.quantitie.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.quantitie.FocusedBaseColor = System.Drawing.Color.White;
+            this.quantitie.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.quantitie.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.quantitie.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.quantitie.Location = new System.Drawing.Point(449, 259);
+            this.quantitie.Name = "quantitie";
+            this.quantitie.PasswordChar = '\0';
+            this.quantitie.Radius = 5;
+            this.quantitie.SelectedText = "";
+            this.quantitie.Size = new System.Drawing.Size(176, 50);
+            this.quantitie.TabIndex = 20;
+            this.quantitie.TextOffsetX = 10;
+            this.quantitie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.quantitie_KeyPress);
             // 
             // label3
             // 
@@ -359,6 +361,11 @@
             this.panel1.Size = new System.Drawing.Size(2, 250);
             this.panel1.TabIndex = 23;
             // 
+            // Sortee_aysnc
+            // 
+            this.Sortee_aysnc.DoWork += new System.ComponentModel.DoWorkEventHandler(this.Sortee_aysnc_DoWork);
+            this.Sortee_aysnc.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.Sortee_aysnc_RunWorkerCompleted);
+            // 
             // details_Sortee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -385,7 +392,7 @@
             this.Controls.Add(this.CancelAll);
             this.Controls.Add(this.gunaGradientButton2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.gunaTextBox2);
+            this.Controls.Add(this.quantitie);
             this.Font = new System.Drawing.Font("Neometric", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "details_Sortee";
@@ -401,7 +408,7 @@
 
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaTextBox quantitie;
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaGradientButton CancelAll;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
@@ -422,5 +429,6 @@
         private System.Windows.Forms.Label id;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.ComponentModel.BackgroundWorker Sortee_aysnc;
     }
 }

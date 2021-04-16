@@ -67,6 +67,7 @@
             this.valide = new Guna.UI.WinForms.GunaGradientButton();
             this.entree_print_Document = new System.Drawing.Printing.PrintDocument();
             this.entree_print_Dialog = new System.Windows.Forms.PrintDialog();
+            this.used_items_button = new Guna.UI.WinForms.GunaGradientButton();
             this.Add.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -444,7 +445,7 @@
             this.progresbar.IdleThickness = 10;
             this.progresbar.Image = null;
             this.progresbar.ImageSize = new System.Drawing.Size(52, 52);
-            this.progresbar.Location = new System.Drawing.Point(468, 20);
+            this.progresbar.Location = new System.Drawing.Point(531, 21);
             this.progresbar.Name = "progresbar";
             this.progresbar.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.progresbar.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -501,7 +502,7 @@
             this.Sortee.ForeColor = System.Drawing.Color.White;
             this.Sortee.Image = ((System.Drawing.Image)(resources.GetObject("Sortee.Image")));
             this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
-            this.Sortee.Location = new System.Drawing.Point(240, 36);
+            this.Sortee.Location = new System.Drawing.Point(173, 36);
             this.Sortee.Name = "Sortee";
             this.Sortee.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.Sortee.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -529,7 +530,7 @@
             this.Entree.ForeColor = System.Drawing.Color.White;
             this.Entree.Image = ((System.Drawing.Image)(resources.GetObject("Entree.Image")));
             this.Entree.ImageSize = new System.Drawing.Size(20, 20);
-            this.Entree.Location = new System.Drawing.Point(79, 36);
+            this.Entree.Location = new System.Drawing.Point(27, 36);
             this.Entree.Name = "Entree";
             this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -564,6 +565,7 @@
             this.view_data.AllowUserToResizeColumns = false;
             this.view_data.AllowUserToResizeRows = false;
             this.view_data.BackgroundColor = System.Drawing.Color.White;
+            this.view_data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.view_data.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.view_data.ColumnHeadersHeight = 25;
             this.view_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -592,6 +594,7 @@
             // viewData_worker
             // 
             this.viewData_worker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.view_worker_DoWork);
+            this.viewData_worker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.viewData_worker_ProgressChanged);
             this.viewData_worker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.view_worker_RunWorkerCompleted);
             // 
             // add_data_worker
@@ -664,16 +667,45 @@
             this.entree_print_Dialog.Document = this.entree_print_Document;
             this.entree_print_Dialog.UseEXDialog = true;
             // 
+            // used_items_button
+            // 
+            this.used_items_button.AnimationHoverSpeed = 0.07F;
+            this.used_items_button.AnimationSpeed = 0.03F;
+            this.used_items_button.BackColor = System.Drawing.Color.Transparent;
+            this.used_items_button.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.used_items_button.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.used_items_button.BorderColor = System.Drawing.Color.Transparent;
+            this.used_items_button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.used_items_button.FocusedColor = System.Drawing.Color.Empty;
+            this.used_items_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.used_items_button.ForeColor = System.Drawing.Color.White;
+            this.used_items_button.Image = ((System.Drawing.Image)(resources.GetObject("used_items_button.Image")));
+            this.used_items_button.ImageSize = new System.Drawing.Size(20, 20);
+            this.used_items_button.Location = new System.Drawing.Point(328, 36);
+            this.used_items_button.Name = "used_items_button";
+            this.used_items_button.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.used_items_button.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.used_items_button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.used_items_button.OnHoverForeColor = System.Drawing.Color.White;
+            this.used_items_button.OnHoverImage = null;
+            this.used_items_button.OnPressedColor = System.Drawing.Color.Black;
+            this.used_items_button.Radius = 5;
+            this.used_items_button.Size = new System.Drawing.Size(143, 45);
+            this.used_items_button.TabIndex = 13;
+            this.used_items_button.Text = "articles usagés ";
+            this.used_items_button.Click += new System.EventHandler(this.used_items);
+            // 
             // articlee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.valide);
             this.Controls.Add(this.progresbar);
+            this.Controls.Add(this.valide);
             this.Controls.Add(this.Container);
             this.Controls.Add(this.gunaGradientButton6);
             this.Controls.Add(this.Entree);
+            this.Controls.Add(this.used_items_button);
             this.Controls.Add(this.Sortee);
             this.Controls.Add(this.gunaGradientButton4);
             this.Name = "articlee";
@@ -728,5 +760,6 @@
         private Guna.UI.WinForms.GunaGradientButton valide;
         private System.Drawing.Printing.PrintDocument entree_print_Document;
         private System.Windows.Forms.PrintDialog entree_print_Dialog;
+        private Guna.UI.WinForms.GunaGradientButton used_items_button;
     }
 }
