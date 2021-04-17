@@ -30,9 +30,9 @@ namespace ProjectV1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            hideAll(null,dashboard_button);
-           
-           
+            hideAll(dashboard1, dashboard_button);
+
+
         }
 
         private void hideAll(Control control,Control button)
@@ -84,7 +84,7 @@ namespace ProjectV1
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-            hideAll(null,dashboard_button);
+            hideAll(dashboard1,dashboard_button);
         }
 
         private void gunaGradientButton5_Click(object sender, EventArgs e)

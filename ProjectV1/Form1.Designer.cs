@@ -43,6 +43,7 @@
             this.fourni1 = new ProjectV1.fourni();
             this.articlee1 = new ProjectV1.articlee();
             this.cLients1 = new ProjectV1.Controls.CLients();
+            this.dashboard1 = new ProjectV1.dashboard();
             this.MENU.SuspendLayout();
             this.LOGO.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -260,6 +261,7 @@
             this.homa_container.Controls.Add(this.fourni1);
             this.homa_container.Controls.Add(this.articlee1);
             this.homa_container.Controls.Add(this.cLients1);
+            this.homa_container.Controls.Add(this.dashboard1);
             this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
             this.homa_container.Location = new System.Drawing.Point(172, 0);
             this.homa_container.Name = "homa_container";
@@ -300,6 +302,15 @@
             this.cLients1.Size = new System.Drawing.Size(1060, 588);
             this.cLients1.TabIndex = 3;
             // 
+            // dashboard1
+            // 
+            this.dashboard1.BackColor = System.Drawing.Color.White;
+            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(1060, 588);
+            this.dashboard1.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -338,6 +349,7 @@
         private fourni fourni1;
         private equipe equipe1;
         private Controls.CLients cLients1;
+        private dashboard dashboard1;
     }
 }
 
