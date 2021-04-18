@@ -164,4 +164,19 @@
   <metadata name="working_back.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="Entree.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAU5JREFUWEftmIsNgjAURRmBERyNEdwAN3AU3UQ3wA0cAe+B4gfRUlvCi+lJboJg
+        6Amlz2eLKdq2LZWtclAa5aoswUlhjErZuOE/oy8hVitLCfmonco7urhReFprg8Pr09QJnpwFuQGmvnR6
+        neC+O22L3SDH1FqEdVAiyAqyyhZBlrlVjgjyQlqlQdAyV+uCbUpB6ij1lKqQ7LVJKVh1dUtw3J+KJwvG
+        kgVj+TtBygeDT+Xew3E8uvacoLYuVNDflnvQPaiVswkVfDSRP6J7BLV3oYJMz9S0kblTHPQrEyr4jbyK
+        Y8mCsWTBWCgflBeSbBMgpeAiILjWRtEsELS0JzPmhKD5P+5sVFqlQpD2x+p72DcgOtj1n03Rb7+BPvAU
+        Le3RNE7tgU4mLbARdAXfab2ji2tNN+uAsf1du740dMRH5awsAUIXhTGoJBNiRXEDq07m50GeOkEAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <metadata name="worker_back_view.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>143, 17</value>
+  </metadata>
 </root>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectV1.model
 {
-    class equipement_model
+   public class equipement_model
     {
         int code;
         string nom_equipement;

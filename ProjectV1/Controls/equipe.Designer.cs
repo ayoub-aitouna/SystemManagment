@@ -41,7 +41,15 @@
             this.code_equipemnt = new Guna.UI.WinForms.GunaTextBox();
             this.ajouterequipe = new Guna.UI.WinForms.GunaGradientButton();
             this.working_back = new System.ComponentModel.BackgroundWorker();
+            this.continer = new System.Windows.Forms.Panel();
+            this.view = new System.Windows.Forms.Panel();
+            this.view_data = new System.Windows.Forms.DataGridView();
+            this.Entree = new Guna.UI.WinForms.GunaGradientButton();
+            this.worker_back_view = new System.ComponentModel.BackgroundWorker();
             this.add.SuspendLayout();
+            this.continer.SuspendLayout();
+            this.view.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.view_data)).BeginInit();
             this.SuspendLayout();
             // 
             // progresbar
@@ -120,6 +128,7 @@
             this.gunaGradientButton6.Radius = 20;
             this.gunaGradientButton6.Size = new System.Drawing.Size(44, 44);
             this.gunaGradientButton6.TabIndex = 19;
+            this.gunaGradientButton6.Click += new System.EventHandler(this.gunaGradientButton6_Click);
             // 
             // add
             // 
@@ -130,9 +139,10 @@
             this.add.Controls.Add(this.nom_equipe);
             this.add.Controls.Add(this.code_equipemnt);
             this.add.Controls.Add(this.ajouterequipe);
-            this.add.Location = new System.Drawing.Point(3, 66);
+            this.add.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.add.Location = new System.Drawing.Point(0, 0);
             this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(992, 458);
+            this.add.Size = new System.Drawing.Size(995, 458);
             this.add.TabIndex = 21;
             this.add.Paint += new System.Windows.Forms.PaintEventHandler(this.add_Paint);
             // 
@@ -257,12 +267,75 @@
             // working_back
             // 
             this.working_back.DoWork += new System.ComponentModel.DoWorkEventHandler(this.working_back_DoWork);
+            this.working_back.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.working_back_RunWorkerCompleted);
+            // 
+            // continer
+            // 
+            this.continer.Controls.Add(this.add);
+            this.continer.Controls.Add(this.view);
+            this.continer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.continer.Location = new System.Drawing.Point(0, 66);
+            this.continer.Name = "continer";
+            this.continer.Size = new System.Drawing.Size(995, 458);
+            this.continer.TabIndex = 30;
+            // 
+            // view
+            // 
+            this.view.Controls.Add(this.view_data);
+            this.view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view.Location = new System.Drawing.Point(0, 0);
+            this.view.Name = "view";
+            this.view.Size = new System.Drawing.Size(995, 458);
+            this.view.TabIndex = 30;
+            // 
+            // view_data
+            // 
+            this.view_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.view_data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view_data.Location = new System.Drawing.Point(0, 0);
+            this.view_data.Name = "view_data";
+            this.view_data.Size = new System.Drawing.Size(995, 458);
+            this.view_data.TabIndex = 0;
+            // 
+            // Entree
+            // 
+            this.Entree.AnimationHoverSpeed = 0.07F;
+            this.Entree.AnimationSpeed = 0.03F;
+            this.Entree.BackColor = System.Drawing.Color.Transparent;
+            this.Entree.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.Entree.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.Entree.BorderColor = System.Drawing.Color.Transparent;
+            this.Entree.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Entree.FocusedColor = System.Drawing.Color.Empty;
+            this.Entree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Entree.ForeColor = System.Drawing.Color.White;
+            this.Entree.Image = ((System.Drawing.Image)(resources.GetObject("Entree.Image")));
+            this.Entree.ImageSize = new System.Drawing.Size(20, 20);
+            this.Entree.Location = new System.Drawing.Point(32, 14);
+            this.Entree.Name = "Entree";
+            this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.Entree.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Entree.OnHoverForeColor = System.Drawing.Color.White;
+            this.Entree.OnHoverImage = null;
+            this.Entree.OnPressedColor = System.Drawing.Color.Black;
+            this.Entree.Radius = 5;
+            this.Entree.Size = new System.Drawing.Size(129, 45);
+            this.Entree.TabIndex = 31;
+            this.Entree.Text = "Entrée";
+            this.Entree.Click += new System.EventHandler(this.Entree_Click);
+            // 
+            // worker_back_view
+            // 
+            this.worker_back_view.DoWork += new System.ComponentModel.DoWorkEventHandler(this.worker_back_view_DoWork);
+            this.worker_back_view.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.worker_back_view_RunWorkerCompleted);
             // 
             // equipe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.add);
+            this.Controls.Add(this.Entree);
+            this.Controls.Add(this.continer);
             this.Controls.Add(this.gunaGradientButton6);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.progresbar);
@@ -271,6 +344,9 @@
             this.Load += new System.EventHandler(this.equipe_Load);
             this.add.ResumeLayout(false);
             this.add.PerformLayout();
+            this.continer.ResumeLayout(false);
+            this.view.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.view_data)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -288,5 +364,10 @@
         private Guna.UI.WinForms.GunaTextBox code_equipemnt;
         private Guna.UI.WinForms.GunaGradientButton ajouterequipe;
         private System.ComponentModel.BackgroundWorker working_back;
+        private System.Windows.Forms.Panel continer;
+        private System.Windows.Forms.Panel view;
+        private System.Windows.Forms.DataGridView view_data;
+        private Guna.UI.WinForms.GunaGradientButton Entree;
+        private System.ComponentModel.BackgroundWorker worker_back_view;
     }
 }

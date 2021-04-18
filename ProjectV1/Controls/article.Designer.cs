@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(articlee));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Add = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.entree_print_Document = new System.Drawing.Printing.PrintDocument();
             this.entree_print_Dialog = new System.Windows.Forms.PrintDialog();
             this.used_items_button = new Guna.UI.WinForms.GunaGradientButton();
+            this.update_data = new System.ComponentModel.BackgroundWorker();
             this.Add.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -214,7 +215,7 @@
             this.date.Radius = 19;
             this.date.Size = new System.Drawing.Size(155, 40);
             this.date.TabIndex = 19;
-            this.date.Text = "4/11/2021";
+            this.date.Text = "11/04/2021";
             this.date.Value = new System.DateTime(2021, 4, 11, 22, 17, 2, 539);
             // 
             // quantitier
@@ -574,8 +575,8 @@
             this.view_data.Location = new System.Drawing.Point(0, 0);
             this.view_data.Name = "view_data";
             this.view_data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.view_data.Size = new System.Drawing.Size(995, 441);
             this.view_data.TabIndex = 0;
             this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
@@ -695,6 +696,11 @@
             this.used_items_button.Text = "articles usagés ";
             this.used_items_button.Click += new System.EventHandler(this.used_items);
             // 
+            // update_data
+            // 
+            this.update_data.DoWork += new System.ComponentModel.DoWorkEventHandler(this.update_data_DoWork);
+            this.update_data.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.update_data_RunWorkerCompleted);
+            // 
             // articlee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -761,5 +767,6 @@
         private System.Drawing.Printing.PrintDocument entree_print_Document;
         private System.Windows.Forms.PrintDialog entree_print_Dialog;
         private Guna.UI.WinForms.GunaGradientButton used_items_button;
+        private System.ComponentModel.BackgroundWorker update_data;
     }
 }

@@ -15,7 +15,7 @@ namespace ProjectV1
 {
     public partial class add_success : Form
     {
-        article_model data = new article_model();
+        string prgf;
         // generate a file name as the current date/time in unix timestamp format
         string file = "Article_entree"+(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds.ToString();
 
@@ -26,9 +26,19 @@ namespace ProjectV1
 
         public add_success(article_model data)
         {
-            this.data = data;
+             prgf = @"Barcode " + data.Barcode1 + "\n Desination " + data.Nom + "\n quantitie " + data.Quontitier1 + "\n Prix " + data.Prix
+                + "\n description_inter " + data.Description_inter + "\n descroption_fabrication " + data.Descroption_fabrication +
+                "\n Date " + data.Date_entre;
+            ;
             InitializeComponent();
         
+        }
+        public add_success(equipement_model equipement)
+        {
+            string prgf = @"code :"+equipement.CODE+"matricul :"+equipement.Matrucil +"nom :"+equipement.Nom_equipment;
+            
+            InitializeComponent();
+
         }
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
@@ -38,10 +48,7 @@ namespace ProjectV1
 
         private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            string prgf = @"Barcode " + data.Barcode1 + "\n Desination " + data.Nom + "\n quantitie " + data.Quontitier1 + "\n Prix " + data.Prix
-                + "\n description_inter " + data.Description_inter + "\n descroption_fabrication " + data.Descroption_fabrication +
-                "\n Date " + data.Date_entre;
-                ;
+           
 
             e.Graphics.DrawString(prgf, new Font("Neometric", 10, FontStyle.Regular), Brushes.Black, new Point(100, 50));
 

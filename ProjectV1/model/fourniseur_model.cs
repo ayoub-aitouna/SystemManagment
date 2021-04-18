@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 
 namespace ProjectV1.model
 {
-    class fourniseur_model
+  public  class fourniseur_model
     {
         int code_fourniseur;
         string nom;
         string email;
         string adress;
-        int numerophone;
-        public fourniseur_model(int code,string nom,string email,string adres,int numerophone)
+        string numerophone;
+        public fourniseur_model(int code,string nom,string email,string adres,string numerophone)
         {
             this.code_fourniseur = code;
             this.nom = nom;
             this.email = email;
             this.adress = adres;
             this.numerophone = numerophone;
+
+        }
+        public fourniseur_model()
+        {
+           
 
         }
         public int Code_fourniseur
@@ -69,7 +74,7 @@ namespace ProjectV1.model
 
         }
     
-        public int Numerophone
+        public string Numerophone
         {
             get
             {

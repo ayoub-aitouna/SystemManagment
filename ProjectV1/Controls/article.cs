@@ -352,7 +352,7 @@ namespace ProjectV1
             DataGridViewCellCollection a = view_data.Rows[e.RowIndex].Cells;
 
             string value = a[2].Value.ToString();
-
+            progresbar.Show();
             article_model model = new article_model();
             model.Id = int.Parse(a[0].Value.ToString());
             model.Barcode1 = a[1].Value.ToString();
@@ -365,12 +365,29 @@ namespace ProjectV1
             model.Date_entre = DateTime.Parse(a[8].Value.ToString());
             model.Img = (byte[])a[9].Value;
 
-            sqlcn sql = new sqlcn();
-            sql.update(model);
-            MessageBox.Show("les données ont été mises à jour ");
-
+            if (!update_data.IsBusy)
+            {
+                update_data.RunWorkerAsync(model);
+            }
+        
+           
 
         }
+        private void update_data_DoWork(object sender, DoWorkEventArgs e)
+        {
+            article_model model =((article_model)e.Argument);
+            sqlcn sql = new sqlcn();
+            sql.update(model);
+            e.Result = model;
+        }
+        private void update_data_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progresbar.Hide();
+            article_model model = ((article_model)e.Result);
+            add_success add_Success = new add_success(model);
+            add_Success.ShowDialog();
+        }
+
         /*
          * retrive data and bind it to a datagridview 
          * in the background thread
