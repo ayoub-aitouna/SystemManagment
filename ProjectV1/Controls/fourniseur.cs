@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ProjectV1.model;
 using ProjectV1.sql;
 using System.Data.SqlClient;
+using Guna.UI.WinForms;
 
 namespace ProjectV1
 {
@@ -30,7 +31,8 @@ namespace ProjectV1
 
         private void Entree_Click(object sender, EventArgs e)
         {
-
+            hideAll(ajoute);
+            mode(MOde_entree);
         }
 
         private void ajoute_Paint(object sender, PaintEventArgs e)
@@ -41,7 +43,7 @@ namespace ProjectV1
         private void fourni_Load(object sender, EventArgs e)
         {
             progresbar.Hide();
-           
+            StyleDatagridview();
             hideAll(ajoute);
 
         }
@@ -77,15 +79,15 @@ namespace ProjectV1
             switch (_mode_)
             {
                 case MOde_entree:
-                    ajoute.Text = "Entree";
-                    ClearEvents(ajoute, events);
-                    ajoute.Click += events[0];
+                    btn_ajoute.Text = "Entree";
+                    ClearEvents(btn_ajoute, events);
+                    btn_ajoute.Click += events[0];
                     break;
 
                 case Mode_search:
-                    ajoute.Text = "Researche";
-                    ClearEvents(ajoute, events);
-                    ajoute.Click += events[1];
+                    btn_ajoute.Text = "Researche";
+                    ClearEvents(btn_ajoute, events);
+                    btn_ajoute.Click += events[1];
                     break;
             }
         }
@@ -95,6 +97,36 @@ namespace ProjectV1
             {
                 c.Click -= item;
             }
+        }
+        private void search_event(object sender, EventArgs e)
+        {
+            //List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
+            //setview_data(data);
+
+            back_fourniseur_view.RunWorkerAsync("SELECT * from Fourniseur where code like '" + code_fourniseur.Text + "'");
+            hideAll(panel_view);
+            Controls_clear(ajoute);
+
+        }
+        private void Controls_clear(Control C)
+        {
+            foreach (Control item in C.Controls)
+            {
+                // MessageBox.Show(item.GetType().ToString());
+                if (item.GetType() == typeof(TextBox))
+                    ((TextBox)item).Clear();
+                if (item.GetType() == typeof(GunaTextBox))
+                    ((GunaTextBox)item).Clear();
+                if (item.GetType() == typeof(DateTimePicker))
+                    ((DateTimePicker)item).Value = DateTime.Today;
+                if (item.GetType() == typeof(RadioButton))
+                    ((RadioButton)item).Checked = false;
+                if (item.GetType() == typeof(PictureBox))
+                    ((PictureBox)item).Image = null;
+                if (item.Controls.Count != 0)
+                    Controls_clear(item);
+            }
+
         }
         private void gunaGradientButton1_Click_1(object sender, EventArgs e)
         {
@@ -116,7 +148,10 @@ namespace ProjectV1
 
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
+          
 
+            hideAll(ajoute);
+            mode(Mode_search);
         }
 
         private void back_forniseur__add_DoWork(object sender, DoWorkEventArgs e)
@@ -177,9 +212,60 @@ namespace ProjectV1
             }
             else
             {
-                MessageBox.Show("BIEN FAITE");
-                //add_success add_Success = new add_success(item);
-                //add_Success.ShowDialog();
+           
+                add_success add_Success = new add_success(item);
+                add_Success.ShowDialog();
+            }
+        }
+
+        private void back_fourniseur_view_DoWork(object sender, DoWorkEventArgs e)
+        {
+            sqlcn SqlConnection = new sqlcn();
+            e.Result = SqlConnection.Viewfourniseur(e.Argument.ToString());
+        }
+
+        private void back_fourniseur_view_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            List<fourniseur_model> q = (List<fourniseur_model>)e.Result;
+
+            progresbar.Hide();
+            view_data.Enabled = true;
+
+            setview_data(q);
+        }
+        void StyleDatagridview()
+        {
+            view_data.BorderStyle = BorderStyle.None;
+            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(226, 226, 226);
+            view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
+            view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+            view_data.BackgroundColor = Color.FromArgb(30, 30, 30);
+            view_data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            view_data.EnableHeadersVisualStyles = false;
+            view_data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            view_data.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
+            view_data.ColumnHeadersHeight = 40;
+            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
+            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            view_data.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
+            view_data.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
+
+
+            view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+
+
+        }
+        private void gunaGradientButton4_Click(object sender, EventArgs e)
+        {
+            hideAll(panel_view);
+            view_data.Enabled = false;
+            progresbar.Show();
+            if (!back_fourniseur_view.IsBusy)
+            {
+                back_fourniseur_view.RunWorkerAsync("SELECT * from Fourniseur");
             }
         }
     }

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fourni));
             this.Entree = new Guna.UI.WinForms.GunaGradientButton();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.valide = new Guna.UI.WinForms.GunaGradientButton();
             this.cherche = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.ajoute = new System.Windows.Forms.Panel();
@@ -106,33 +105,6 @@
             this.progresbar.TabIndex = 17;
             this.progresbar.Value = 20;
             // 
-            // valide
-            // 
-            this.valide.AnimationHoverSpeed = 0.07F;
-            this.valide.AnimationSpeed = 0.03F;
-            this.valide.BackColor = System.Drawing.Color.Transparent;
-            this.valide.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.valide.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.valide.BorderColor = System.Drawing.Color.Transparent;
-            this.valide.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.valide.FocusedColor = System.Drawing.Color.Empty;
-            this.valide.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valide.ForeColor = System.Drawing.Color.White;
-            this.valide.Image = ((System.Drawing.Image)(resources.GetObject("valide.Image")));
-            this.valide.ImageOffsetX = -1;
-            this.valide.ImageSize = new System.Drawing.Size(25, 25);
-            this.valide.Location = new System.Drawing.Point(941, 16);
-            this.valide.Name = "valide";
-            this.valide.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.valide.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.valide.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.valide.OnHoverForeColor = System.Drawing.Color.White;
-            this.valide.OnHoverImage = null;
-            this.valide.OnPressedColor = System.Drawing.Color.Black;
-            this.valide.Radius = 20;
-            this.valide.Size = new System.Drawing.Size(44, 44);
-            this.valide.TabIndex = 20;
-            // 
             // cherche
             // 
             this.cherche.AnimationHoverSpeed = 0.07F;
@@ -187,6 +159,7 @@
             this.gunaGradientButton4.Radius = 20;
             this.gunaGradientButton4.Size = new System.Drawing.Size(44, 44);
             this.gunaGradientButton4.TabIndex = 18;
+            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // ajoute
             // 
@@ -390,6 +363,11 @@
             this.back_forniseur__add.DoWork += new System.ComponentModel.DoWorkEventHandler(this.back_forniseur__add_DoWork);
             this.back_forniseur__add.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.back_forniseur__add_RunWorkerCompleted);
             // 
+            // back_fourniseur_view
+            // 
+            this.back_fourniseur_view.DoWork += new System.ComponentModel.DoWorkEventHandler(this.back_fourniseur_view_DoWork);
+            this.back_fourniseur_view.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.back_fourniseur_view_RunWorkerCompleted);
+            // 
             // continer
             // 
             this.continer.Controls.Add(this.ajoute);
@@ -412,9 +390,10 @@
             // view_data
             // 
             this.view_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.view_data.Dock = System.Windows.Forms.DockStyle.Fill;
             this.view_data.Location = new System.Drawing.Point(0, 0);
             this.view_data.Name = "view_data";
-            this.view_data.Size = new System.Drawing.Size(240, 150);
+            this.view_data.Size = new System.Drawing.Size(995, 452);
             this.view_data.TabIndex = 0;
             // 
             // fourni
@@ -422,7 +401,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.continer);
-            this.Controls.Add(this.valide);
             this.Controls.Add(this.cherche);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.progresbar);
@@ -443,7 +421,6 @@
 
         private Guna.UI.WinForms.GunaGradientButton Entree;
         private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
-        private Guna.UI.WinForms.GunaGradientButton valide;
         private Guna.UI.WinForms.GunaGradientButton cherche;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private System.Windows.Forms.Panel ajoute;

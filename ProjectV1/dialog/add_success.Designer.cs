@@ -52,7 +52,7 @@
             this.print.BorderColor = System.Drawing.Color.Transparent;
             this.print.DialogResult = System.Windows.Forms.DialogResult.None;
             this.print.FocusedColor = System.Drawing.Color.Empty;
-            this.print.Font = new System.Drawing.Font("Neometric", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.print.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.print.ForeColor = System.Drawing.Color.White;
             this.print.Image = ((System.Drawing.Image)(resources.GetObject("print.Image")));
             this.print.ImageSize = new System.Drawing.Size(20, 20);
@@ -80,7 +80,7 @@
             this.save.BorderColor = System.Drawing.Color.Transparent;
             this.save.DialogResult = System.Windows.Forms.DialogResult.None;
             this.save.FocusedColor = System.Drawing.Color.Empty;
-            this.save.Font = new System.Drawing.Font("Neometric", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save.ForeColor = System.Drawing.Color.White;
             this.save.Image = ((System.Drawing.Image)(resources.GetObject("save.Image")));
             this.save.ImageSize = new System.Drawing.Size(20, 20);
@@ -108,7 +108,7 @@
             this.gunaGradientButton2.BorderColor = System.Drawing.Color.Transparent;
             this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton2.Font = new System.Drawing.Font("Neometric", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton2.Image")));
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(20, 20);
@@ -134,11 +134,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Neometric", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(163, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(137, 23);
+            this.label1.Size = new System.Drawing.Size(124, 24);
             this.label1.TabIndex = 12;
             this.label1.Text = "Le Processus";
             // 
@@ -155,11 +155,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Neometric Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(118, 146);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 23);
+            this.label2.Size = new System.Drawing.Size(203, 24);
             this.label2.TabIndex = 12;
             this.label2.Text = "a terminé avec succès ";
             // 
@@ -189,6 +189,7 @@
             this.Name = "add_success";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "add_success";
+            this.Load += new System.EventHandler(this.add_success_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

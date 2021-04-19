@@ -138,6 +138,7 @@
     <Compile Include="model\article_model.cs" />
     <Compile Include="model\equipement_model.cs" />
     <Compile Include="model\fourniseur_model.cs" />
+    <Compile Include="model\model_client.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sqln\sqlcn.cs" />

@@ -35,8 +35,24 @@ namespace ProjectV1
         }
         public add_success(equipement_model equipement)
         {
-            string prgf = @"code :"+equipement.CODE+"matricul :"+equipement.Matrucil +"nom :"+equipement.Nom_equipment;
+             prgf = @"code :"+equipement.CODE+"matricul :"+equipement.Matrucil +"nom :"+equipement.Nom_equipment;
             
+            InitializeComponent();
+
+        }
+        public add_success(fourniseur_model fourniseur)
+        {
+             prgf = @"code :" + fourniseur.Code_fourniseur + "NOM de fourniseur :" +fourniseur.Nom 
+                + "adress de fourniseur :" +fourniseur.Adress+"Email de fourniseur"+fourniseur.Email+"numero teliphone de fourniseur"+fourniseur.Numerophone;
+
+            InitializeComponent();
+
+        }
+        public add_success(model_client client)
+        {
+             prgf = @"code Client:" + client.Code_client + "NOM de client :" + client.Nom_client
+                + "adress de client :" + client.Adress_client + "Email de client" + client.Email_client + "numero teliphone de client" + client.Numerophone_client;
+
             InitializeComponent();
 
         }
@@ -71,6 +87,11 @@ namespace ProjectV1
             printDocument.Print();
             save.Text = "enregistrée";
 
+
+        }
+
+        private void add_success_Load(object sender, EventArgs e)
+        {
 
         }
     }

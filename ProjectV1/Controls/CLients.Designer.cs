@@ -33,21 +33,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nom = new System.Windows.Forms.Label();
             this.code = new System.Windows.Forms.Label();
-            this.adress_detelifon = new Guna.UI.WinForms.GunaTextBox();
-            this.code_fourniseur = new Guna.UI.WinForms.GunaTextBox();
-            this.valide = new Guna.UI.WinForms.GunaGradientButton();
+            this.adress_client = new Guna.UI.WinForms.GunaTextBox();
+            this.code_client = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGradientButton6 = new Guna.UI.WinForms.GunaGradientButton();
             this.label5 = new System.Windows.Forms.Label();
             this.ajoute = new System.Windows.Forms.Panel();
-            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
-            this.email_fourniseur = new Guna.UI.WinForms.GunaTextBox();
-            this.numero_fourniseur = new Guna.UI.WinForms.GunaTextBox();
-            this.nom_fourniseur = new Guna.UI.WinForms.GunaTextBox();
+            this.btn_ajoute = new Guna.UI.WinForms.GunaGradientButton();
+            this.email_client = new Guna.UI.WinForms.GunaTextBox();
+            this.numero_client = new Guna.UI.WinForms.GunaTextBox();
+            this.nom_client = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.Sortee = new Guna.UI.WinForms.GunaGradientButton();
             this.Entree = new Guna.UI.WinForms.GunaGradientButton();
+            this.continaire = new System.Windows.Forms.Panel();
+            this.panel_view = new System.Windows.Forms.Panel();
+            this.view_data = new System.Windows.Forms.DataGridView();
+            this.background_ajoute = new System.ComponentModel.BackgroundWorker();
+            this.background_view = new System.ComponentModel.BackgroundWorker();
             this.ajoute.SuspendLayout();
+            this.continaire.SuspendLayout();
+            this.panel_view.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.view_data)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -90,72 +96,45 @@
             this.code.TabIndex = 36;
             this.code.Text = "Code";
             // 
-            // adress_detelifon
+            // adress_client
             // 
-            this.adress_detelifon.BackColor = System.Drawing.Color.Transparent;
-            this.adress_detelifon.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.adress_detelifon.BorderColor = System.Drawing.Color.Silver;
-            this.adress_detelifon.BorderSize = 0;
-            this.adress_detelifon.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.adress_detelifon.FocusedBaseColor = System.Drawing.Color.White;
-            this.adress_detelifon.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.adress_detelifon.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.adress_detelifon.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.adress_detelifon.Location = new System.Drawing.Point(26, 175);
-            this.adress_detelifon.Name = "adress_detelifon";
-            this.adress_detelifon.PasswordChar = '\0';
-            this.adress_detelifon.Radius = 10;
-            this.adress_detelifon.SelectedText = "";
-            this.adress_detelifon.Size = new System.Drawing.Size(356, 50);
-            this.adress_detelifon.TabIndex = 39;
-            this.adress_detelifon.TextOffsetX = 10;
+            this.adress_client.BackColor = System.Drawing.Color.Transparent;
+            this.adress_client.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.adress_client.BorderColor = System.Drawing.Color.Silver;
+            this.adress_client.BorderSize = 0;
+            this.adress_client.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.adress_client.FocusedBaseColor = System.Drawing.Color.White;
+            this.adress_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.adress_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.adress_client.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.adress_client.Location = new System.Drawing.Point(26, 175);
+            this.adress_client.Name = "adress_client";
+            this.adress_client.PasswordChar = '\0';
+            this.adress_client.Radius = 10;
+            this.adress_client.SelectedText = "";
+            this.adress_client.Size = new System.Drawing.Size(356, 50);
+            this.adress_client.TabIndex = 39;
+            this.adress_client.TextOffsetX = 10;
             // 
-            // code_fourniseur
+            // code_client
             // 
-            this.code_fourniseur.BackColor = System.Drawing.Color.Transparent;
-            this.code_fourniseur.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.code_fourniseur.BorderColor = System.Drawing.Color.Silver;
-            this.code_fourniseur.BorderSize = 0;
-            this.code_fourniseur.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.code_fourniseur.FocusedBaseColor = System.Drawing.Color.White;
-            this.code_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.code_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.code_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.code_fourniseur.Location = new System.Drawing.Point(26, 35);
-            this.code_fourniseur.Name = "code_fourniseur";
-            this.code_fourniseur.PasswordChar = '\0';
-            this.code_fourniseur.Radius = 10;
-            this.code_fourniseur.SelectedText = "";
-            this.code_fourniseur.Size = new System.Drawing.Size(356, 50);
-            this.code_fourniseur.TabIndex = 41;
-            this.code_fourniseur.TextOffsetX = 10;
-            // 
-            // valide
-            // 
-            this.valide.AnimationHoverSpeed = 0.07F;
-            this.valide.AnimationSpeed = 0.03F;
-            this.valide.BackColor = System.Drawing.Color.Transparent;
-            this.valide.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.valide.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.valide.BorderColor = System.Drawing.Color.Transparent;
-            this.valide.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.valide.FocusedColor = System.Drawing.Color.Empty;
-            this.valide.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valide.ForeColor = System.Drawing.Color.White;
-            this.valide.Image = ((System.Drawing.Image)(resources.GetObject("valide.Image")));
-            this.valide.ImageOffsetX = -1;
-            this.valide.ImageSize = new System.Drawing.Size(25, 25);
-            this.valide.Location = new System.Drawing.Point(941, 15);
-            this.valide.Name = "valide";
-            this.valide.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.valide.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.valide.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.valide.OnHoverForeColor = System.Drawing.Color.White;
-            this.valide.OnHoverImage = null;
-            this.valide.OnPressedColor = System.Drawing.Color.Black;
-            this.valide.Radius = 20;
-            this.valide.Size = new System.Drawing.Size(44, 44);
-            this.valide.TabIndex = 38;
+            this.code_client.BackColor = System.Drawing.Color.Transparent;
+            this.code_client.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.code_client.BorderColor = System.Drawing.Color.Silver;
+            this.code_client.BorderSize = 0;
+            this.code_client.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.code_client.FocusedBaseColor = System.Drawing.Color.White;
+            this.code_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.code_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.code_client.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.code_client.Location = new System.Drawing.Point(26, 35);
+            this.code_client.Name = "code_client";
+            this.code_client.PasswordChar = '\0';
+            this.code_client.Radius = 10;
+            this.code_client.SelectedText = "";
+            this.code_client.Size = new System.Drawing.Size(356, 50);
+            this.code_client.TabIndex = 41;
+            this.code_client.TextOffsetX = 10;
             // 
             // gunaGradientButton6
             // 
@@ -183,6 +162,7 @@
             this.gunaGradientButton6.Radius = 20;
             this.gunaGradientButton6.Size = new System.Drawing.Size(44, 44);
             this.gunaGradientButton6.TabIndex = 37;
+            this.gunaGradientButton6.Click += new System.EventHandler(this.gunaGradientButton6_Click);
             // 
             // label5
             // 
@@ -196,108 +176,111 @@
             // 
             // ajoute
             // 
-            this.ajoute.Controls.Add(this.gunaGradientButton1);
+            this.ajoute.Controls.Add(this.btn_ajoute);
             this.ajoute.Controls.Add(this.label5);
             this.ajoute.Controls.Add(this.label4);
             this.ajoute.Controls.Add(this.label3);
             this.ajoute.Controls.Add(this.nom);
             this.ajoute.Controls.Add(this.code);
-            this.ajoute.Controls.Add(this.email_fourniseur);
-            this.ajoute.Controls.Add(this.numero_fourniseur);
-            this.ajoute.Controls.Add(this.adress_detelifon);
-            this.ajoute.Controls.Add(this.nom_fourniseur);
-            this.ajoute.Controls.Add(this.code_fourniseur);
-            this.ajoute.Location = new System.Drawing.Point(0, 71);
+            this.ajoute.Controls.Add(this.email_client);
+            this.ajoute.Controls.Add(this.numero_client);
+            this.ajoute.Controls.Add(this.adress_client);
+            this.ajoute.Controls.Add(this.nom_client);
+            this.ajoute.Controls.Add(this.code_client);
+            this.ajoute.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ajoute.Location = new System.Drawing.Point(0, 0);
             this.ajoute.Name = "ajoute";
             this.ajoute.Size = new System.Drawing.Size(995, 452);
             this.ajoute.TabIndex = 39;
+            this.ajoute.Paint += new System.Windows.Forms.PaintEventHandler(this.ajoute_Paint);
             // 
-            // gunaGradientButton1
+            // btn_ajoute
             // 
-            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaGradientButton1.AnimationSpeed = 0.03F;
-            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaGradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
-            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(53, 400);
-            this.gunaGradientButton1.Name = "gunaGradientButton1";
-            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaGradientButton1.OnHoverImage = null;
-            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Radius = 5;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(129, 45);
-            this.gunaGradientButton1.TabIndex = 42;
-            this.gunaGradientButton1.Text = "Ajoutter";
+            this.btn_ajoute.AnimationHoverSpeed = 0.07F;
+            this.btn_ajoute.AnimationSpeed = 0.03F;
+            this.btn_ajoute.BackColor = System.Drawing.Color.Transparent;
+            this.btn_ajoute.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.btn_ajoute.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.btn_ajoute.BorderColor = System.Drawing.Color.Transparent;
+            this.btn_ajoute.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_ajoute.FocusedColor = System.Drawing.Color.Empty;
+            this.btn_ajoute.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ajoute.ForeColor = System.Drawing.Color.White;
+            this.btn_ajoute.Image = ((System.Drawing.Image)(resources.GetObject("btn_ajoute.Image")));
+            this.btn_ajoute.ImageSize = new System.Drawing.Size(20, 20);
+            this.btn_ajoute.Location = new System.Drawing.Point(53, 400);
+            this.btn_ajoute.Name = "btn_ajoute";
+            this.btn_ajoute.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.btn_ajoute.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.btn_ajoute.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btn_ajoute.OnHoverForeColor = System.Drawing.Color.White;
+            this.btn_ajoute.OnHoverImage = null;
+            this.btn_ajoute.OnPressedColor = System.Drawing.Color.Black;
+            this.btn_ajoute.Radius = 5;
+            this.btn_ajoute.Size = new System.Drawing.Size(129, 45);
+            this.btn_ajoute.TabIndex = 42;
+            this.btn_ajoute.Text = "Ajoutter";
+            this.btn_ajoute.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
-            // email_fourniseur
+            // email_client
             // 
-            this.email_fourniseur.BackColor = System.Drawing.Color.Transparent;
-            this.email_fourniseur.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.email_fourniseur.BorderColor = System.Drawing.Color.Silver;
-            this.email_fourniseur.BorderSize = 0;
-            this.email_fourniseur.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.email_fourniseur.FocusedBaseColor = System.Drawing.Color.White;
-            this.email_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.email_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.email_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.email_fourniseur.Location = new System.Drawing.Point(26, 315);
-            this.email_fourniseur.Name = "email_fourniseur";
-            this.email_fourniseur.PasswordChar = '\0';
-            this.email_fourniseur.Radius = 10;
-            this.email_fourniseur.SelectedText = "";
-            this.email_fourniseur.Size = new System.Drawing.Size(356, 50);
-            this.email_fourniseur.TabIndex = 37;
-            this.email_fourniseur.TextOffsetX = 10;
+            this.email_client.BackColor = System.Drawing.Color.Transparent;
+            this.email_client.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.email_client.BorderColor = System.Drawing.Color.Silver;
+            this.email_client.BorderSize = 0;
+            this.email_client.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.email_client.FocusedBaseColor = System.Drawing.Color.White;
+            this.email_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.email_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.email_client.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.email_client.Location = new System.Drawing.Point(26, 315);
+            this.email_client.Name = "email_client";
+            this.email_client.PasswordChar = '\0';
+            this.email_client.Radius = 10;
+            this.email_client.SelectedText = "";
+            this.email_client.Size = new System.Drawing.Size(356, 50);
+            this.email_client.TabIndex = 37;
+            this.email_client.TextOffsetX = 10;
             // 
-            // numero_fourniseur
+            // numero_client
             // 
-            this.numero_fourniseur.BackColor = System.Drawing.Color.Transparent;
-            this.numero_fourniseur.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.numero_fourniseur.BorderColor = System.Drawing.Color.Silver;
-            this.numero_fourniseur.BorderSize = 0;
-            this.numero_fourniseur.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.numero_fourniseur.FocusedBaseColor = System.Drawing.Color.White;
-            this.numero_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.numero_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.numero_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numero_fourniseur.Location = new System.Drawing.Point(26, 245);
-            this.numero_fourniseur.Name = "numero_fourniseur";
-            this.numero_fourniseur.PasswordChar = '\0';
-            this.numero_fourniseur.Radius = 10;
-            this.numero_fourniseur.SelectedText = "";
-            this.numero_fourniseur.Size = new System.Drawing.Size(356, 50);
-            this.numero_fourniseur.TabIndex = 38;
-            this.numero_fourniseur.TextOffsetX = 10;
+            this.numero_client.BackColor = System.Drawing.Color.Transparent;
+            this.numero_client.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.numero_client.BorderColor = System.Drawing.Color.Silver;
+            this.numero_client.BorderSize = 0;
+            this.numero_client.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.numero_client.FocusedBaseColor = System.Drawing.Color.White;
+            this.numero_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.numero_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.numero_client.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.numero_client.Location = new System.Drawing.Point(26, 245);
+            this.numero_client.Name = "numero_client";
+            this.numero_client.PasswordChar = '\0';
+            this.numero_client.Radius = 10;
+            this.numero_client.SelectedText = "";
+            this.numero_client.Size = new System.Drawing.Size(356, 50);
+            this.numero_client.TabIndex = 38;
+            this.numero_client.TextOffsetX = 10;
             // 
-            // nom_fourniseur
+            // nom_client
             // 
-            this.nom_fourniseur.BackColor = System.Drawing.Color.Transparent;
-            this.nom_fourniseur.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.nom_fourniseur.BorderColor = System.Drawing.Color.Silver;
-            this.nom_fourniseur.BorderSize = 0;
-            this.nom_fourniseur.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.nom_fourniseur.FocusedBaseColor = System.Drawing.Color.White;
-            this.nom_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.nom_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.nom_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nom_fourniseur.Location = new System.Drawing.Point(26, 105);
-            this.nom_fourniseur.Name = "nom_fourniseur";
-            this.nom_fourniseur.PasswordChar = '\0';
-            this.nom_fourniseur.Radius = 10;
-            this.nom_fourniseur.SelectedText = "";
-            this.nom_fourniseur.Size = new System.Drawing.Size(356, 50);
-            this.nom_fourniseur.TabIndex = 40;
-            this.nom_fourniseur.TextOffsetX = 10;
+            this.nom_client.BackColor = System.Drawing.Color.Transparent;
+            this.nom_client.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.nom_client.BorderColor = System.Drawing.Color.Silver;
+            this.nom_client.BorderSize = 0;
+            this.nom_client.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.nom_client.FocusedBaseColor = System.Drawing.Color.White;
+            this.nom_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.nom_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.nom_client.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.nom_client.Location = new System.Drawing.Point(26, 105);
+            this.nom_client.Name = "nom_client";
+            this.nom_client.PasswordChar = '\0';
+            this.nom_client.Radius = 10;
+            this.nom_client.SelectedText = "";
+            this.nom_client.Size = new System.Drawing.Size(356, 50);
+            this.nom_client.TabIndex = 40;
+            this.nom_client.TextOffsetX = 10;
             // 
             // gunaGradientButton4
             // 
@@ -325,6 +308,7 @@
             this.gunaGradientButton4.Radius = 20;
             this.gunaGradientButton4.Size = new System.Drawing.Size(44, 44);
             this.gunaGradientButton4.TabIndex = 36;
+            this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
             // 
             // progresbar
             // 
@@ -346,33 +330,6 @@
             this.progresbar.Size = new System.Drawing.Size(60, 60);
             this.progresbar.TabIndex = 35;
             this.progresbar.Value = 20;
-            // 
-            // Sortee
-            // 
-            this.Sortee.AnimationHoverSpeed = 0.07F;
-            this.Sortee.AnimationSpeed = 0.03F;
-            this.Sortee.BackColor = System.Drawing.Color.Transparent;
-            this.Sortee.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Sortee.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Sortee.BorderColor = System.Drawing.Color.Transparent;
-            this.Sortee.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Sortee.FocusedColor = System.Drawing.Color.Empty;
-            this.Sortee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.Sortee.ForeColor = System.Drawing.Color.White;
-            this.Sortee.Image = ((System.Drawing.Image)(resources.GetObject("Sortee.Image")));
-            this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
-            this.Sortee.Location = new System.Drawing.Point(208, 15);
-            this.Sortee.Name = "Sortee";
-            this.Sortee.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Sortee.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.Sortee.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Sortee.OnHoverForeColor = System.Drawing.Color.White;
-            this.Sortee.OnHoverImage = null;
-            this.Sortee.OnPressedColor = System.Drawing.Color.Black;
-            this.Sortee.Radius = 5;
-            this.Sortee.Size = new System.Drawing.Size(129, 45);
-            this.Sortee.TabIndex = 34;
-            this.Sortee.Text = "Sorte";
             // 
             // Entree
             // 
@@ -400,23 +357,64 @@
             this.Entree.Size = new System.Drawing.Size(129, 45);
             this.Entree.TabIndex = 33;
             this.Entree.Text = "Entrée";
+            this.Entree.Click += new System.EventHandler(this.Entree_Click);
+            // 
+            // continaire
+            // 
+            this.continaire.Controls.Add(this.ajoute);
+            this.continaire.Controls.Add(this.panel_view);
+            this.continaire.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.continaire.Location = new System.Drawing.Point(0, 72);
+            this.continaire.Name = "continaire";
+            this.continaire.Size = new System.Drawing.Size(995, 452);
+            this.continaire.TabIndex = 43;
+            // 
+            // panel_view
+            // 
+            this.panel_view.Controls.Add(this.view_data);
+            this.panel_view.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_view.Location = new System.Drawing.Point(0, 0);
+            this.panel_view.Name = "panel_view";
+            this.panel_view.Size = new System.Drawing.Size(995, 452);
+            this.panel_view.TabIndex = 40;
+            // 
+            // view_data
+            // 
+            this.view_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.view_data.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.view_data.Location = new System.Drawing.Point(0, 0);
+            this.view_data.Name = "view_data";
+            this.view_data.Size = new System.Drawing.Size(995, 452);
+            this.view_data.TabIndex = 0;
+            // 
+            // background_ajoute
+            // 
+            this.background_ajoute.DoWork += new System.ComponentModel.DoWorkEventHandler(this.background_ajoute_DoWork);
+            this.background_ajoute.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.background_ajoute_RunWorkerCompleted);
+            // 
+            // background_view
+            // 
+            this.background_view.DoWork += new System.ComponentModel.DoWorkEventHandler(this.background_view_DoWork);
+            this.background_view.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.background_view_RunWorkerCompleted);
             // 
             // CLients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.valide);
             this.Controls.Add(this.gunaGradientButton6);
-            this.Controls.Add(this.ajoute);
+            this.Controls.Add(this.continaire);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.progresbar);
-            this.Controls.Add(this.Sortee);
             this.Controls.Add(this.Entree);
             this.Name = "CLients";
             this.Size = new System.Drawing.Size(995, 524);
+            this.Load += new System.EventHandler(this.CLients_Load);
             this.ajoute.ResumeLayout(false);
             this.ajoute.PerformLayout();
+            this.continaire.ResumeLayout(false);
+            this.panel_view.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.view_data)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -427,19 +425,22 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label nom;
         private System.Windows.Forms.Label code;
-        private Guna.UI.WinForms.GunaTextBox adress_detelifon;
-        private Guna.UI.WinForms.GunaTextBox code_fourniseur;
-        private Guna.UI.WinForms.GunaGradientButton valide;
+        private Guna.UI.WinForms.GunaTextBox adress_client;
+        private Guna.UI.WinForms.GunaTextBox code_client;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel ajoute;
-        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
-        private Guna.UI.WinForms.GunaTextBox email_fourniseur;
-        private Guna.UI.WinForms.GunaTextBox numero_fourniseur;
-        private Guna.UI.WinForms.GunaTextBox nom_fourniseur;
+        private Guna.UI.WinForms.GunaGradientButton btn_ajoute;
+        private Guna.UI.WinForms.GunaTextBox email_client;
+        private Guna.UI.WinForms.GunaTextBox numero_client;
+        private Guna.UI.WinForms.GunaTextBox nom_client;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
-        private Guna.UI.WinForms.GunaGradientButton Sortee;
         private Guna.UI.WinForms.GunaGradientButton Entree;
+        private System.Windows.Forms.Panel continaire;
+        private System.Windows.Forms.Panel panel_view;
+        private System.Windows.Forms.DataGridView view_data;
+        private System.ComponentModel.BackgroundWorker background_ajoute;
+        private System.ComponentModel.BackgroundWorker background_view;
     }
 }

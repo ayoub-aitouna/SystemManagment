@@ -219,6 +219,38 @@ namespace ProjectV1.sql
 
             return data;
         }
+        public List<model_client> ViewClient(String cmnd)
+        {
+            List<model_client> data = new List<model_client>();
+
+            SqlCommand req = new SqlCommand();
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            req.Connection = cnn;
+            req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
+            req.CommandText = cmnd;
+            req.Parameters.Clear();
+            datareader = req.ExecuteReader();
+            while (datareader.Read())
+            {
+
+                model_client item = new model_client();
+                item.Code_client = int.Parse(datareader.GetValue(1).ToString());
+                item.Nom_client = datareader.GetValue(2).ToString();
+                item.Adress_client = datareader.GetValue(3).ToString();
+                item.Numerophone_client = datareader.GetValue(4).ToString();
+                item.Email_client = datareader.GetValue(5).ToString();
+
+
+                data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
+            }
+
+            cnn.Close();
+
+            return data;
+        }
+    
     }
   
 }
