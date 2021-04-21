@@ -28,15 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,9 +52,9 @@
             this.gunaElipsePanel9 = new Guna.UI.WinForms.GunaElipsePanel();
             this.pieChart1 = new LiveCharts.WinForms.PieChart();
             this.gunaElipsePanel10 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.chart1 = new LiveCharts.WinForms.CartesianChart();
             this.gunaElipsePanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.gunaElipsePanel3.SuspendLayout();
@@ -69,7 +65,6 @@
             this.gunaElipsePanel6.SuspendLayout();
             this.gunaElipsePanel9.SuspendLayout();
             this.gunaElipsePanel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,16 +76,6 @@
             this.label1.Size = new System.Drawing.Size(111, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Dashboard";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
@@ -106,13 +91,13 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Neometric Alt", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(83, 75);
+            this.label2.Location = new System.Drawing.Point(60, 65);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 16);
+            this.label2.Size = new System.Drawing.Size(128, 16);
             this.label2.TabIndex = 0;
-            this.label2.Text = "articles au total";
+            this.label2.Text = "Entrees au total";
             // 
             // gunaElipsePanel1
             // 
@@ -126,6 +111,16 @@
             this.gunaElipsePanel1.Radius = 10;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(200, 100);
             this.gunaElipsePanel1.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProjectV1.Properties.Resources.Vector;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(61, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // gunaElipsePanel2
             // 
@@ -142,7 +137,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = global::ProjectV1.Properties.Resources.Close_Square;
             this.pictureBox2.Location = new System.Drawing.Point(3, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(61, 50);
@@ -164,13 +159,13 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Neometric Alt", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(83, 75);
+            this.label5.Location = new System.Drawing.Point(70, 65);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 16);
+            this.label5.Size = new System.Drawing.Size(122, 16);
             this.label5.TabIndex = 0;
-            this.label5.Text = "articles au total";
+            this.label5.Text = "Sortee au total";
             // 
             // gunaElipsePanel3
             // 
@@ -187,7 +182,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = global::ProjectV1.Properties.Resources.bx_bxs_user_rectangle__1_;
             this.pictureBox3.Location = new System.Drawing.Point(3, 22);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(61, 50);
@@ -209,13 +204,13 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Neometric Alt", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(83, 75);
+            this.label7.Location = new System.Drawing.Point(125, 65);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 16);
+            this.label7.Size = new System.Drawing.Size(60, 16);
             this.label7.TabIndex = 0;
-            this.label7.Text = "articles au total";
+            this.label7.Text = "Clients";
             // 
             // gunaElipsePanel4
             // 
@@ -232,7 +227,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = global::ProjectV1.Properties.Resources.clarity_storage_solid;
             this.pictureBox4.Location = new System.Drawing.Point(3, 22);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(61, 50);
@@ -245,7 +240,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(135, 28);
+            this.label8.Location = new System.Drawing.Point(139, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 18);
             this.label8.TabIndex = 0;
@@ -254,20 +249,20 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Neometric Alt", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(83, 75);
+            this.label9.Location = new System.Drawing.Point(139, 65);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(97, 16);
+            this.label9.Size = new System.Drawing.Size(50, 16);
             this.label9.TabIndex = 0;
-            this.label9.Text = "articles au total";
+            this.label9.Text = "Stock";
             // 
             // gunaElipsePanel5
             // 
             this.gunaElipsePanel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.gunaElipsePanel5.Controls.Add(this.cartesianChart1);
-            this.gunaElipsePanel5.Location = new System.Drawing.Point(57, 148);
+            this.gunaElipsePanel5.Location = new System.Drawing.Point(38, 151);
             this.gunaElipsePanel5.Name = "gunaElipsePanel5";
             this.gunaElipsePanel5.Padding = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel5.Radius = 20;
@@ -289,7 +284,7 @@
             this.gunaElipsePanel6.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel6.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.gunaElipsePanel6.Controls.Add(this.cartesianChart2);
-            this.gunaElipsePanel6.Location = new System.Drawing.Point(520, 150);
+            this.gunaElipsePanel6.Location = new System.Drawing.Point(534, 153);
             this.gunaElipsePanel6.Name = "gunaElipsePanel6";
             this.gunaElipsePanel6.Padding = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel6.Radius = 20;
@@ -311,7 +306,7 @@
             this.gunaElipsePanel9.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel9.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.gunaElipsePanel9.Controls.Add(this.pieChart1);
-            this.gunaElipsePanel9.Location = new System.Drawing.Point(57, 339);
+            this.gunaElipsePanel9.Location = new System.Drawing.Point(38, 368);
             this.gunaElipsePanel9.Name = "gunaElipsePanel9";
             this.gunaElipsePanel9.Padding = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel9.Radius = 20;
@@ -332,7 +327,7 @@
             this.gunaElipsePanel10.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel10.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.gunaElipsePanel10.Controls.Add(this.chart1);
-            this.gunaElipsePanel10.Location = new System.Drawing.Point(520, 341);
+            this.gunaElipsePanel10.Location = new System.Drawing.Point(534, 370);
             this.gunaElipsePanel10.Name = "gunaElipsePanel10";
             this.gunaElipsePanel10.Padding = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel10.Radius = 20;
@@ -341,21 +336,9 @@
             // 
             // chart1
             // 
-            this.chart1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.chart1.BorderlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.chart1.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(10, 10);
             this.chart1.Name = "chart1";
-            this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
             this.chart1.Size = new System.Drawing.Size(405, 155);
             this.chart1.TabIndex = 0;
             this.chart1.Text = "chart1";
@@ -375,10 +358,11 @@
             this.Controls.Add(this.gunaElipsePanel1);
             this.Controls.Add(this.label1);
             this.Name = "dashboard";
-            this.Size = new System.Drawing.Size(995, 524);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Size = new System.Drawing.Size(995, 627);
+            this.Load += new System.EventHandler(this.dashboard_Load);
             this.gunaElipsePanel1.ResumeLayout(false);
             this.gunaElipsePanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.gunaElipsePanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -392,7 +376,6 @@
             this.gunaElipsePanel6.ResumeLayout(false);
             this.gunaElipsePanel9.ResumeLayout(false);
             this.gunaElipsePanel10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,6 +407,6 @@
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel9;
         private LiveCharts.WinForms.PieChart pieChart1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel10;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private LiveCharts.WinForms.CartesianChart chart1;
     }
 }

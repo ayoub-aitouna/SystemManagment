@@ -46,6 +46,7 @@
             this.view_data = new System.Windows.Forms.DataGridView();
             this.Entree = new Guna.UI.WinForms.GunaGradientButton();
             this.worker_back_view = new System.ComponentModel.BackgroundWorker();
+            this.update_data_DoWork = new System.ComponentModel.BackgroundWorker();
             this.add.SuspendLayout();
             this.continer.SuspendLayout();
             this.view.SuspendLayout();
@@ -296,6 +297,8 @@
             this.view_data.Name = "view_data";
             this.view_data.Size = new System.Drawing.Size(995, 458);
             this.view_data.TabIndex = 0;
+            this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
+            this.view_data.SelectionChanged += new System.EventHandler(this.view_data_SelectionChanged);
             // 
             // Entree
             // 
@@ -329,6 +332,11 @@
             // 
             this.worker_back_view.DoWork += new System.ComponentModel.DoWorkEventHandler(this.worker_back_view_DoWork);
             this.worker_back_view.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.worker_back_view_RunWorkerCompleted);
+            // 
+            // update_data_DoWork
+            // 
+            this.update_data_DoWork.DoWork += new System.ComponentModel.DoWorkEventHandler(this.update_data_DoWork_DoWork);
+            this.update_data_DoWork.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.update_data_DoWork_RunWorkerCompleted);
             // 
             // equipe
             // 
@@ -369,5 +377,6 @@
         private System.Windows.Forms.DataGridView view_data;
         private Guna.UI.WinForms.GunaGradientButton Entree;
         private System.ComponentModel.BackgroundWorker worker_back_view;
+        private System.ComponentModel.BackgroundWorker update_data_DoWork;
     }
 }

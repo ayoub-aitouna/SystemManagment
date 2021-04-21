@@ -22,16 +22,22 @@ namespace ProjectV1
     public partial class articlee : UserControl , Icloseall
     {
 
-        private const int Mode_Sortee = 100;
-        private const int MOde_entree = 200;
-        private const int Mode_search = 300;
+        //private const int Mode_Sortee = 100;
+        //private const int MOde_entree = 200;
+        //private const int Mode_search = 300;
+       public Units.Unit _units = new Units.Unit();
+
         private int Breake =1;
+
         List<article_model> selectedRows = new List<article_model>();
         sql.sqlcn remplire = new sql.sqlcn();
         public articlee()
         {
             InitializeComponent();
         }
+
+
+
         /*
       * on userControl loaded
       */
@@ -39,7 +45,8 @@ namespace ProjectV1
         {
 
             progresbar.Visible = false;
-            mode(MOde_entree);
+            _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
+
             List<article_model> data = loaddata("select * from Artical");
             AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
             foreach (var item in data)
@@ -49,10 +56,16 @@ namespace ProjectV1
             desination.AutoCompleteMode = AutoCompleteMode.Suggest;
             desination.AutoCompleteSource = AutoCompleteSource.CustomSource;
             desination.AutoCompleteCustomSource = coll;
-            StyleDatagridview();
+            Units.Unit units = new Units.Unit();
+            units.StyleDatagridview(view_data,1);
             setview_data(data);
 
         }
+
+
+
+
+
         /*
          * When a user clicks on add button this method get exuted 
          * what is does is it get the input and asinge them to an 
@@ -131,6 +144,10 @@ namespace ProjectV1
                 pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             }
         }
+
+
+
+
         /*
          * on View CLick
          * show data of table in data grid view  
@@ -148,6 +165,9 @@ namespace ProjectV1
             viewData_worker.RunWorkerAsync("select * from Artical");
 
         }
+
+
+
         /*
         * hide all the controls in the given parent exept the control in geven as argumnet 
              */
@@ -184,49 +204,18 @@ namespace ProjectV1
         private void sortee(object sender, EventArgs e)
         {
             hideAll(Add);
-            mode(Mode_Sortee);
+            _units.mode(Units.Unit.Mode_Sortee1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
+
 
 
         }
 
 
 
-        private void View_click(object sender, EventArgs e)
-        {
+   
 
-        }
-
-        /*change button mod {
-         * Name
-         * click_Event
-         * 
-         * }*/
-        private void mode(int _mode_)
-        {
-            List<EventHandler> events = new List<EventHandler>();
-            events.Add(new EventHandler(this.gunaGradientButton1_Click));
-            events.Add(new EventHandler(this.sortee_event));
-            events.Add(new EventHandler(this.search_event));
-
-            switch (_mode_)
-            {
-                case MOde_entree:
-                    add_button.Text = "Entree";
-                    ClearEvents(add_button, events);
-                    add_button.Click += events[0];
-                    break;
-                case Mode_Sortee:
-                    add_button.Text = "Sortee";
-                    ClearEvents(add_button, events);
-                    add_button.Click += events[1];
-                    break;
-                case Mode_search:
-                    add_button.Text = "Researche";
-                    ClearEvents(add_button, events);
-                    add_button.Click += events[2];
-                    break;
-            }
-        }
+   
+       
         /*
          * clear all the event of the button
          */
@@ -253,7 +242,8 @@ namespace ProjectV1
             viewData_worker.RunWorkerAsync("select * from Artical where nom like '" + desination.Text + "'");
 
             hideAll(View);
-            Controls_clear(Add);
+            _units.Controls_clear(Add);
+
 
         }
 
@@ -271,7 +261,7 @@ namespace ProjectV1
 
             viewData_worker.RunWorkerAsync("select * from Artical where nom like '" + desination.Text + "'");
             hideAll(View);
-            Controls_clear(Add);
+            _units.Controls_clear(Add);
 
         }
 
@@ -285,8 +275,9 @@ namespace ProjectV1
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(Add);
-            mode(MOde_entree);
-            Controls_clear(Add);
+            _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
+
+            _units.Controls_clear(Add);
         }
 
         /*
@@ -311,8 +302,9 @@ namespace ProjectV1
             view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
 
+            
             view_data.DataSource = data;
-            view_data.DataSource = data;
+            view_data.Columns["Id"].Visible = false;
             for (int i = 0; i < view_data.Columns.Count; i++)
                 if (view_data.Columns[i] is DataGridViewImageColumn)
                 {
@@ -321,29 +313,8 @@ namespace ProjectV1
                 }
         }
 
-        /*
-         * Reset all the controls in the parent geven in the arguments
-         */
-        private void Controls_clear(Control C)
-        {
-            foreach (Control item in C.Controls)
-            {
-                // MessageBox.Show(item.GetType().ToString());
-                if (item.GetType() == typeof(TextBox))
-                    ((TextBox)item).Clear();
-                if (item.GetType() == typeof(GunaTextBox))
-                    ((GunaTextBox)item).Clear();
-                if (item.GetType() == typeof(DateTimePicker))
-                    ((DateTimePicker)item).Value = DateTime.Today;
-                if (item.GetType() == typeof(RadioButton))
-                    ((RadioButton)item).Checked = false;
-                if (item.GetType() == typeof(PictureBox))
-                    ((PictureBox)item).Image = null;
-                if (item.Controls.Count != 0)
-                    Controls_clear(item);
-            }
-
-        }
+      
+    
         /*
          * when the user edite on a cell of datagridview
          */
@@ -412,7 +383,9 @@ namespace ProjectV1
         {
             progresbar.Hide();
             view_data.Enabled = true;
+            
             setview_data((List<article_model>)e.Result);
+           
         }
         /*
          * start an async task to add data to database 
@@ -484,41 +457,19 @@ namespace ProjectV1
                 add_success dialog = new add_success(data);       
                 dialog.ShowDialog();
             }
-            Controls_clear(Add);
+            _units.Controls_clear(Add);
+
         }
 
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
-            mode(Mode_search);
+            _units.mode(Units.Unit.Mode_search1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
             hideAll(Add);
 
         }
 
-        void StyleDatagridview()
-        {
-            view_data.BorderStyle = BorderStyle.None;
-            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(226, 226, 226);
-            view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
-            view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            view_data.BackgroundColor = Color.FromArgb(30, 30, 30);
-            view_data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            view_data.EnableHeadersVisualStyles = false;
-            view_data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            view_data.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            view_data.ColumnHeadersHeight = 40;
-            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
-            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            view_data.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
-            view_data.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-            view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            if (this.Width > 1020)
-            {
-                view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            }
-            
+       
 
-        }
 
 
         /*

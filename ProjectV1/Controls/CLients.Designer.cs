@@ -50,6 +50,7 @@
             this.view_data = new System.Windows.Forms.DataGridView();
             this.background_ajoute = new System.ComponentModel.BackgroundWorker();
             this.background_view = new System.ComponentModel.BackgroundWorker();
+            this.update = new System.ComponentModel.BackgroundWorker();
             this.ajoute.SuspendLayout();
             this.continaire.SuspendLayout();
             this.panel_view.SuspendLayout();
@@ -386,6 +387,8 @@
             this.view_data.Name = "view_data";
             this.view_data.Size = new System.Drawing.Size(995, 452);
             this.view_data.TabIndex = 0;
+            this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
+          
             // 
             // background_ajoute
             // 
@@ -396,6 +399,11 @@
             // 
             this.background_view.DoWork += new System.ComponentModel.DoWorkEventHandler(this.background_view_DoWork);
             this.background_view.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.background_view_RunWorkerCompleted);
+            // 
+            // update
+            // 
+            this.update.DoWork += new System.ComponentModel.DoWorkEventHandler(this.update_DoWork);
+            this.update.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.update_RunWorkerCompleted);
             // 
             // CLients
             // 
@@ -442,5 +450,6 @@
         private System.Windows.Forms.DataGridView view_data;
         private System.ComponentModel.BackgroundWorker background_ajoute;
         private System.ComponentModel.BackgroundWorker background_view;
+        private System.ComponentModel.BackgroundWorker update;
     }
 }

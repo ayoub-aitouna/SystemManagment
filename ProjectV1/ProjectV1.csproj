@@ -142,6 +142,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="sqln\sqlcn.cs" />
+    <Compile Include="Units\Unit.cs" />
     <EmbeddedResource Include="Controls\CLients.resx">
       <DependentUpon>CLients.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +181,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -197,6 +199,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="image\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Vector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Square.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bx_bxs-user-rectangle %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clarity_storage-solid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

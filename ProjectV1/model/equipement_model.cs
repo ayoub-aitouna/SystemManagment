@@ -8,6 +8,7 @@ namespace ProjectV1.model
 {
    public class equipement_model
     {
+        int _ref;
         int code;
         string nom_equipement;
         string matricil;
@@ -21,10 +22,22 @@ namespace ProjectV1.model
             this.nom_equipement = nome_equipement;
             this.matricil = matricule;
         }
+        public int Ref
+        {
+            get
+            {
+                return _ref;
+            }
+
+            set
+            {
+                _ref = value;
+       }
+        }
         public int CODE { get { return code; } set { code = value; } }
         public string Nom_equipment { get { return nom_equipement; } set { nom_equipement = value; } }
         public string Matrucil { get { return matricil; } set { matricil = value; } }
 
-
+        
     }
 }

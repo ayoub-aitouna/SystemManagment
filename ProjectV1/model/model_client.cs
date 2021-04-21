@@ -8,6 +8,7 @@ namespace ProjectV1.model
 {
   public  class model_client
     {
+        int _ref;
         int code_client;
         string nom_client;
         string email_client;
@@ -26,6 +27,18 @@ namespace ProjectV1.model
         {
 
 
+        }
+        public int Ref
+        {
+            get
+            {
+                return _ref;
+            }
+
+            set
+            {
+                _ref = value;
+            }
         }
         public int Code_client
         {
@@ -87,5 +100,7 @@ namespace ProjectV1.model
 
 
         }
+
+       
     }
 }

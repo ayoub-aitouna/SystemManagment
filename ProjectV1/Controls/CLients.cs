@@ -16,8 +16,7 @@ namespace ProjectV1.Controls
     public partial class CLients : UserControl
     {
         sql.sqlcn remplire = new sql.sqlcn();
-        private const int MOde_entree = 200;
-        private const int Mode_search = 300;
+        Units.Unit units = new Units.Unit();
         public CLients()
         {
             InitializeComponent();
@@ -25,7 +24,8 @@ namespace ProjectV1.Controls
         private void CLients_Load(object sender, EventArgs e)
         {
             progresbar.Hide();
-            StyleDatagridview();
+          
+            units.StyleDatagridview(view_data,1);
             hideAll(ajoute);
         }
         private void hideAll(Control control)
@@ -51,30 +51,7 @@ namespace ProjectV1.Controls
             }
         }
 
-        void StyleDatagridview()
-        {
-            view_data.BorderStyle = BorderStyle.None;
-            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(226, 226, 226);
-            view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
-            view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            view_data.BackgroundColor = Color.FromArgb(30, 30, 30);
-            view_data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            view_data.EnableHeadersVisualStyles = false;
-            view_data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            view_data.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            view_data.ColumnHeadersHeight = 40;
-            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
-            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            view_data.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
-            view_data.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-
-
-            view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-
-        }
+      
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
@@ -92,36 +69,8 @@ namespace ProjectV1.Controls
                 background_ajoute.RunWorkerAsync(item);
             }
         }
-        void ClearEvents(Control c, List<EventHandler> events)
-        {
-            foreach (var item in events)
-            {
-                c.Click -= item;
-            }
-        }
-        //cette methode changer event entre evente de ajouter et de chercher
-        private void mode(int _mode_)
-        {
-            List<EventHandler> events = new List<EventHandler>();
-
-            events.Add(new EventHandler(this.gunaGradientButton1_Click));
-            events.Add(new EventHandler(this.gunaGradientButton6_Click));
-
-            switch (_mode_)
-            {
-                case MOde_entree:
-                    btn_ajoute.Text = "Entree";
-                    ClearEvents(btn_ajoute, events);
-                    btn_ajoute.Click += events[0];
-                    break;
-
-                case Mode_search:
-                    btn_ajoute.Text = "Researche";
-                    ClearEvents(btn_ajoute, events);
-                    btn_ajoute.Click += events[1];
-                    break;
-            }
-        }
+     
+      
         private void background_ajoute_DoWork(object sender, DoWorkEventArgs e)
         {
             model.model_client item = (model.model_client)e.Argument;
@@ -167,7 +116,8 @@ namespace ProjectV1.Controls
             }
             else
             {
-                MessageBox.Show("BIEN FAITE");
+              
+                units.Controls_clear(ajoute);
                 add_success add_Success = new add_success(item);
                 add_Success.ShowDialog();
             }
@@ -183,19 +133,18 @@ namespace ProjectV1.Controls
 
             view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 66, 132);
             view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-
+            
 
             view_data.DataSource = data;
-
+            view_data.Columns["Ref"].Visible = false;
 
         }
         private void background_view_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             List<model_client> q = (List<model_client>)e.Result;
-
             progresbar.Hide();
             view_data.Enabled = true;
-
+            units.Controls_clear(ajoute);
             setview_data(q);
         }
 
@@ -223,7 +172,8 @@ namespace ProjectV1.Controls
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
             hideAll(ajoute);
-            mode(Mode_search);
+            units.mode(Units.Unit.Mode_search1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+
         }
 
         private void ajoute_Paint(object sender, PaintEventArgs e)
@@ -233,8 +183,46 @@ namespace ProjectV1.Controls
 
         private void Entree_Click(object sender, EventArgs e)
         {
-            hideAll(ajoute);
-            mode(MOde_entree);
+           hideAll(ajoute);              
+           units.mode(Units.Unit.MOde_entree1, btn_ajoute,new EventHandler(this.gunaGradientButton1_Click),new EventHandler(this.search_event));
         }
+
+        private void update_DoWork(object sender, DoWorkEventArgs e)
+        {
+            model_client model = ((model_client)e.Argument);
+            sqlcn sql = new sqlcn();
+            sql.update(model);
+            e.Result = model;
+        }
+
+        private void update_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progresbar.Hide();
+            model_client model = ((model_client)e.Result);
+            add_success add_Success = new add_success(model);
+            add_Success.ShowDialog();
+        }
+
+        private void view_data_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            progresbar.Show();
+            DataGridViewCellCollection a = view_data.Rows[e.RowIndex].Cells;
+
+            string value = a[2].Value.ToString();
+            
+            model_client model = new model_client();
+            model.Ref = int.Parse(a[0].Value.ToString());
+            model.Code_client = int.Parse(a[1].Value.ToString());
+            model.Nom_client = a[2].Value.ToString();
+            model.Email_client = a[3].Value.ToString();
+            model.Adress_client = a[4].Value.ToString();
+            model.Numerophone_client = a[5].Value.ToString();
+            if (!update.IsBusy)
+            {
+                update.RunWorkerAsync(model);
+            }
+        }
+
+    
     }
 }

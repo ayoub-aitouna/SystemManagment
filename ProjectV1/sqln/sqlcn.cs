@@ -103,6 +103,100 @@ namespace ProjectV1.sql
 
             cnn.Close();
         }
+        public void update(equipement_model item)
+        {
+            SqlCommand macommende = new SqlCommand();
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            macommende.Connection = cnn;
+
+            macommende.CommandType = CommandType.Text;
+            macommende.CommandText = @"UPDATE equipement SET  code = @code,  nom = @nom,  matircile = @matricile
+                                        WHERE ref=" + item.Ref;
+            SqlParameter[] param = new SqlParameter[3];
+            param[0] = new SqlParameter("@code", SqlDbType.VarChar, 40);
+            param[0].Value = item.CODE;
+
+            param[1] = new SqlParameter("@nom", SqlDbType.VarChar, 40);
+            param[1].Value = item.Nom_equipment;
+
+            param[2] = new SqlParameter("@matricile", SqlDbType.VarChar, 40);
+            param[2].Value = item.Matrucil;
+          
+            macommende.Parameters.AddRange(param);
+            cnn.Close();
+            cnn.Open();
+
+            macommende.ExecuteNonQuery();
+
+            cnn.Close();
+        }
+        public void update(model_client item)
+        {
+            SqlCommand macommende = new SqlCommand();
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            macommende.Connection = cnn;
+
+            macommende.CommandType = CommandType.Text;
+            macommende.CommandText = @"UPDATE Client SET  code = @code,  nom = @nom,  phone = @phone,adress=@adress,Email=@Email
+                                        WHERE ref=" + item.Ref;
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@code", SqlDbType.VarChar, 40);
+            param[0].Value = item.Code_client;
+
+            param[1] = new SqlParameter("@nom", SqlDbType.VarChar, 40);
+            param[1].Value = item.Nom_client;
+            param[2] = new SqlParameter("@phone", SqlDbType.VarChar, 40);
+            param[2].Value = item.Numerophone_client;
+            param[3] = new SqlParameter("@adress", SqlDbType.VarChar, 40);
+            param[3].Value = item.Adress_client;
+            param[4] = new SqlParameter("@Email", SqlDbType.VarChar, 40);
+            param[4].Value = item.Email_client;
+
+            macommende.Parameters.AddRange(param);
+            cnn.Close();
+            cnn.Open();
+
+            macommende.ExecuteNonQuery();
+
+            cnn.Close();
+        }
+        public void update(fourniseur_model item)
+        {
+            SqlCommand macommende = new SqlCommand();
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            macommende.Connection = cnn;
+
+            macommende.CommandType = CommandType.Text;
+            macommende.CommandText = @"UPDATE fourniseur SET  code = @code,  nom = @nom,  phone = @phone , adress=@adress , Email=@Email
+                                        WHERE ref=" + item.Ref;
+            SqlParameter[] param = new SqlParameter[5];
+            param[0] = new SqlParameter("@code", SqlDbType.Int);
+            param[0].Value = item.Code_fourniseur;
+
+            param[1] = new SqlParameter("@nom", SqlDbType.VarChar, 40);
+            param[1].Value = item.Nom;
+
+            param[2] = new SqlParameter("@phone", SqlDbType.VarChar, 40);
+            param[2].Value = item.Numerophone;
+
+
+            param[3] = new SqlParameter("@adress", SqlDbType.VarChar, 40);
+            param[3].Value = item.Adress;
+
+            param[4] = new SqlParameter("@Email", SqlDbType.VarChar, 40);
+            param[4].Value = item.Email;
+
+            macommende.Parameters.AddRange(param);
+            cnn.Close();
+            cnn.Open();
+
+            macommende.ExecuteNonQuery();
+
+            cnn.Close();
+        }
         //methode insert ,delet ,update
         public int ExuteCommende(string stored_procedure, SqlParameter[] param)
         {
@@ -176,6 +270,7 @@ namespace ProjectV1.sql
             {
 
                 equipement_model item = new equipement_model();
+                item.Ref = int.Parse(datareader.GetValue(0).ToString());
                 item.Nom_equipment = datareader.GetValue(1).ToString();
                 item.Matrucil = datareader.GetValue(2).ToString();
                 item.CODE = int.Parse(datareader.GetValue(3).ToString());
@@ -205,10 +300,11 @@ namespace ProjectV1.sql
             {
 
                 fourniseur_model item = new fourniseur_model();
+                item.Ref = int.Parse(datareader.GetValue(0).ToString());
                 item.Code_fourniseur = int.Parse( datareader.GetValue(1).ToString());
                 item.Nom = datareader.GetValue(2).ToString();
-                item.Adress =datareader.GetValue(3).ToString();
-                item.Numerophone = datareader.GetValue(4).ToString();
+                item.Numerophone =datareader.GetValue(3).ToString();
+                item.Adress = datareader.GetValue(4).ToString();
                 item.Email = datareader.GetValue(5).ToString();
 
 
@@ -236,6 +332,7 @@ namespace ProjectV1.sql
             {
 
                 model_client item = new model_client();
+                item.Ref = int.Parse(datareader.GetValue(0).ToString());
                 item.Code_client = int.Parse(datareader.GetValue(1).ToString());
                 item.Nom_client = datareader.GetValue(2).ToString();
                 item.Adress_client = datareader.GetValue(3).ToString();

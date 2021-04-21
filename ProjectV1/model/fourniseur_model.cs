@@ -8,6 +8,8 @@ namespace ProjectV1.model
 {
   public  class fourniseur_model
     {
+
+        int _ref;
         int code_fourniseur;
         string nom;
         string email;
@@ -26,6 +28,18 @@ namespace ProjectV1.model
         {
            
 
+        }
+        public int Ref
+        {
+            get
+            {
+                return _ref;
+            }
+
+            set
+            {
+                _ref = value;
+            }
         }
         public int Code_fourniseur
         {
@@ -87,5 +101,7 @@ namespace ProjectV1.model
 
 
         }
+
+       
     }
 }

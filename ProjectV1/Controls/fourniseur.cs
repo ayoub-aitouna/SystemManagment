@@ -17,6 +17,7 @@ namespace ProjectV1
     public partial class fourni : UserControl
     {
         sql.sqlcn remplire = new sql.sqlcn();
+        public Units.Unit _units = new Units.Unit();
         private const int MOde_entree = 200;
         private const int Mode_search = 300;
         public fourni()
@@ -26,13 +27,15 @@ namespace ProjectV1
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
+         
 
         }
 
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(ajoute);
-            mode(MOde_entree);
+            _units.mode(Units.Unit.MOde_entree1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+
         }
 
         private void ajoute_Paint(object sender, PaintEventArgs e)
@@ -43,7 +46,7 @@ namespace ProjectV1
         private void fourni_Load(object sender, EventArgs e)
         {
             progresbar.Hide();
-            StyleDatagridview();
+            _units.StyleDatagridview(view_data,1);
             hideAll(ajoute);
 
         }
@@ -69,28 +72,7 @@ namespace ProjectV1
 
             }
         }
-        private void mode(int _mode_)
-        {
-            List<EventHandler> events = new List<EventHandler>();
-
-            events.Add(new EventHandler(this.gunaGradientButton1_Click));
-            events.Add(new EventHandler(this.gunaGradientButton6_Click));
-
-            switch (_mode_)
-            {
-                case MOde_entree:
-                    btn_ajoute.Text = "Entree";
-                    ClearEvents(btn_ajoute, events);
-                    btn_ajoute.Click += events[0];
-                    break;
-
-                case Mode_search:
-                    btn_ajoute.Text = "Researche";
-                    ClearEvents(btn_ajoute, events);
-                    btn_ajoute.Click += events[1];
-                    break;
-            }
-        }
+       
         void ClearEvents(Control c, List<EventHandler> events)
         {
             foreach (var item in events)
@@ -105,29 +87,10 @@ namespace ProjectV1
 
             back_fourniseur_view.RunWorkerAsync("SELECT * from Fourniseur where code like '" + code_fourniseur.Text + "'");
             hideAll(panel_view);
-            Controls_clear(ajoute);
+            _units.Controls_clear(ajoute);
 
         }
-        private void Controls_clear(Control C)
-        {
-            foreach (Control item in C.Controls)
-            {
-                // MessageBox.Show(item.GetType().ToString());
-                if (item.GetType() == typeof(TextBox))
-                    ((TextBox)item).Clear();
-                if (item.GetType() == typeof(GunaTextBox))
-                    ((GunaTextBox)item).Clear();
-                if (item.GetType() == typeof(DateTimePicker))
-                    ((DateTimePicker)item).Value = DateTime.Today;
-                if (item.GetType() == typeof(RadioButton))
-                    ((RadioButton)item).Checked = false;
-                if (item.GetType() == typeof(PictureBox))
-                    ((PictureBox)item).Image = null;
-                if (item.Controls.Count != 0)
-                    Controls_clear(item);
-            }
-
-        }
+  
         private void gunaGradientButton1_Click_1(object sender, EventArgs e)
         {
             progresbar.Show();
@@ -148,10 +111,9 @@ namespace ProjectV1
 
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
-          
-
             hideAll(ajoute);
-            mode(Mode_search);
+            _units.mode(Units.Unit.Mode_search1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+
         }
 
         private void back_forniseur__add_DoWork(object sender, DoWorkEventArgs e)
@@ -193,9 +155,8 @@ namespace ProjectV1
             view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 66, 132);
             view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
-
             view_data.DataSource = data;
-
+            view_data.Columns["Ref"].Visible = false;
 
         }
         private void back_forniseur__add_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -212,7 +173,7 @@ namespace ProjectV1
             }
             else
             {
-           
+                _units.Controls_clear(ajoute);
                 add_success add_Success = new add_success(item);
                 add_Success.ShowDialog();
             }
@@ -231,33 +192,10 @@ namespace ProjectV1
 
             progresbar.Hide();
             view_data.Enabled = true;
-
+            _units.Controls_clear(ajoute);
             setview_data(q);
         }
-        void StyleDatagridview()
-        {
-            view_data.BorderStyle = BorderStyle.None;
-            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(226, 226, 226);
-            view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
-            view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            view_data.BackgroundColor = Color.FromArgb(30, 30, 30);
-            view_data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            view_data.EnableHeadersVisualStyles = false;
-            view_data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            view_data.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            view_data.ColumnHeadersHeight = 40;
-            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
-            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            view_data.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
-            view_data.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-
-
-            view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-
-
-
-        }
+     
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
             hideAll(panel_view);
@@ -267,6 +205,43 @@ namespace ProjectV1
             {
                 back_fourniseur_view.RunWorkerAsync("SELECT * from Fourniseur");
             }
+        }
+
+        private void view_data_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+            progresbar.Show();
+            DataGridViewCellCollection a = view_data.Rows[e.RowIndex].Cells;
+
+            MessageBox.Show(a[0].Value.ToString());
+            fourniseur_model model = new fourniseur_model();
+            model.Ref = int.Parse(a[0].Value.ToString());
+            model.Code_fourniseur = int.Parse(a[1].Value.ToString());
+            model.Nom = a[2].Value.ToString();
+            model.Email = a[3].Value.ToString();
+            model.Adress = a[4].Value.ToString();
+            model.Numerophone = a[5].Value.ToString();
+            if (!update.IsBusy)
+            {
+                update.RunWorkerAsync(model);
+            }
+        }
+
+        private void update_DoWork(object sender, DoWorkEventArgs e)
+        {
+            fourniseur_model model = ((fourniseur_model)e.Argument);
+            sqlcn sql = new sqlcn();
+            MessageBox.Show(model.ToString());
+            sql.update(model);
+            e.Result = model;
+        }
+
+        private void update_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progresbar.Hide();
+            fourniseur_model model = ((fourniseur_model)e.Result);
+            add_success add_Success = new add_success(model);
+            add_Success.ShowDialog();
         }
     }
 }

@@ -17,7 +17,10 @@ namespace ProjectV1
     {
         private const int MOde_entree = 200;
         private const int Mode_search = 300;
+        List<equipement_model> selectedRows = new List<equipement_model>();
         sql.sqlcn remplire = new sql.sqlcn();
+         Units.Unit _units = new Units.Unit();
+
         public equipe()
         {
             InitializeComponent();
@@ -35,6 +38,7 @@ namespace ProjectV1
             item.CODE = int.Parse(code_equipemnt.Text);
             item.Nom_equipment = nom_equipe.Text;
             item.Matrucil = matricule_equipe.Text;
+            _units.Controls_clear(add);
             if (!working_back.IsBusy)
             {
                 working_back.RunWorkerAsync(item);
@@ -54,7 +58,7 @@ namespace ProjectV1
             hideAll(add);
 
             //style data gride view
-            StyleDatagridview();
+            _units.StyleDatagridview(view_data,1);
         }
 
         private void working_back_DoWork(object sender, DoWorkEventArgs e)
@@ -135,28 +139,28 @@ namespace ProjectV1
 
             }
         }
-        private void mode(int _mode_)
-        {
-            List<EventHandler> events = new List<EventHandler>();
+        //private void mode(int _mode_)
+        //{
+        //    List<EventHandler> events = new List<EventHandler>();
            
-            events.Add(new EventHandler(this.gunaGradientButton1_Click));
-            events.Add(new EventHandler(this.search_event));
+        //    events.Add(new EventHandler(this.gunaGradientButton1_Click));
+        //    events.Add(new EventHandler(this.search_event));
 
-            switch (_mode_)
-            {
-                case MOde_entree:
-                    ajouterequipe.Text = "Entree";
-                    ClearEvents(ajouterequipe, events);
-                    ajouterequipe.Click += events[0];
-                    break;
+        //    switch (_mode_)
+        //    {
+        //        case MOde_entree:
+        //            ajouterequipe.Text = "Entree";
+        //            ClearEvents(ajouterequipe, events);
+        //            ajouterequipe.Click += events[0];
+        //            break;
                 
-                case Mode_search:
-                    ajouterequipe.Text = "Researche";
-                    ClearEvents(ajouterequipe, events);
-                    ajouterequipe.Click += events[1];
-                    break;
-            }
-        }
+        //        case Mode_search:
+        //            ajouterequipe.Text = "Researche";
+        //            ClearEvents(ajouterequipe, events);
+        //            ajouterequipe.Click += events[1];
+        //            break;
+        //    }
+        //}
 
         void ClearEvents(Control c, List<EventHandler> events)
         {
@@ -170,6 +174,8 @@ namespace ProjectV1
         {
             view_data.Enabled = false;
             progresbar.Show();
+            _units.Controls_clear(add);
+
             if (!worker_back_view.IsBusy)
             {
        
@@ -181,16 +187,18 @@ namespace ProjectV1
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(add);
-            mode(MOde_entree);
+            _units.mode(Units.Unit.MOde_entree1, ajouterequipe, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+
         }
 
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
             hideAll(add);
-            mode(Mode_search);
+            _units.mode(Units.Unit.Mode_search1, ajouterequipe, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
 
-           
-         
+
+
+
 
         }
         private void setview_data(List<equipement_model> data)
@@ -216,32 +224,71 @@ namespace ProjectV1
             
             progresbar.Hide();
             view_data.Enabled = true;
-
+        
             setview_data(q);
+            view_data.Columns["ref"].Visible = false;
         }
-        void StyleDatagridview()
+
+        private void view_data_SelectionChanged(object sender, EventArgs e)
         {
-            view_data.BorderStyle = BorderStyle.None;
-            view_data.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(226, 226, 226);
-            view_data.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            view_data.DefaultCellStyle.SelectionBackColor = Color.SeaGreen;
-            view_data.DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
-            view_data.BackgroundColor = Color.FromArgb(30, 30, 30);
-            view_data.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            view_data.EnableHeadersVisualStyles = false;
-            view_data.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            view_data.ColumnHeadersDefaultCellStyle.Font = new Font("MS Reference Sans Serif", 10);
-            view_data.ColumnHeadersHeight = 40;
-            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(37, 37, 38);
-            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            view_data.AdvancedCellBorderStyle.Bottom = DataGridViewAdvancedCellBorderStyle.None;
-            view_data.AdvancedCellBorderStyle.Top = DataGridViewAdvancedCellBorderStyle.None;
-           
-           
-                view_data.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            if (view_data.SelectedRows.Count > 0)
+            {
+                selectedRows.Clear();
+                for (int i = 0; i < view_data.SelectedRows.Count; i++)
+                {
+                    DataGridViewCellCollection a = view_data.SelectedRows[i].Cells;
+                    string value = a[2].Value.ToString();
+                    equipement_model model = new equipement_model();
+               
+                    selectedRows.Add(model);
+
+                }
+
+            }
+            else
+            {
+                selectedRows.Clear();
+            }
+        }
+
+        private void view_data_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewCellCollection a = view_data.Rows[e.RowIndex].Cells;
+
+            string value = a[2].Value.ToString();
+            progresbar.Show();
+            equipement_model model = new equipement_model();
+            model.Ref = int.Parse(a[0].Value.ToString());
+            model.CODE = int.Parse(a[1].Value.ToString());
+            model.Nom_equipment = a[2].Value.ToString();
+            model.Matrucil = a[3].Value.ToString();
             
 
+            if (!update_data_DoWork.IsBusy)
+            {
+                update_data_DoWork.RunWorkerAsync(model);
+            }
 
+        }
+
+        private void update_data_DoWork_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+
+            progresbar.Hide();
+            equipement_model model = ((equipement_model)e.Result);
+            add_success add_Success = new add_success(model);
+            add_Success.ShowDialog();
+        }
+
+   
+        private void update_data_DoWork_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            equipement_model model = ((equipement_model)e.Argument);
+            sqlcn sql = new sqlcn();
+            MessageBox.Show(model.Ref + "" + model.CODE + "" + model.Nom_equipment + "" + model.Matrucil);
+            sql.update(model);
+            e.Result = model;
         }
     }
 }
