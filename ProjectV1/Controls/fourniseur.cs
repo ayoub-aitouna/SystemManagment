@@ -11,13 +11,14 @@ using ProjectV1.model;
 using ProjectV1.sql;
 using System.Data.SqlClient;
 using Guna.UI.WinForms;
+using System.Diagnostics;
 
 namespace ProjectV1
 {
     public partial class fourni : UserControl
     {
         sql.sqlcn remplire = new sql.sqlcn();
-        public Units.Unit _units = new Units.Unit();
+        public Units.Unit units = new Units.Unit();
         private const int MOde_entree = 200;
         private const int Mode_search = 300;
         public fourni()
@@ -34,7 +35,7 @@ namespace ProjectV1
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(ajoute);
-            _units.mode(Units.Unit.MOde_entree1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+            units.mode(Units.Unit.MOde_entree1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click_1), new EventHandler(this.search_event));
 
         }
 
@@ -46,7 +47,7 @@ namespace ProjectV1
         private void fourni_Load(object sender, EventArgs e)
         {
             progresbar.Hide();
-            _units.StyleDatagridview(view_data,1);
+            units.StyleDatagridview(view_data,1);
             hideAll(ajoute);
 
         }
@@ -77,23 +78,27 @@ namespace ProjectV1
         {
             foreach (var item in events)
             {
+               
+
                 c.Click -= item;
             }
         }
         private void search_event(object sender, EventArgs e)
         {
-            //List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
-            //setview_data(data);
-
-            back_fourniseur_view.RunWorkerAsync("SELECT * from Fourniseur where code like '" + code_fourniseur.Text + "'");
+           
             hideAll(panel_view);
-            _units.Controls_clear(ajoute);
+            if (!back_fourniseur_view.IsBusy)
+            {
+                back_fourniseur_view.RunWorkerAsync("SELECT * from Fourniseur where code like '" + code_fourniseur.Text + "'");
+            }
+          
 
         }
   
         private void gunaGradientButton1_Click_1(object sender, EventArgs e)
         {
             progresbar.Show();
+            
              fourniseur_model item = new fourniseur_model();
             item.Code_fourniseur = int.Parse(code_fourniseur.Text);
             item.Nom = nom.Text;
@@ -112,7 +117,7 @@ namespace ProjectV1
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
             hideAll(ajoute);
-            _units.mode(Units.Unit.Mode_search1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+            units.mode(Units.Unit.Mode_search1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click_1), new EventHandler(this.search_event));
 
         }
 
@@ -173,7 +178,7 @@ namespace ProjectV1
             }
             else
             {
-                _units.Controls_clear(ajoute);
+                units.Controls_clear(ajoute);
                 add_success add_Success = new add_success(item);
                 add_Success.ShowDialog();
             }
@@ -192,7 +197,7 @@ namespace ProjectV1
 
             progresbar.Hide();
             view_data.Enabled = true;
-            _units.Controls_clear(ajoute);
+            units.Controls_clear(ajoute);
             setview_data(q);
         }
      

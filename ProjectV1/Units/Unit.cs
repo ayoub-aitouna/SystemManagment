@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
+using System.Diagnostics;
 
 namespace ProjectV1.Units
 {
@@ -127,6 +128,7 @@ namespace ProjectV1.Units
         {
             foreach (var item in events)
             {
+                Debug.WriteLine("constructor fired " + item.ToString());
                 c.Click -= item;
             }
         }
