@@ -31,6 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MENU = new System.Windows.Forms.Panel();
             this.LOGO = new System.Windows.Forms.Panel();
+            this.homa_container = new System.Windows.Forms.Panel();
+            this.user_Login1 = new ProjectV1.Controls.User_Login();
+            this.equipe1 = new ProjectV1.equipe();
+            this.fourni1 = new ProjectV1.fourni();
+            this.articlee1 = new ProjectV1.articlee();
+            this.cLients1 = new ProjectV1.Controls.CLients();
+            this.dashboard1 = new ProjectV1.dashboard();
+            this.rapport1 = new ProjectV1.Controls.Rapport();
+            this.rapport_button = new Guna.UI.WinForms.GunaGradientButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.forneseur = new Guna.UI.WinForms.GunaGradientButton();
             this.equipment = new Guna.UI.WinForms.GunaGradientButton();
@@ -38,21 +47,16 @@
             this.users = new Guna.UI.WinForms.GunaGradientButton();
             this.article = new Guna.UI.WinForms.GunaGradientButton();
             this.dashboard_button = new Guna.UI.WinForms.GunaGradientButton();
-            this.homa_container = new System.Windows.Forms.Panel();
-            this.equipe1 = new ProjectV1.equipe();
-            this.fourni1 = new ProjectV1.fourni();
-            this.articlee1 = new ProjectV1.articlee();
-            this.cLients1 = new ProjectV1.Controls.CLients();
-            this.dashboard1 = new ProjectV1.dashboard();
             this.MENU.SuspendLayout();
             this.LOGO.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.homa_container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MENU
             // 
             this.MENU.BackColor = System.Drawing.Color.White;
+            this.MENU.Controls.Add(this.rapport_button);
             this.MENU.Controls.Add(this.LOGO);
             this.MENU.Controls.Add(this.forneseur);
             this.MENU.Controls.Add(this.equipment);
@@ -74,6 +78,110 @@
             this.LOGO.Name = "LOGO";
             this.LOGO.Size = new System.Drawing.Size(97, 54);
             this.LOGO.TabIndex = 0;
+            // 
+            // homa_container
+            // 
+            this.homa_container.Controls.Add(this.user_Login1);
+            this.homa_container.Controls.Add(this.equipe1);
+            this.homa_container.Controls.Add(this.fourni1);
+            this.homa_container.Controls.Add(this.articlee1);
+            this.homa_container.Controls.Add(this.cLients1);
+            this.homa_container.Controls.Add(this.dashboard1);
+            this.homa_container.Controls.Add(this.rapport1);
+            this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homa_container.Location = new System.Drawing.Point(172, 0);
+            this.homa_container.Name = "homa_container";
+            this.homa_container.Size = new System.Drawing.Size(1060, 588);
+            this.homa_container.TabIndex = 1;
+            // 
+            // user_Login1
+            // 
+            this.user_Login1.BackColor = System.Drawing.Color.White;
+            this.user_Login1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user_Login1.Location = new System.Drawing.Point(0, 0);
+            this.user_Login1.Name = "user_Login1";
+            this.user_Login1.Size = new System.Drawing.Size(1060, 588);
+            this.user_Login1.TabIndex = 5;
+            // 
+            // equipe1
+            // 
+            this.equipe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.equipe1.Location = new System.Drawing.Point(0, 0);
+            this.equipe1.Name = "equipe1";
+            this.equipe1.Size = new System.Drawing.Size(1060, 588);
+            this.equipe1.TabIndex = 2;
+            this.equipe1.Load += new System.EventHandler(this.equipe1_Load);
+            // 
+            // fourni1
+            // 
+            this.fourni1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fourni1.Location = new System.Drawing.Point(0, 0);
+            this.fourni1.Name = "fourni1";
+            this.fourni1.Size = new System.Drawing.Size(1060, 588);
+            this.fourni1.TabIndex = 1;
+            // 
+            // articlee1
+            // 
+            this.articlee1.BackColor = System.Drawing.Color.White;
+            this.articlee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.articlee1.Location = new System.Drawing.Point(0, 0);
+            this.articlee1.Name = "articlee1";
+            this.articlee1.Size = new System.Drawing.Size(1060, 588);
+            this.articlee1.TabIndex = 0;
+            // 
+            // cLients1
+            // 
+            this.cLients1.BackColor = System.Drawing.Color.White;
+            this.cLients1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cLients1.Location = new System.Drawing.Point(0, 0);
+            this.cLients1.Name = "cLients1";
+            this.cLients1.Size = new System.Drawing.Size(1060, 588);
+            this.cLients1.TabIndex = 3;
+            // 
+            // dashboard1
+            // 
+            this.dashboard1.BackColor = System.Drawing.Color.White;
+            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(1060, 588);
+            this.dashboard1.TabIndex = 4;
+            // 
+            // rapport1
+            // 
+            this.rapport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rapport1.Location = new System.Drawing.Point(0, 0);
+            this.rapport1.Name = "rapport1";
+            this.rapport1.Size = new System.Drawing.Size(1060, 588);
+            this.rapport1.TabIndex = 6;
+            // 
+            // rapport_button
+            // 
+            this.rapport_button.AnimationHoverSpeed = 0.07F;
+            this.rapport_button.AnimationSpeed = 0.03F;
+            this.rapport_button.BackColor = System.Drawing.Color.Transparent;
+            this.rapport_button.BaseColor1 = System.Drawing.Color.Transparent;
+            this.rapport_button.BaseColor2 = System.Drawing.Color.Transparent;
+            this.rapport_button.BorderColor = System.Drawing.Color.Black;
+            this.rapport_button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.rapport_button.FocusedColor = System.Drawing.Color.Empty;
+            this.rapport_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rapport_button.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.rapport_button.Image = ((System.Drawing.Image)(resources.GetObject("rapport_button.Image")));
+            this.rapport_button.ImageSize = new System.Drawing.Size(20, 20);
+            this.rapport_button.Location = new System.Drawing.Point(20, 338);
+            this.rapport_button.Name = "rapport_button";
+            this.rapport_button.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rapport_button.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.rapport_button.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.rapport_button.OnHoverForeColor = System.Drawing.Color.Black;
+            this.rapport_button.OnHoverImage = null;
+            this.rapport_button.OnPressedColor = System.Drawing.Color.Black;
+            this.rapport_button.Radius = 15;
+            this.rapport_button.Size = new System.Drawing.Size(140, 40);
+            this.rapport_button.TabIndex = 5;
+            this.rapport_button.Text = "Rapport";
+            this.rapport_button.Click += new System.EventHandler(this.rapport_buttonClick);
             // 
             // pictureBox1
             // 
@@ -101,7 +209,7 @@
             this.forneseur.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.forneseur.Image = ((System.Drawing.Image)(resources.GetObject("forneseur.Image")));
             this.forneseur.ImageSize = new System.Drawing.Size(20, 20);
-            this.forneseur.Location = new System.Drawing.Point(20, 154);
+            this.forneseur.Location = new System.Drawing.Point(20, 246);
             this.forneseur.Name = "forneseur";
             this.forneseur.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.forneseur.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -129,7 +237,7 @@
             this.equipment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.equipment.Image = ((System.Drawing.Image)(resources.GetObject("equipment.Image")));
             this.equipment.ImageSize = new System.Drawing.Size(20, 20);
-            this.equipment.Location = new System.Drawing.Point(20, 246);
+            this.equipment.Location = new System.Drawing.Point(20, 199);
             this.equipment.Name = "equipment";
             this.equipment.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.equipment.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -157,7 +265,7 @@
             this.settings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.settings.Image = ((System.Drawing.Image)(resources.GetObject("settings.Image")));
             this.settings.ImageSize = new System.Drawing.Size(20, 20);
-            this.settings.Location = new System.Drawing.Point(20, 337);
+            this.settings.Location = new System.Drawing.Point(20, 384);
             this.settings.Name = "settings";
             this.settings.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.settings.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -213,7 +321,7 @@
             this.article.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.article.Image = ((System.Drawing.Image)(resources.GetObject("article.Image")));
             this.article.ImageSize = new System.Drawing.Size(20, 20);
-            this.article.Location = new System.Drawing.Point(20, 200);
+            this.article.Location = new System.Drawing.Point(20, 153);
             this.article.Name = "article";
             this.article.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.article.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -255,62 +363,6 @@
             this.dashboard_button.Text = "Dashboard";
             this.dashboard_button.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
-            // homa_container
-            // 
-            this.homa_container.Controls.Add(this.equipe1);
-            this.homa_container.Controls.Add(this.fourni1);
-            this.homa_container.Controls.Add(this.articlee1);
-            this.homa_container.Controls.Add(this.cLients1);
-            this.homa_container.Controls.Add(this.dashboard1);
-            this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homa_container.Location = new System.Drawing.Point(172, 0);
-            this.homa_container.Name = "homa_container";
-            this.homa_container.Size = new System.Drawing.Size(1060, 588);
-            this.homa_container.TabIndex = 1;
-            // 
-            // equipe1
-            // 
-            this.equipe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.equipe1.Location = new System.Drawing.Point(0, 0);
-            this.equipe1.Name = "equipe1";
-            this.equipe1.Size = new System.Drawing.Size(1060, 588);
-            this.equipe1.TabIndex = 2;
-            // 
-            // fourni1
-            // 
-            this.fourni1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fourni1.Location = new System.Drawing.Point(0, 0);
-            this.fourni1.Name = "fourni1";
-            this.fourni1.Size = new System.Drawing.Size(1060, 588);
-            this.fourni1.TabIndex = 1;
-            // 
-            // articlee1
-            // 
-            this.articlee1.BackColor = System.Drawing.Color.White;
-            this.articlee1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.articlee1.Location = new System.Drawing.Point(0, 0);
-            this.articlee1.Name = "articlee1";
-            this.articlee1.Size = new System.Drawing.Size(1060, 588);
-            this.articlee1.TabIndex = 0;
-            // 
-            // cLients1
-            // 
-            this.cLients1.BackColor = System.Drawing.Color.White;
-            this.cLients1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cLients1.Location = new System.Drawing.Point(0, 0);
-            this.cLients1.Name = "cLients1";
-            this.cLients1.Size = new System.Drawing.Size(1060, 588);
-            this.cLients1.TabIndex = 3;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.BackColor = System.Drawing.Color.White;
-            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(1060, 588);
-            this.dashboard1.TabIndex = 4;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,8 +379,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MENU.ResumeLayout(false);
             this.LOGO.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.homa_container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,6 +402,9 @@
         private equipe equipe1;
         private Controls.CLients cLients1;
         private dashboard dashboard1;
+        private Guna.UI.WinForms.GunaGradientButton rapport_button;
+        private Controls.User_Login user_Login1;
+        private Controls.Rapport rapport1;
     }
 }
 

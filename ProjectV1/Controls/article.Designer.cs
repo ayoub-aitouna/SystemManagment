@@ -69,12 +69,14 @@
             this.entree_print_Dialog = new System.Windows.Forms.PrintDialog();
             this.used_items_button = new Guna.UI.WinForms.GunaGradientButton();
             this.update_data = new System.ComponentModel.BackgroundWorker();
+            this.menu_container = new System.Windows.Forms.Panel();
             this.Add.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.View.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.view_data)).BeginInit();
             this.Container.SuspendLayout();
+            this.menu_container.SuspendLayout();
             this.SuspendLayout();
             // 
             // Add
@@ -473,8 +475,8 @@
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaGradientButton4.Location = new System.Drawing.Point(801, 36);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
-            this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton4.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.gunaGradientButton4.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.gunaGradientButton4.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton4.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.OnHoverImage = null;
@@ -505,8 +507,8 @@
             this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
             this.Sortee.Location = new System.Drawing.Point(173, 36);
             this.Sortee.Name = "Sortee";
-            this.Sortee.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Sortee.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.Sortee.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.Sortee.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.Sortee.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Sortee.OnHoverForeColor = System.Drawing.Color.White;
             this.Sortee.OnHoverImage = null;
@@ -533,8 +535,8 @@
             this.Entree.ImageSize = new System.Drawing.Size(20, 20);
             this.Entree.Location = new System.Drawing.Point(27, 36);
             this.Entree.Name = "Entree";
-            this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.Entree.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Entree.OnHoverForeColor = System.Drawing.Color.White;
             this.Entree.OnHoverImage = null;
@@ -594,6 +596,7 @@
             // 
             // viewData_worker
             // 
+            this.viewData_worker.WorkerSupportsCancellation = true;
             this.viewData_worker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.view_worker_DoWork);
             this.viewData_worker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.viewData_worker_ProgressChanged);
             this.viewData_worker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.view_worker_RunWorkerCompleted);
@@ -620,8 +623,8 @@
             this.gunaGradientButton6.ImageSize = new System.Drawing.Size(25, 25);
             this.gunaGradientButton6.Location = new System.Drawing.Point(862, 36);
             this.gunaGradientButton6.Name = "gunaGradientButton6";
-            this.gunaGradientButton6.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.gunaGradientButton6.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton6.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.gunaGradientButton6.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.gunaGradientButton6.OnHoverBorderColor = System.Drawing.Color.Black;
             this.gunaGradientButton6.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton6.OnHoverImage = null;
@@ -648,8 +651,8 @@
             this.valide.ImageSize = new System.Drawing.Size(25, 25);
             this.valide.Location = new System.Drawing.Point(934, 36);
             this.valide.Name = "valide";
-            this.valide.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.valide.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.valide.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.valide.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.valide.OnHoverBorderColor = System.Drawing.Color.Black;
             this.valide.OnHoverForeColor = System.Drawing.Color.White;
             this.valide.OnHoverImage = null;
@@ -684,8 +687,8 @@
             this.used_items_button.ImageSize = new System.Drawing.Size(20, 20);
             this.used_items_button.Location = new System.Drawing.Point(328, 36);
             this.used_items_button.Name = "used_items_button";
-            this.used_items_button.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.used_items_button.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.used_items_button.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.used_items_button.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
             this.used_items_button.OnHoverBorderColor = System.Drawing.Color.Black;
             this.used_items_button.OnHoverForeColor = System.Drawing.Color.White;
             this.used_items_button.OnHoverImage = null;
@@ -701,19 +704,28 @@
             this.update_data.DoWork += new System.ComponentModel.DoWorkEventHandler(this.update_data_DoWork);
             this.update_data.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.update_data_RunWorkerCompleted);
             // 
+            // menu_container
+            // 
+            this.menu_container.Controls.Add(this.valide);
+            this.menu_container.Controls.Add(this.gunaGradientButton6);
+            this.menu_container.Controls.Add(this.Entree);
+            this.menu_container.Controls.Add(this.used_items_button);
+            this.menu_container.Controls.Add(this.gunaGradientButton4);
+            this.menu_container.Controls.Add(this.Sortee);
+            this.menu_container.Dock = System.Windows.Forms.DockStyle.Top;
+            this.menu_container.Location = new System.Drawing.Point(0, 0);
+            this.menu_container.Name = "menu_container";
+            this.menu_container.Size = new System.Drawing.Size(995, 93);
+            this.menu_container.TabIndex = 20;
+            // 
             // articlee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.progresbar);
-            this.Controls.Add(this.valide);
+            this.Controls.Add(this.menu_container);
             this.Controls.Add(this.Container);
-            this.Controls.Add(this.gunaGradientButton6);
-            this.Controls.Add(this.Entree);
-            this.Controls.Add(this.used_items_button);
-            this.Controls.Add(this.Sortee);
-            this.Controls.Add(this.gunaGradientButton4);
             this.Name = "articlee";
             this.Size = new System.Drawing.Size(995, 524);
             this.Load += new System.EventHandler(this.articlee_Load);
@@ -724,6 +736,7 @@
             this.View.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.view_data)).EndInit();
             this.Container.ResumeLayout(false);
+            this.menu_container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -749,7 +762,6 @@
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaTextBox quantitier;
         private Guna.UI.WinForms.GunaTextBox desination;
-        private Guna.UI.WinForms.GunaTextBox reference_intrene;
         private Guna.UI.WinForms.GunaTextBox reference_fabricant;
         private Guna.UI.WinForms.GunaTextBox prix;
         private Guna.UI.WinForms.GunaTextBox code_ean;
@@ -768,5 +780,7 @@
         private System.Windows.Forms.PrintDialog entree_print_Dialog;
         private Guna.UI.WinForms.GunaGradientButton used_items_button;
         private System.ComponentModel.BackgroundWorker update_data;
+        private Guna.UI.WinForms.GunaTextBox reference_intrene;
+        private System.Windows.Forms.Panel menu_container;
     }
 }

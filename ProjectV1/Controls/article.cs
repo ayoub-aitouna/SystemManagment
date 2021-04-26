@@ -43,7 +43,7 @@ namespace ProjectV1
       */
         private void articlee_Load(object sender, EventArgs e)
         {
-
+            Menu_chosen(Entree);
             progresbar.Visible = false;
             _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
 
@@ -156,14 +156,27 @@ namespace ProjectV1
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
             hideAll(View);
+           
+            runViewAsync("select * from Artical", gunaGradientButton4);
+            view_data.Enabled = false;
+            progresbar.Show();
+            
+
+        }
+
+        private void runViewAsync(String cmnd,Control btn)
+        {
+           
             if (viewData_worker.IsBusy)
             {
                 viewData_worker.CancelAsync();
+                MessageBox.Show("S'il vous plaît, attendez. En traitement ");
             }
-            view_data.Enabled = false;
-            progresbar.Show();
-            viewData_worker.RunWorkerAsync("select * from Artical");
-
+            else
+            {
+                viewData_worker.RunWorkerAsync(cmnd);
+                Menu_chosen(btn);
+            }
         }
 
 
@@ -203,19 +216,46 @@ namespace ProjectV1
              */
         private void sortee(object sender, EventArgs e)
         {
+            Menu_chosen(Sortee);
             hideAll(Add);
+            changeToSorteMode(true);
             _units.mode(Units.Unit.Mode_Sortee1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
 
 
 
         }
 
+        private void changeToSorteMode(bool v)
+        {
+            if (v)
+            {
+                reference_intrene.Hide();
+                label5.Hide();
+                reference_fabricant.Hide();
+                label4.Hide();
+                gunaElipsePanel1.Hide();
+                upload.Hide();
+           
+            }
+            else
+            {
+                reference_intrene.Show();
+                label5.Show();
+                reference_fabricant.Show();
+                label4.Show();
+                gunaElipsePanel1.Show();
+                upload.Show();
+            }
+        }
 
 
-   
 
-   
-       
+
+
+
+
+
+
         /*
          * clear all the event of the button
          */
@@ -237,10 +277,11 @@ namespace ProjectV1
          */
         private void sortee_event(object sender, EventArgs e)
         {
-            //List<article_model> data = loaddata("select * from Artical where nom like '" + desination.Text + "'");
-            //setview_data(data);
-            viewData_worker.RunWorkerAsync("select * from Artical where nom like '" + desination.Text + "'");
-
+            if (!viewData_worker.IsBusy)
+            {
+                viewData_worker.RunWorkerAsync(@"select * from Artical where nom like '" + desination.Text + "' OR Barcode like '" + barcode.Text
+                                                + "' OR code_fabrication like '" + code_ean.Text + "' OR prix like '" + prix.Text+"'");
+            }
             hideAll(View);
             _units.Controls_clear(Add);
 
@@ -275,6 +316,8 @@ namespace ProjectV1
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(Add);
+            Menu_chosen(Entree);
+            changeToSorteMode(false);
             _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
 
             _units.Controls_clear(Add);
@@ -382,9 +425,9 @@ namespace ProjectV1
         private void view_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             progresbar.Hide();
-            view_data.Enabled = true;
-            
+            view_data.Enabled = true;         
             setview_data((List<article_model>)e.Result);
+            MessageBox.Show("le traitement est terminé");
            
         }
         /*
@@ -463,7 +506,9 @@ namespace ProjectV1
 
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
+            Menu_chosen(gunaGradientButton6);
             _units.mode(Units.Unit.Mode_search1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
+            changeToSorteMode(true);
             hideAll(Add);
 
         }
@@ -559,14 +604,38 @@ namespace ProjectV1
 
         private void used_items(object sender, EventArgs e)
         {
-            hideAll(View);
-            if (viewData_worker.IsBusy)
-            {
-                viewData_worker.CancelAsync();
-            }
-            viewData_worker.RunWorkerAsync("select * from Artical_Sortee");
-        }
+           
 
+            hideAll(View);
+           
+            view_data.Enabled = false;
+            progresbar.Show();
+         
+            runViewAsync("select * from Artical_Sortee", used_items_button);
+
+        }
+        private void Menu_chosen(Control btn)
+        {
+            foreach (var item in menu_container.Controls)
+            {
+
+                GunaGradientButton a = (GunaGradientButton)item;
+
+                if (btn != null && (a == btn))
+                {
+
+                    a.BaseColor1 = Color.FromArgb(184, 60, 247);
+                    a.BaseColor2 = Color.FromArgb(184, 60, 247);
+
+                }
+                else
+                {
+                    a.BaseColor1 = Color.FromArgb(12, 66, 132);
+                    a.BaseColor2 = Color.FromArgb(12, 66, 132);
+                }
+
+            }
+        }
       
     }
     public interface Icloseall

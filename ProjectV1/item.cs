@@ -34,8 +34,8 @@ namespace ProjectV1
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-            Form2 f = new Form2();
-            f.ShowDialog();
+            //Form2 f = new Form2();
+            //f.ShowDialog();
         }
     }
 }

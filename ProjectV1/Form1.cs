@@ -8,29 +8,33 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Guna.UI.WinForms;
+using ProjectV1.Units;
+using ProjectV1.model;
 namespace ProjectV1
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IUserSuccessfullyAuthenticated
     {
-      
 
+      
         public Form1()
         {
             InitializeComponent();
+            
+            
         }
 
    
-        private void panel7_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
        
         
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            hideAll(dashboard1, dashboard_button);
+            
+         
+         
+                hideAll(user_Login1, null);
+                MENU.Hide();
+                user_Login1.load(this);
 
 
         }
@@ -62,6 +66,7 @@ namespace ProjectV1
                 }
             }
 
+
             foreach (var item in homa_container.Controls)
             {
 
@@ -87,10 +92,7 @@ namespace ProjectV1
             hideAll(dashboard1,dashboard_button);
         }
 
-        private void gunaGradientButton5_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+     
 
       
         private void gunaGradientButton2_Click(object sender, EventArgs e)
@@ -122,5 +124,28 @@ namespace ProjectV1
 
             hideAll(null, settings);
         }
+
+        private void equipe1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void UserSuccessfullyAuthenticated()
+        {
+            hideAll(dashboard1, dashboard_button);
+            MENU.Show();
+           
+        }
+
+     
+
+        private void rapport_buttonClick(object sender, EventArgs e)
+        {
+            hideAll(rapport1, rapport_button);
+        }
+    }
+    public interface IUserSuccessfullyAuthenticated
+    {
+        void UserSuccessfullyAuthenticated();
     }
 }

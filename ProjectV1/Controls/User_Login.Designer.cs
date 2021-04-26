@@ -1,13 +1,13 @@
-﻿namespace ProjectV1.Units
+﻿namespace ProjectV1.Controls
 {
-    partial class Form2
+    partial class User_Login
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,16 +20,15 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.remamber = new System.Windows.Forms.CheckBox();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_ajoute = new Guna.UI.WinForms.GunaGradientButton();
@@ -37,30 +36,18 @@
             this.nom = new System.Windows.Forms.Label();
             this.username = new Guna.UI.WinForms.GunaTextBox();
             this.pasword = new Guna.UI.WinForms.GunaTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.backlogin = new System.ComponentModel.BackgroundWorker();
-            this.remamber = new System.Windows.Forms.CheckBox();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel2
+            // remamber
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.remamber);
-            this.panel2.Controls.Add(this.progresbar);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.btn_ajoute);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.nom);
-            this.panel2.Controls.Add(this.username);
-            this.panel2.Controls.Add(this.pasword);
-            this.panel2.Location = new System.Drawing.Point(660, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(520, 496);
-            this.panel2.TabIndex = 1;
+            this.remamber.AutoSize = true;
+            this.remamber.Location = new System.Drawing.Point(615, 303);
+            this.remamber.Name = "remamber";
+            this.remamber.Size = new System.Drawing.Size(97, 17);
+            this.remamber.TabIndex = 52;
+            this.remamber.Text = "Remamber me ";
+            this.remamber.UseVisualStyleBackColor = true;
             // 
             // progresbar
             // 
@@ -73,14 +60,14 @@
             this.progresbar.IdleThickness = 10;
             this.progresbar.Image = null;
             this.progresbar.ImageSize = new System.Drawing.Size(52, 52);
-            this.progresbar.Location = new System.Drawing.Point(230, 26);
+            this.progresbar.Location = new System.Drawing.Point(730, 96);
             this.progresbar.Name = "progresbar";
             this.progresbar.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.progresbar.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.progresbar.ProgressOffset = 20;
             this.progresbar.ProgressThickness = 10;
             this.progresbar.Size = new System.Drawing.Size(60, 60);
-            this.progresbar.TabIndex = 50;
+            this.progresbar.TabIndex = 1;
             this.progresbar.Value = 20;
             // 
             // label1
@@ -88,10 +75,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.label1.Location = new System.Drawing.Point(224, 130);
+            this.label1.Location = new System.Drawing.Point(710, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 31);
-            this.label1.TabIndex = 49;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Login";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -109,7 +96,7 @@
             this.btn_ajoute.ForeColor = System.Drawing.Color.White;
             this.btn_ajoute.Image = null;
             this.btn_ajoute.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_ajoute.Location = new System.Drawing.Point(181, 353);
+            this.btn_ajoute.Location = new System.Drawing.Point(691, 347);
             this.btn_ajoute.Name = "btn_ajoute";
             this.btn_ajoute.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btn_ajoute.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -130,7 +117,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.label3.Location = new System.Drawing.Point(118, 261);
+            this.label3.Location = new System.Drawing.Point(612, 235);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 41;
@@ -142,7 +129,7 @@
             this.nom.BackColor = System.Drawing.Color.Transparent;
             this.nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.nom.Location = new System.Drawing.Point(118, 191);
+            this.nom.Location = new System.Drawing.Point(612, 152);
             this.nom.Name = "nom";
             this.nom.Size = new System.Drawing.Size(81, 16);
             this.nom.TabIndex = 42;
@@ -159,13 +146,13 @@
             this.username.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.username.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.username.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.username.Location = new System.Drawing.Point(94, 198);
+            this.username.Location = new System.Drawing.Point(588, 162);
             this.username.Name = "username";
             this.username.PasswordChar = '\0';
             this.username.Radius = 10;
             this.username.SelectedText = "";
             this.username.Size = new System.Drawing.Size(356, 50);
-            this.username.TabIndex = 44;
+            this.username.TabIndex = 2;
             this.username.TextOffsetX = 10;
             // 
             // pasword
@@ -179,88 +166,52 @@
             this.pasword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.pasword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.pasword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.pasword.Location = new System.Drawing.Point(94, 261);
+            this.pasword.Location = new System.Drawing.Point(588, 247);
             this.pasword.Name = "pasword";
             this.pasword.PasswordChar = '\0';
             this.pasword.Radius = 10;
             this.pasword.SelectedText = "";
             this.pasword.Size = new System.Drawing.Size(356, 50);
-            this.pasword.TabIndex = 43;
+            this.pasword.TabIndex = 3;
             this.pasword.TextOffsetX = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(491, 579);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(494, 561);
-            this.panel1.TabIndex = 0;
+            this.pasword.Enter += new System.EventHandler(this.pasword_Enter);
             // 
             // backlogin
             // 
             this.backlogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backlogin_DoWork);
             this.backlogin.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backlogin_RunWorkerCompleted);
             // 
-            // remamber
-            // 
-            this.remamber.AutoSize = true;
-            this.remamber.Location = new System.Drawing.Point(112, 319);
-            this.remamber.Name = "remamber";
-            this.remamber.Size = new System.Drawing.Size(97, 17);
-            this.remamber.TabIndex = 52;
-            this.remamber.Text = "Remamber me ";
-            this.remamber.UseVisualStyleBackColor = true;
-            // 
-            // Form2
+            // User_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1232, 588);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.Name = "Form2";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.Text = "MTLE";
-            this.Load += new System.EventHandler(this.login_Load);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.Controls.Add(this.remamber);
+            this.Controls.Add(this.btn_ajoute);
+            this.Controls.Add(this.progresbar);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nom);
+            this.Controls.Add(this.username);
+            this.Controls.Add(this.pasword);
+            this.Name = "User_Login";
+            this.Size = new System.Drawing.Size(995, 441);
+            this.Load += new System.EventHandler(this.User_Login_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Panel panel2;
+
+        private System.Windows.Forms.CheckBox remamber;
+        private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaGradientButton btn_ajoute;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label nom;
-        private Guna.UI.WinForms.GunaTextBox pasword;
         private Guna.UI.WinForms.GunaTextBox username;
-        private Guna.UI.WinForms.GunaGradientButton btn_ajoute;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaTextBox pasword;
         private System.ComponentModel.BackgroundWorker backlogin;
-        private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
-        private System.Windows.Forms.CheckBox remamber;
     }
 }

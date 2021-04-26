@@ -39,6 +39,8 @@ namespace ProjectV1.sql
         public  DataTable Selectdata(string stored_procedure,SqlParameter[] param)
         {
             SqlCommand macommende = new SqlCommand();
+            macommende.Connection = macn;
+            
             macommende.CommandType = CommandType.StoredProcedure;
             macommende.CommandText = stored_procedure;
             if (param !=null)
@@ -48,9 +50,10 @@ namespace ProjectV1.sql
                     macommende.Parameters.Add(param[i]);
                 }
             }
-            SqlDataAdapter da = new SqlDataAdapter();
+            SqlDataAdapter da = new SqlDataAdapter(macommende);
             DataTable dt = new DataTable();
             da.Fill(dt);
+          
             return dt;
 
         }
