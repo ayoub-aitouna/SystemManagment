@@ -39,6 +39,7 @@ namespace ProjectV1.Controls
         private void btn_ajoute_Click(object sender, EventArgs e)
         {
             itm.User = username.Text;
+       
             if (Is_Hashed)
             {
                 itm.Pasword = pasword.Text;
@@ -47,7 +48,9 @@ namespace ProjectV1.Controls
             else
             {
                 itm.Pasword = hash.Hashing(pasword.Text);
+
             }
+         
             progresbar.Show();
             if (!backlogin.IsBusy)
             {
@@ -90,7 +93,8 @@ namespace ProjectV1.Controls
                     loginclasse user = new loginclasse();
                     user.User = dt.Rows[0][1].ToString();
                     user.Pasword = dt.Rows[0][2].ToString();
-                    user.Type = "admin";
+                    user.Type = dt.Rows[0][3].ToString();
+                  
                     fileio.writeXml(user);
                    
                 }

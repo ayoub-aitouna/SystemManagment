@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProjectV1.model
 {
-    class loginclasse
+   public class loginclasse
     {
         string user;
         string pasword;

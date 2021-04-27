@@ -58,7 +58,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 10);
+            this.label1.Location = new System.Drawing.Point(65, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 15);
             this.label1.TabIndex = 19;
@@ -109,7 +109,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(588, 10);
+            this.label2.Location = new System.Drawing.Point(588, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 15);
             this.label2.TabIndex = 19;
@@ -120,7 +120,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(62, 71);
+            this.label3.Location = new System.Drawing.Point(65, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 15);
             this.label3.TabIndex = 19;
@@ -142,12 +142,12 @@
             "Administrateur",
             "utilisateur",
             "directeur "});
-            this.gunaComboBox1.Location = new System.Drawing.Point(35, 9);
+            this.gunaComboBox1.Location = new System.Drawing.Point(12, 9);
             this.gunaComboBox1.Name = "gunaComboBox1";
             this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
             this.gunaComboBox1.Radius = 10;
-            this.gunaComboBox1.Size = new System.Drawing.Size(300, 26);
+            this.gunaComboBox1.Size = new System.Drawing.Size(376, 26);
             this.gunaComboBox1.TabIndex = 3;
             // 
             // gunaElipsePanel1

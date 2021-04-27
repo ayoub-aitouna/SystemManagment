@@ -370,6 +370,7 @@ namespace ProjectV1.sql
 
                 item.User = datareader.GetValue(1).ToString();
                 item.Pasword = datareader.GetValue(2).ToString();
+                item.Type = datareader.GetValue(3).ToString();
                
                 data.Add(item);
                 // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));

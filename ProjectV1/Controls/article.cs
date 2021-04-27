@@ -12,6 +12,7 @@ using ProjectV1.dialog;
 using Guna.UI.WinForms;
 using System.Threading.Tasks;
 using System.Threading;
+using ProjectV1.Units;
 namespace ProjectV1
   
 {
@@ -25,7 +26,7 @@ namespace ProjectV1
         //private const int Mode_Sortee = 100;
         //private const int MOde_entree = 200;
         //private const int Mode_search = 300;
-       public Units.Unit _units = new Units.Unit();
+       public Unit _units = new Unit();
 
         private int Breake =1;
 
@@ -43,6 +44,7 @@ namespace ProjectV1
       */
         private void articlee_Load(object sender, EventArgs e)
         {
+            
             Menu_chosen(Entree);
             progresbar.Visible = false;
             _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
