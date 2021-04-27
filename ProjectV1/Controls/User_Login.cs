@@ -88,15 +88,17 @@ namespace ProjectV1.Controls
             DataTable dt = (DataTable)e.Result;
             if (dt.Rows.Count > 0)
             {
+                loginclasse user = new loginclasse();
+                user.User = dt.Rows[0][1].ToString();
+                user.Pasword = dt.Rows[0][2].ToString();
+                user.Type = dt.Rows[0][3].ToString();
+                Properties.Settings.Default.User = user.User;
+                Properties.Settings.Default.Password = user.Pasword;
+                Properties.Settings.Default.type = user.Type;
+                Properties.Settings.Default.Save();
                 if (remamber.Checked)
-                {
-                    loginclasse user = new loginclasse();
-                    user.User = dt.Rows[0][1].ToString();
-                    user.Pasword = dt.Rows[0][2].ToString();
-                    user.Type = dt.Rows[0][3].ToString();
-                  
-                    fileio.writeXml(user);
-                   
+                {                   
+                    fileio.writeXml(user);  
                 }
                 userSuccessfullyAuthenticated.UserSuccessfullyAuthenticated();
 

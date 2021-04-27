@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(articlee));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Add = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -70,6 +70,7 @@
             this.update_data = new System.ComponentModel.BackgroundWorker();
             this.menu_container = new System.Windows.Forms.Panel();
             this.Sortie = new Guna.UI.WinForms.GunaGradientButton();
+            this.ArticleSorieView = new System.ComponentModel.BackgroundWorker();
             this.Add.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -549,8 +550,8 @@
             this.view_data.Location = new System.Drawing.Point(0, 0);
             this.view_data.Name = "view_data";
             this.view_data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.view_data.Size = new System.Drawing.Size(995, 441);
             this.view_data.TabIndex = 0;
             this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
@@ -570,7 +571,6 @@
             // 
             this.viewData_worker.WorkerSupportsCancellation = true;
             this.viewData_worker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.view_worker_DoWork);
-            this.viewData_worker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.viewData_worker_ProgressChanged);
             this.viewData_worker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.view_worker_RunWorkerCompleted);
             // 
             // add_data_worker
@@ -718,6 +718,12 @@
             this.Sortie.Text = "Sortie";
             this.Sortie.Click += new System.EventHandler(this.sortee);
             // 
+            // ArticleSorieView
+            // 
+            this.ArticleSorieView.WorkerSupportsCancellation = true;
+            this.ArticleSorieView.DoWork += new System.ComponentModel.DoWorkEventHandler(this.ArticleSorieView_DoWork);
+            this.ArticleSorieView.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.ArticleSorieView_RunWorkerCompleted);
+            // 
             // articlee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -782,5 +788,6 @@
         private Guna.UI.WinForms.GunaTextBox reference_intrene;
         private System.Windows.Forms.Panel menu_container;
         private Guna.UI.WinForms.GunaGradientButton Sortie;
+        private System.ComponentModel.BackgroundWorker ArticleSorieView;
     }
 }

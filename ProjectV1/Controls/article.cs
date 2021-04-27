@@ -13,6 +13,8 @@ using Guna.UI.WinForms;
 using System.Threading.Tasks;
 using System.Threading;
 using ProjectV1.Units;
+using System.Collections;
+
 namespace ProjectV1
   
 {
@@ -155,14 +157,14 @@ namespace ProjectV1
         {
             hideAll(View);
            
-            runViewAsync("select * from Artical", gunaGradientButton4);
+            runViewAsync("select * from Artical", gunaGradientButton4,0);
             view_data.Enabled = false;
             progresbar.Show();
             
 
         }
 
-        private void runViewAsync(String cmnd,Control btn)
+        private void runViewAsync(String cmnd,Control btn,int a)
         {
            
             if (viewData_worker.IsBusy)
@@ -172,13 +174,18 @@ namespace ProjectV1
             }
             else
             {
+                
                 viewData_worker.RunWorkerAsync(cmnd);
                 Menu_chosen(btn);
             }
         }
 
 
-
+        enum arguments
+        {
+            commande,
+            type
+        }
         /*
         * hide all the controls in the given parent exept the control in geven as argumnet 
              */
@@ -353,9 +360,26 @@ namespace ProjectV1
                     break;
                 }
         }
+        private void setview_data(List<Articl_sortie> data)
+        {
 
-      
-    
+            view_data.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(12, 66, 132);
+            view_data.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+
+
+            view_data.DataSource = data;
+            view_data.Columns["Id"].Visible = false;
+            for (int i = 0; i < view_data.Columns.Count; i++)
+                if (view_data.Columns[i] is DataGridViewImageColumn)
+                {
+                    ((DataGridViewImageColumn)view_data.Columns[i]).ImageLayout = DataGridViewImageCellLayout.Zoom;
+                    break;
+                }
+        }
+
+
+
         /*
          * when the user edite on a cell of datagridview
          */
@@ -407,14 +431,36 @@ namespace ProjectV1
         private void view_worker_DoWork(object sender, DoWorkEventArgs e)
         {
             sqlcn SqlConnection = new sqlcn();
-            e.Result = SqlConnection.View(e.Argument.ToString());
-          
+           
+           
+                SqlDataReader datareader = SqlConnection.Data_View(e.Argument.ToString());
+                List<article_model> data = new List<article_model>();
+                while (datareader.Read())
+                {
+                article_model item = new article_model();
+                    item.Id = (int)datareader.GetValue(0);
+                    item.Barcode1 = (String)datareader.GetValue(1);
+                    item.Nom = (String)datareader.GetValue(2);
+                    item.Description_inter = (String)datareader.GetValue(3);
+                    item.Descroption_fabrication = (String)datareader.GetValue(4);
+                    item.Code_fabrication = (String)datareader.GetValue(5);
+                    item.Prix = (double)datareader.GetValue(6);
+                    item.Quontitier1 = (int)datareader.GetValue(7);
+                    item.Date_entre = (DateTime)datareader.GetValue(8);        
+                    item.Img = (Byte[])datareader.GetValue(9);
+                    data.Add(item);
+                    // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
+                }
+                e.Result = data;
+
+
+           
+             
+            
+
         }
 
-        private void viewData_worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-    
-        }
+      
         /*
          * when the view background thread complets 
          * progress bar visibity set to false
@@ -422,6 +468,7 @@ namespace ProjectV1
          */
         private void view_worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
+          //  ArrayList arguments = e.Argument as 
             progresbar.Hide();
             view_data.Enabled = true;         
             setview_data((List<article_model>)e.Result);
@@ -561,24 +608,60 @@ namespace ProjectV1
             if (view_data.SelectedRows.Count > 0)
             {
                 selectedRows.Clear();
-                for (int i = 0; i < view_data.SelectedRows.Count; i++)
+                try
                 {
-                    DataGridViewCellCollection a = view_data.SelectedRows[i].Cells;
-                    string value = a[2].Value.ToString();
-                    article_model model = new article_model();
-                    model.Id = int.Parse(a[0].Value.ToString());
-                    model.Barcode1 = a[1].Value.ToString();
-                    model.Nom = a[2].Value.ToString();
-                    model.Description_inter = a[3].Value.ToString();
-                    model.Descroption_fabrication = a[4].Value.ToString();
-                    model.Code_fabrication = a[5].Value.ToString();
-                    model.Prix = double.Parse(a[6].Value.ToString());
-                    model.Quontitier1 = int.Parse(a[7].Value.ToString());
-                    model.Date_entre = DateTime.Parse(a[8].Value.ToString());
-                    model.Img = (byte[])a[9].Value;
-                    selectedRows.Add(model);
+                    for (int i = 0; i < view_data.SelectedRows.Count; i++)
+                    {
+                        DataGridViewCellCollection a = view_data.SelectedRows[i].Cells;
+                        string value = a[2].Value.ToString();
+                        article_model model = new article_model();
+                        model.Id = int.Parse(a[0].Value.ToString());
+                        model.Barcode1 = a[1].Value.ToString();
+                        model.Nom = a[2].Value.ToString();
+                        model.Description_inter = a[3].Value.ToString();
+                        model.Descroption_fabrication = a[4].Value.ToString();
+                        model.Code_fabrication = a[5].Value.ToString();
+                        model.Prix = double.Parse(a[6].Value.ToString());
+                        model.Quontitier1 = int.Parse(a[7].Value.ToString());
+                        model.Date_entre = DateTime.Parse(a[8].Value.ToString());
+                        model.Img = (byte[])a[9].Value;
+                        selectedRows.Add(model);
 
+                    }
                 }
+                catch (Exception)
+                {
+                    try
+                    {
+                        for (int i = 0; i < view_data.SelectedRows.Count; i++)
+                        {
+                            DataGridViewCellCollection a = view_data.SelectedRows[i].Cells;
+                            string value = a[2].Value.ToString();
+                            Articl_sortie model = new Articl_sortie();
+                            model.Id = int.Parse(a[0].Value.ToString());
+                            model.Barcode1 = a[1].Value.ToString();
+                            model.Nom = a[2].Value.ToString();
+                            model.Description_inter = a[3].Value.ToString();
+                            model.Descroption_fabrication = a[4].Value.ToString();
+                            model.Code_fabrication = a[5].Value.ToString();
+                            model.Prix = double.Parse(a[6].Value.ToString());
+                            model.Quontitier1 = int.Parse(a[7].Value.ToString());
+                            model.Date_entre = DateTime.Parse(a[8].Value.ToString());
+                            model.Date_sortie = DateTime.Parse(a[9].Value.ToString());
+                            model.Date_sortie = DateTime.Parse(a[9].Value.ToString());
+                            model.Matricul = a[9].Value.ToString();
+                            model.Img = (byte[])a[11].Value;
+                            // selectedRows.Add(model);
+                        }
+                    }
+                    catch (Exception)
+                    {
+
+                        //throw;
+                    }
+                   // throw;
+                }
+             
 
             }
             else
@@ -609,8 +692,11 @@ namespace ProjectV1
            
             view_data.Enabled = false;
             progresbar.Show();
-         
-            runViewAsync("select * from Artical_Sortee", used_items_button);
+            if (!ArticleSorieView.IsBusy)
+            {
+                ArticleSorieView.RunWorkerAsync("select * from Artical_Sortee");
+            }
+           
 
         }
         private void Menu_chosen(Control btn)
@@ -635,7 +721,42 @@ namespace ProjectV1
 
             }
         }
-      
+
+        private void ArticleSorieView_DoWork(object sender, DoWorkEventArgs e)
+        {
+            sqlcn SqlConnection = new sqlcn();
+
+
+            SqlDataReader datareader = SqlConnection.Data_View(e.Argument.ToString());
+            List<Articl_sortie> data = new List<Articl_sortie>();
+            while (datareader.Read())
+            {
+                Articl_sortie item = new Articl_sortie();
+                item.Id = (int)datareader.GetValue(0);
+                item.Barcode1 = (String)datareader.GetValue(1);
+                item.Nom = (String)datareader.GetValue(2);
+                item.Description_inter = (String)datareader.GetValue(3);
+                item.Descroption_fabrication = (String)datareader.GetValue(4);
+                item.Code_fabrication = (String)datareader.GetValue(5);
+                item.Prix = (double)datareader.GetValue(6);
+                item.Quontitier1 = (int)datareader.GetValue(7);
+                item.Date_entre = (DateTime)datareader.GetValue(8);
+                item.Date_sortie = (DateTime)datareader.GetValue(9);
+                item.Matricul = (String)datareader.GetValue(10);
+                item.Img = (Byte[])datareader.GetValue(11);
+                data.Add(item);
+                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
+            }
+            e.Result = data;
+        }
+
+        private void ArticleSorieView_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            progresbar.Hide();
+            view_data.Enabled = true;
+            setview_data((List<Articl_sortie>)e.Result);
+            MessageBox.Show("le traitement est terminé");
+        }
     }
     public interface Icloseall
     {

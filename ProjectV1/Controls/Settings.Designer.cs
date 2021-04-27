@@ -30,16 +30,17 @@
         {
             this.view_data = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.barcode = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.Username = new Guna.UI.WinForms.GunaTextBox();
+            this.Password = new Guna.UI.WinForms.GunaTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.gunaComboBox1 = new Guna.UI.WinForms.GunaComboBox();
+            this.type = new Guna.UI.WinForms.GunaComboBox();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.upload = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.view = new System.ComponentModel.BackgroundWorker();
             this.add = new System.ComponentModel.BackgroundWorker();
+            this.progesabar = new Guna.UI.WinForms.GunaWinCircleProgressIndicator();
             ((System.ComponentModel.ISupportInitialize)(this.view_data)).BeginInit();
             this.gunaElipsePanel1.SuspendLayout();
             this.SuspendLayout();
@@ -64,45 +65,45 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Nom d\'utilisateur";
             // 
-            // barcode
+            // Username
             // 
-            this.barcode.BackColor = System.Drawing.Color.Transparent;
-            this.barcode.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.barcode.BorderColor = System.Drawing.Color.Silver;
-            this.barcode.BorderSize = 0;
-            this.barcode.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.barcode.FocusedBaseColor = System.Drawing.Color.White;
-            this.barcode.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.barcode.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.barcode.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.barcode.Location = new System.Drawing.Point(41, 17);
-            this.barcode.Name = "barcode";
-            this.barcode.PasswordChar = '\0';
-            this.barcode.Radius = 20;
-            this.barcode.SelectedText = "";
-            this.barcode.Size = new System.Drawing.Size(400, 45);
-            this.barcode.TabIndex = 20;
-            this.barcode.TextOffsetX = 10;
+            this.Username.BackColor = System.Drawing.Color.Transparent;
+            this.Username.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Username.BorderColor = System.Drawing.Color.Silver;
+            this.Username.BorderSize = 0;
+            this.Username.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Username.FocusedBaseColor = System.Drawing.Color.White;
+            this.Username.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Username.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.Username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Username.Location = new System.Drawing.Point(41, 17);
+            this.Username.Name = "Username";
+            this.Username.PasswordChar = '\0';
+            this.Username.Radius = 20;
+            this.Username.SelectedText = "";
+            this.Username.Size = new System.Drawing.Size(400, 45);
+            this.Username.TabIndex = 20;
+            this.Username.TextOffsetX = 10;
             // 
-            // gunaTextBox1
+            // Password
             // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox1.BorderSize = 0;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaTextBox1.Location = new System.Drawing.Point(564, 17);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 20;
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(400, 45);
-            this.gunaTextBox1.TabIndex = 2;
-            this.gunaTextBox1.TextOffsetX = 10;
+            this.Password.BackColor = System.Drawing.Color.Transparent;
+            this.Password.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.Password.BorderColor = System.Drawing.Color.Silver;
+            this.Password.BorderSize = 0;
+            this.Password.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Password.FocusedBaseColor = System.Drawing.Color.White;
+            this.Password.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.Password.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.Password.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Password.Location = new System.Drawing.Point(564, 17);
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '\0';
+            this.Password.Radius = 20;
+            this.Password.SelectedText = "";
+            this.Password.Size = new System.Drawing.Size(400, 45);
+            this.Password.TabIndex = 2;
+            this.Password.TextOffsetX = 10;
             // 
             // label2
             // 
@@ -126,35 +127,35 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "rôle ";
             // 
-            // gunaComboBox1
+            // type
             // 
-            this.gunaComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaComboBox1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gunaComboBox1.BorderColor = System.Drawing.Color.Silver;
-            this.gunaComboBox1.BorderSize = 0;
-            this.gunaComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.gunaComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.gunaComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.gunaComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.gunaComboBox1.FormattingEnabled = true;
-            this.gunaComboBox1.Items.AddRange(new object[] {
+            this.type.BackColor = System.Drawing.Color.Transparent;
+            this.type.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.type.BorderColor = System.Drawing.Color.Silver;
+            this.type.BorderSize = 0;
+            this.type.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.type.FocusedColor = System.Drawing.Color.Empty;
+            this.type.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.type.ForeColor = System.Drawing.Color.Black;
+            this.type.FormattingEnabled = true;
+            this.type.Items.AddRange(new object[] {
             "Administrateur",
             "utilisateur",
             "directeur "});
-            this.gunaComboBox1.Location = new System.Drawing.Point(12, 9);
-            this.gunaComboBox1.Name = "gunaComboBox1";
-            this.gunaComboBox1.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaComboBox1.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.gunaComboBox1.Radius = 10;
-            this.gunaComboBox1.Size = new System.Drawing.Size(376, 26);
-            this.gunaComboBox1.TabIndex = 3;
+            this.type.Location = new System.Drawing.Point(12, 9);
+            this.type.Name = "type";
+            this.type.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.type.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.type.Radius = 10;
+            this.type.Size = new System.Drawing.Size(376, 26);
+            this.type.TabIndex = 3;
             // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.gunaElipsePanel1.Controls.Add(this.gunaComboBox1);
+            this.gunaElipsePanel1.Controls.Add(this.type);
             this.gunaElipsePanel1.Location = new System.Drawing.Point(41, 80);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
@@ -187,6 +188,7 @@
             this.upload.Size = new System.Drawing.Size(160, 45);
             this.upload.TabIndex = 21;
             this.upload.Text = "ajouter ";
+            this.upload.Click += new System.EventHandler(this.upload_Click);
             // 
             // gunaGradientButton1
             // 
@@ -220,18 +222,33 @@
             this.view.DoWork += new System.ComponentModel.DoWorkEventHandler(this.view_DoWork);
             this.view.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.view_RunWorkerCompleted);
             // 
+            // add
+            // 
+            this.add.DoWork += new System.ComponentModel.DoWorkEventHandler(this.add_DoWork);
+            this.add.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.add_RunWorkerCompleted);
+            // 
+            // progesabar
+            // 
+            this.progesabar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.progesabar.Location = new System.Drawing.Point(471, 39);
+            this.progesabar.Name = "progesabar";
+            this.progesabar.ProgressColor = System.Drawing.Color.DodgerBlue;
+            this.progesabar.Size = new System.Drawing.Size(64, 64);
+            this.progesabar.TabIndex = 22;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.progesabar);
             this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.upload);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.gunaTextBox1);
-            this.Controls.Add(this.barcode);
+            this.Controls.Add(this.Password);
+            this.Controls.Add(this.Username);
             this.Controls.Add(this.gunaElipsePanel1);
             this.Controls.Add(this.view_data);
             this.Name = "Settings";
@@ -248,15 +265,16 @@
 
         private System.Windows.Forms.DataGridView view_data;
         private System.Windows.Forms.Label label1;
-        private Guna.UI.WinForms.GunaTextBox barcode;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox Username;
+        private Guna.UI.WinForms.GunaTextBox Password;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private Guna.UI.WinForms.GunaComboBox gunaComboBox1;
+        private Guna.UI.WinForms.GunaComboBox type;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaGradientButton upload;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
         private System.ComponentModel.BackgroundWorker view;
         private System.ComponentModel.BackgroundWorker add;
+        private Guna.UI.WinForms.GunaWinCircleProgressIndicator progesabar;
     }
 }

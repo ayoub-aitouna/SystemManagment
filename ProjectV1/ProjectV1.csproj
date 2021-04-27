@@ -155,6 +155,7 @@
       <DependentUpon>item.cs</DependentUpon>
     </Compile>
     <Compile Include="model\article_model.cs" />
+    <Compile Include="model\Articl_sortie.cs" />
     <Compile Include="model\equipement_model.cs" />
     <Compile Include="model\fourniseur_model.cs" />
     <Compile Include="model\loginclasse.cs" />

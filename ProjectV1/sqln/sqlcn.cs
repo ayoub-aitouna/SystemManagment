@@ -256,6 +256,26 @@ namespace ProjectV1.sql
 
             return data;
         }
+
+        public SqlDataReader Data_View(String cmnd)
+        {
+           
+
+            SqlCommand req = new SqlCommand();
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+
+            req.Connection = cnn;
+            req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
+            req.CommandText = cmnd;
+            req.Parameters.Clear();
+            return req.ExecuteReader();
+            cnn.Close();
+          
+          
+
+         
+        }
         public List<equipement_model> Viewequipe(String cmnd)
         {
             List<equipement_model> data = new List<equipement_model>();

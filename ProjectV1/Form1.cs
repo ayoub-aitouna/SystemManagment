@@ -29,7 +29,11 @@ namespace ProjectV1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            String type = Properties.Settings.Default.type;
+            if (type == "utilisateur" )
+            {
+                settings.Hide();
+            }
          
          
                 hideAll(user_Login1, null);
