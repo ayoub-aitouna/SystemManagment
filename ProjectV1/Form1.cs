@@ -122,7 +122,7 @@ namespace ProjectV1
         private void settings_Click(object sender, EventArgs e)
         {
 
-            hideAll(null, settings);
+            hideAll(settings1, settings);
         }
 
         private void equipe1_Load(object sender, EventArgs e)

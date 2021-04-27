@@ -30,7 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.MENU = new System.Windows.Forms.Panel();
+            this.rapport_button = new Guna.UI.WinForms.GunaGradientButton();
             this.LOGO = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.forneseur = new Guna.UI.WinForms.GunaGradientButton();
+            this.equipment = new Guna.UI.WinForms.GunaGradientButton();
+            this.settings = new Guna.UI.WinForms.GunaGradientButton();
+            this.users = new Guna.UI.WinForms.GunaGradientButton();
+            this.article = new Guna.UI.WinForms.GunaGradientButton();
+            this.dashboard_button = new Guna.UI.WinForms.GunaGradientButton();
             this.homa_container = new System.Windows.Forms.Panel();
             this.user_Login1 = new ProjectV1.Controls.User_Login();
             this.equipe1 = new ProjectV1.equipe();
@@ -39,18 +47,11 @@
             this.cLients1 = new ProjectV1.Controls.CLients();
             this.dashboard1 = new ProjectV1.dashboard();
             this.rapport1 = new ProjectV1.Controls.Rapport();
-            this.rapport_button = new Guna.UI.WinForms.GunaGradientButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.forneseur = new Guna.UI.WinForms.GunaGradientButton();
-            this.equipment = new Guna.UI.WinForms.GunaGradientButton();
-            this.settings = new Guna.UI.WinForms.GunaGradientButton();
-            this.users = new Guna.UI.WinForms.GunaGradientButton();
-            this.article = new Guna.UI.WinForms.GunaGradientButton();
-            this.dashboard_button = new Guna.UI.WinForms.GunaGradientButton();
+            this.settings1 = new ProjectV1.Controls.Settings();
             this.MENU.SuspendLayout();
             this.LOGO.SuspendLayout();
-            this.homa_container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.homa_container.SuspendLayout();
             this.SuspendLayout();
             // 
             // MENU
@@ -69,91 +70,6 @@
             this.MENU.Name = "MENU";
             this.MENU.Size = new System.Drawing.Size(172, 588);
             this.MENU.TabIndex = 0;
-            // 
-            // LOGO
-            // 
-            this.LOGO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.LOGO.Controls.Add(this.pictureBox1);
-            this.LOGO.Location = new System.Drawing.Point(32, 12);
-            this.LOGO.Name = "LOGO";
-            this.LOGO.Size = new System.Drawing.Size(97, 54);
-            this.LOGO.TabIndex = 0;
-            // 
-            // homa_container
-            // 
-            this.homa_container.Controls.Add(this.user_Login1);
-            this.homa_container.Controls.Add(this.equipe1);
-            this.homa_container.Controls.Add(this.fourni1);
-            this.homa_container.Controls.Add(this.articlee1);
-            this.homa_container.Controls.Add(this.cLients1);
-            this.homa_container.Controls.Add(this.dashboard1);
-            this.homa_container.Controls.Add(this.rapport1);
-            this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.homa_container.Location = new System.Drawing.Point(172, 0);
-            this.homa_container.Name = "homa_container";
-            this.homa_container.Size = new System.Drawing.Size(1060, 588);
-            this.homa_container.TabIndex = 1;
-            // 
-            // user_Login1
-            // 
-            this.user_Login1.BackColor = System.Drawing.Color.White;
-            this.user_Login1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.user_Login1.Location = new System.Drawing.Point(0, 0);
-            this.user_Login1.Name = "user_Login1";
-            this.user_Login1.Size = new System.Drawing.Size(1060, 588);
-            this.user_Login1.TabIndex = 5;
-            // 
-            // equipe1
-            // 
-            this.equipe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.equipe1.Location = new System.Drawing.Point(0, 0);
-            this.equipe1.Name = "equipe1";
-            this.equipe1.Size = new System.Drawing.Size(1060, 588);
-            this.equipe1.TabIndex = 2;
-            this.equipe1.Load += new System.EventHandler(this.equipe1_Load);
-            // 
-            // fourni1
-            // 
-            this.fourni1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fourni1.Location = new System.Drawing.Point(0, 0);
-            this.fourni1.Name = "fourni1";
-            this.fourni1.Size = new System.Drawing.Size(1060, 588);
-            this.fourni1.TabIndex = 1;
-            // 
-            // articlee1
-            // 
-            this.articlee1.BackColor = System.Drawing.Color.White;
-            this.articlee1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.articlee1.Location = new System.Drawing.Point(0, 0);
-            this.articlee1.Name = "articlee1";
-            this.articlee1.Size = new System.Drawing.Size(1060, 588);
-            this.articlee1.TabIndex = 0;
-            // 
-            // cLients1
-            // 
-            this.cLients1.BackColor = System.Drawing.Color.White;
-            this.cLients1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cLients1.Location = new System.Drawing.Point(0, 0);
-            this.cLients1.Name = "cLients1";
-            this.cLients1.Size = new System.Drawing.Size(1060, 588);
-            this.cLients1.TabIndex = 3;
-            // 
-            // dashboard1
-            // 
-            this.dashboard1.BackColor = System.Drawing.Color.White;
-            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dashboard1.Location = new System.Drawing.Point(0, 0);
-            this.dashboard1.Name = "dashboard1";
-            this.dashboard1.Size = new System.Drawing.Size(1060, 588);
-            this.dashboard1.TabIndex = 4;
-            // 
-            // rapport1
-            // 
-            this.rapport1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rapport1.Location = new System.Drawing.Point(0, 0);
-            this.rapport1.Name = "rapport1";
-            this.rapport1.Size = new System.Drawing.Size(1060, 588);
-            this.rapport1.TabIndex = 6;
             // 
             // rapport_button
             // 
@@ -182,6 +98,15 @@
             this.rapport_button.TabIndex = 5;
             this.rapport_button.Text = "Rapport";
             this.rapport_button.Click += new System.EventHandler(this.rapport_buttonClick);
+            // 
+            // LOGO
+            // 
+            this.LOGO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.LOGO.Controls.Add(this.pictureBox1);
+            this.LOGO.Location = new System.Drawing.Point(32, 12);
+            this.LOGO.Name = "LOGO";
+            this.LOGO.Size = new System.Drawing.Size(97, 54);
+            this.LOGO.TabIndex = 0;
             // 
             // pictureBox1
             // 
@@ -363,6 +288,92 @@
             this.dashboard_button.Text = "Dashboard";
             this.dashboard_button.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
+            // homa_container
+            // 
+            this.homa_container.Controls.Add(this.user_Login1);
+            this.homa_container.Controls.Add(this.equipe1);
+            this.homa_container.Controls.Add(this.fourni1);
+            this.homa_container.Controls.Add(this.articlee1);
+            this.homa_container.Controls.Add(this.cLients1);
+            this.homa_container.Controls.Add(this.dashboard1);
+            this.homa_container.Controls.Add(this.rapport1);
+            this.homa_container.Controls.Add(this.settings1);
+            this.homa_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.homa_container.Location = new System.Drawing.Point(172, 0);
+            this.homa_container.Name = "homa_container";
+            this.homa_container.Size = new System.Drawing.Size(1060, 588);
+            this.homa_container.TabIndex = 1;
+            // 
+            // user_Login1
+            // 
+            this.user_Login1.BackColor = System.Drawing.Color.White;
+            this.user_Login1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.user_Login1.Location = new System.Drawing.Point(0, 0);
+            this.user_Login1.Name = "user_Login1";
+            this.user_Login1.Size = new System.Drawing.Size(1060, 588);
+            this.user_Login1.TabIndex = 5;
+            // 
+            // equipe1
+            // 
+            this.equipe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.equipe1.Location = new System.Drawing.Point(0, 0);
+            this.equipe1.Name = "equipe1";
+            this.equipe1.Size = new System.Drawing.Size(1060, 588);
+            this.equipe1.TabIndex = 2;
+            this.equipe1.Load += new System.EventHandler(this.equipe1_Load);
+            // 
+            // fourni1
+            // 
+            this.fourni1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fourni1.Location = new System.Drawing.Point(0, 0);
+            this.fourni1.Name = "fourni1";
+            this.fourni1.Size = new System.Drawing.Size(1060, 588);
+            this.fourni1.TabIndex = 1;
+            // 
+            // articlee1
+            // 
+            this.articlee1.BackColor = System.Drawing.Color.White;
+            this.articlee1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.articlee1.Location = new System.Drawing.Point(0, 0);
+            this.articlee1.Name = "articlee1";
+            this.articlee1.Size = new System.Drawing.Size(1060, 588);
+            this.articlee1.TabIndex = 0;
+            // 
+            // cLients1
+            // 
+            this.cLients1.BackColor = System.Drawing.Color.White;
+            this.cLients1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cLients1.Location = new System.Drawing.Point(0, 0);
+            this.cLients1.Name = "cLients1";
+            this.cLients1.Size = new System.Drawing.Size(1060, 588);
+            this.cLients1.TabIndex = 3;
+            // 
+            // dashboard1
+            // 
+            this.dashboard1.BackColor = System.Drawing.Color.White;
+            this.dashboard1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dashboard1.Location = new System.Drawing.Point(0, 0);
+            this.dashboard1.Name = "dashboard1";
+            this.dashboard1.Size = new System.Drawing.Size(1060, 588);
+            this.dashboard1.TabIndex = 4;
+            // 
+            // rapport1
+            // 
+            this.rapport1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rapport1.Location = new System.Drawing.Point(0, 0);
+            this.rapport1.Name = "rapport1";
+            this.rapport1.Size = new System.Drawing.Size(1060, 588);
+            this.rapport1.TabIndex = 6;
+            // 
+            // settings1
+            // 
+            this.settings1.BackColor = System.Drawing.Color.White;
+            this.settings1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.settings1.Location = new System.Drawing.Point(0, 0);
+            this.settings1.Name = "settings1";
+            this.settings1.Size = new System.Drawing.Size(1060, 588);
+            this.settings1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -379,8 +390,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MENU.ResumeLayout(false);
             this.LOGO.ResumeLayout(false);
-            this.homa_container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.homa_container.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -405,6 +416,7 @@
         private Guna.UI.WinForms.GunaGradientButton rapport_button;
         private Controls.User_Login user_Login1;
         private Controls.Rapport rapport1;
+        private Controls.Settings settings1;
     }
 }
 

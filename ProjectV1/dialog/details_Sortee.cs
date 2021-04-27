@@ -7,6 +7,8 @@ using System.Windows.Forms;
 using ProjectV1.model;
 using ProjectV1.sql;
 using System.Data.SqlClient;
+using System.IO;
+using System.Collections.Generic;
 
 namespace ProjectV1.dialog
 {
@@ -38,6 +40,8 @@ namespace ProjectV1.dialog
             descroption_fabrication.Text = item.Descroption_fabrication;
             codeean.Text = item.Code_fabrication;
             date.Text = item.Date_entre.ToShortDateString();
+            pictureBox1.Image = byteToImage(item.Img);
+            
             if (NumberOfDialogs == 1)
             {
                 CancelAll.Hide();
@@ -75,7 +79,8 @@ namespace ProjectV1.dialog
         private void Sortee_aysnc_DoWork(object sender, DoWorkEventArgs e)
         {
             sqlcn sqlConnection = new sqlcn();
-            SqlParameter[] param = new SqlParameter[9];
+            
+            SqlParameter[] param = new SqlParameter[11];
             param[0] = new SqlParameter("@barcode", SqlDbType.VarChar, 40);
             param[0].Value = item.Barcode1;
 
@@ -88,6 +93,7 @@ namespace ProjectV1.dialog
             param[3] = new SqlParameter("@descroption_fabrication", SqlDbType.VarChar, 40);
             param[3].Value = item.Descroption_fabrication;
 
+
             param[4] = new SqlParameter("@code_fabrication", SqlDbType.Int);
             param[4].Value = int.Parse(item.Code_fabrication);
 
@@ -97,13 +103,19 @@ namespace ProjectV1.dialog
             param[6] = new SqlParameter("@Quontitier", SqlDbType.Int);
             param[6].Value = int.Parse(quantitie.Text);
 
-            param[7] = new SqlParameter("@date_sortee", SqlDbType.Date);
-            param[7].Value = item.Date_entre;
+            param[7] = new SqlParameter("@date_sortie", SqlDbType.Date);
+            param[7].Value = gunaDateTimePicker1.Value.ToString();
 
             param[8] = new SqlParameter("@img", SqlDbType.Image);
             param[8].Value = item.Img;
 
-           e.Result = sqlConnection.ExuteCommende("r_Artical_Sortee",param);
+            param[9] = new SqlParameter("@date_entre", SqlDbType.Date);
+            param[9].Value = item.Date_entre;
+
+            param[10] = new SqlParameter("@matricul", SqlDbType.VarChar, 40);
+            param[10].Value = matricule.Text.ToString();
+
+            e.Result = sqlConnection.ExuteCommende("r_Artical_Sortee",param);
 
         }
 
@@ -133,5 +145,19 @@ namespace ProjectV1.dialog
 
            
         }
+        private Bitmap byteToImage(byte[] data)
+        {
+            MemoryStream stream = new MemoryStream();
+            stream.Write(data, 0, Convert.ToInt32(data.Length));
+
+            Bitmap btmp = new Bitmap(stream ,false);
+            stream.Dispose();
+            return btmp;
+        }
+
+       
+
+      
     }
+
 }

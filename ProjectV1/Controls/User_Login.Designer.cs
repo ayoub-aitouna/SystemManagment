@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Login));
             this.remamber = new System.Windows.Forms.CheckBox();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,14 +38,18 @@
             this.username = new Guna.UI.WinForms.GunaTextBox();
             this.pasword = new Guna.UI.WinForms.GunaTextBox();
             this.backlogin = new System.ComponentModel.BackgroundWorker();
+            this.gunaTransfarantPictureBox1 = new Guna.UI.WinForms.GunaTransfarantPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // remamber
             // 
             this.remamber.AutoSize = true;
-            this.remamber.Location = new System.Drawing.Point(615, 303);
+            this.remamber.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remamber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.remamber.Location = new System.Drawing.Point(823, 366);
             this.remamber.Name = "remamber";
-            this.remamber.Size = new System.Drawing.Size(97, 17);
+            this.remamber.Size = new System.Drawing.Size(108, 18);
             this.remamber.TabIndex = 52;
             this.remamber.Text = "Remamber me ";
             this.remamber.UseVisualStyleBackColor = true;
@@ -60,7 +65,7 @@
             this.progresbar.IdleThickness = 10;
             this.progresbar.Image = null;
             this.progresbar.ImageSize = new System.Drawing.Size(52, 52);
-            this.progresbar.Location = new System.Drawing.Point(730, 96);
+            this.progresbar.Location = new System.Drawing.Point(934, 116);
             this.progresbar.Name = "progresbar";
             this.progresbar.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.progresbar.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
@@ -73,13 +78,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.label1.Location = new System.Drawing.Point(710, 35);
+            this.label1.Location = new System.Drawing.Point(918, 179);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 31);
+            this.label1.Size = new System.Drawing.Size(93, 33);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Login";
+            this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_ajoute
@@ -96,7 +101,7 @@
             this.btn_ajoute.ForeColor = System.Drawing.Color.White;
             this.btn_ajoute.Image = null;
             this.btn_ajoute.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_ajoute.Location = new System.Drawing.Point(691, 347);
+            this.btn_ajoute.Location = new System.Drawing.Point(895, 392);
             this.btn_ajoute.Name = "btn_ajoute";
             this.btn_ajoute.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btn_ajoute.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -117,7 +122,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.label3.Location = new System.Drawing.Point(612, 235);
+            this.label3.Location = new System.Drawing.Point(820, 296);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(97, 16);
             this.label3.TabIndex = 41;
@@ -129,7 +134,7 @@
             this.nom.BackColor = System.Drawing.Color.Transparent;
             this.nom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.nom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.nom.Location = new System.Drawing.Point(612, 152);
+            this.nom.Location = new System.Drawing.Point(820, 229);
             this.nom.Name = "nom";
             this.nom.Size = new System.Drawing.Size(81, 16);
             this.nom.TabIndex = 42;
@@ -146,7 +151,7 @@
             this.username.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.username.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.username.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.username.Location = new System.Drawing.Point(588, 162);
+            this.username.Location = new System.Drawing.Point(796, 239);
             this.username.Name = "username";
             this.username.PasswordChar = '\0';
             this.username.Radius = 10;
@@ -166,7 +171,7 @@
             this.pasword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.pasword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.pasword.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.pasword.Location = new System.Drawing.Point(588, 247);
+            this.pasword.Location = new System.Drawing.Point(796, 308);
             this.pasword.Name = "pasword";
             this.pasword.PasswordChar = '\0';
             this.pasword.Radius = 10;
@@ -181,6 +186,19 @@
             this.backlogin.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backlogin_DoWork);
             this.backlogin.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backlogin_RunWorkerCompleted);
             // 
+            // gunaTransfarantPictureBox1
+            // 
+            this.gunaTransfarantPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaTransfarantPictureBox1.BaseColor = System.Drawing.Color.Black;
+            this.gunaTransfarantPictureBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.gunaTransfarantPictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaTransfarantPictureBox1.Image")));
+            this.gunaTransfarantPictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.gunaTransfarantPictureBox1.Name = "gunaTransfarantPictureBox1";
+            this.gunaTransfarantPictureBox1.Size = new System.Drawing.Size(790, 627);
+            this.gunaTransfarantPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gunaTransfarantPictureBox1.TabIndex = 53;
+            this.gunaTransfarantPictureBox1.TabStop = false;
+            // 
             // User_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,9 +212,11 @@
             this.Controls.Add(this.nom);
             this.Controls.Add(this.username);
             this.Controls.Add(this.pasword);
+            this.Controls.Add(this.gunaTransfarantPictureBox1);
             this.Name = "User_Login";
-            this.Size = new System.Drawing.Size(995, 441);
+            this.Size = new System.Drawing.Size(1248, 627);
             this.Load += new System.EventHandler(this.User_Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaTransfarantPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +233,6 @@
         private Guna.UI.WinForms.GunaTextBox username;
         private Guna.UI.WinForms.GunaTextBox pasword;
         private System.ComponentModel.BackgroundWorker backlogin;
+        private Guna.UI.WinForms.GunaTransfarantPictureBox gunaTransfarantPictureBox1;
     }
 }

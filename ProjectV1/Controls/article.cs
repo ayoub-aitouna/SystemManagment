@@ -73,33 +73,36 @@ namespace ProjectV1
               */
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
-            if (checkInputs(Add))
+            if (prix.Text==""|| quantitier.Text==""|| desination.Text==""|| pictureBox1.Image == null)
             {
                 MessageBox.Show("error de input");
             }
             else
             {
-                progresbar.Show();
-                MemoryStream ms = new MemoryStream();
-                pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
-                byte[] imag = ms.ToArray();
+              
+               
+                    progresbar.Show();
+                    MemoryStream ms = new MemoryStream();
+                    pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
+                    byte[] imag = ms.ToArray();
 
-                article_model item = new article_model();
-                item.Barcode1 = barcode.Text;
-                item.Nom = desination.Text;
-                item.Description_inter = reference_intrene.Text;
-                item.Descroption_fabrication = reference_fabricant.Text;
-                item.Code_fabrication = code_ean.Text;
-                item.Prix = Double.Parse(prix.Text);
-                item.Quontitier1 = int.Parse(quantitier.Text);
-                item.Date_entre = DateTime.Parse(date.Value.ToShortDateString());
-                item.Img = imag;
-                if (!add_data_worker.IsBusy)
-                {
-                    add_data_worker.RunWorkerAsync(item);
-                }
+                    article_model item = new article_model();
+                    item.Barcode1 = barcode.Text;
+                    item.Nom = desination.Text;
+                    item.Description_inter = reference_intrene.Text;
+                    item.Descroption_fabrication = reference_fabricant.Text;
+                    item.Code_fabrication = code_ean.Text;
+                    if (prix.Text != "") item.Prix = Double.Parse(prix.Text);
+                    item.Quontitier1 = int.Parse(quantitier.Text);
+                    item.Date_entre = DateTime.Parse(date.Value.ToShortDateString());
+                    item.Img = imag;
+                    if (!add_data_worker.IsBusy)
+                    {
+                        add_data_worker.RunWorkerAsync(item);
+                    }
 
 
+                
             }
         }
 
@@ -107,22 +110,15 @@ namespace ProjectV1
         {
             bool _check = false;
             foreach (Control item in Add.Controls)
-            {
-                // MessageBox.Show(item.GetType().ToString());
-                if (item.GetType() == typeof(TextBox))
-                {
-                    return _check = (((TextBox)item).Text == "");
-                }
-                    
+            {   
                 if (item.GetType() == typeof(GunaTextBox))
                 {
-                    return _check = (((GunaTextBox)item).Text == "");
+                     if ((((GunaTextBox)item).Text.Length == 0))
+                    {
+                        return _check;
+                    }
                 }
-                if (pictureBox1.Image==null||pictureBox1==null)
-                {
-                    return  true;
-                   
-                }
+               
             }
             return _check;
         
@@ -216,7 +212,7 @@ namespace ProjectV1
              */
         private void sortee(object sender, EventArgs e)
         {
-            Menu_chosen(Sortee);
+            Menu_chosen(Sortie);
             hideAll(Add);
             changeToSorteMode(true);
             _units.mode(Units.Unit.Mode_Sortee1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
@@ -451,7 +447,8 @@ namespace ProjectV1
             param[3].Value = item.Descroption_fabrication;
 
             param[4] = new SqlParameter("@code_fabrication", SqlDbType.Int);
-            param[4].Value = int.Parse(item.Code_fabrication);
+          
+            param[4].Value = int.Parse(item.Code_fabrication == "" ? "0" : item.Code_fabrication);
 
             param[5] = new SqlParameter("@prix", SqlDbType.Int);
             param[5].Value = item.Prix;

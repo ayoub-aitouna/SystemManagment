@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(articlee));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Add = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -55,7 +55,6 @@
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
-            this.Sortee = new Guna.UI.WinForms.GunaGradientButton();
             this.Entree = new Guna.UI.WinForms.GunaGradientButton();
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.View = new System.Windows.Forms.Panel();
@@ -70,6 +69,7 @@
             this.used_items_button = new Guna.UI.WinForms.GunaGradientButton();
             this.update_data = new System.ComponentModel.BackgroundWorker();
             this.menu_container = new System.Windows.Forms.Panel();
+            this.Sortie = new Guna.UI.WinForms.GunaGradientButton();
             this.Add.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -125,9 +125,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(573, 97);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
+            this.label7.Size = new System.Drawing.Size(56, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Quantitier";
+            this.label7.Text = "Quantitier*";
             // 
             // label6
             // 
@@ -136,9 +136,9 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(573, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 15;
-            this.label6.Text = "desination";
+            this.label6.Text = "desination*";
             // 
             // label5
             // 
@@ -180,9 +180,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(103, 167);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(24, 13);
+            this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Prix";
+            this.label3.Text = "Prix*";
             // 
             // label2
             // 
@@ -491,34 +491,6 @@
             this.guna2Elipse1.BorderRadius = 0;
             this.guna2Elipse1.TargetControl = this.pictureBox1;
             // 
-            // Sortee
-            // 
-            this.Sortee.AnimationHoverSpeed = 0.07F;
-            this.Sortee.AnimationSpeed = 0.03F;
-            this.Sortee.BackColor = System.Drawing.Color.Transparent;
-            this.Sortee.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Sortee.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Sortee.BorderColor = System.Drawing.Color.Transparent;
-            this.Sortee.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Sortee.FocusedColor = System.Drawing.Color.Empty;
-            this.Sortee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sortee.ForeColor = System.Drawing.Color.White;
-            this.Sortee.Image = ((System.Drawing.Image)(resources.GetObject("Sortee.Image")));
-            this.Sortee.ImageSize = new System.Drawing.Size(20, 20);
-            this.Sortee.Location = new System.Drawing.Point(173, 36);
-            this.Sortee.Name = "Sortee";
-            this.Sortee.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.Sortee.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
-            this.Sortee.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Sortee.OnHoverForeColor = System.Drawing.Color.White;
-            this.Sortee.OnHoverImage = null;
-            this.Sortee.OnPressedColor = System.Drawing.Color.Black;
-            this.Sortee.Radius = 5;
-            this.Sortee.Size = new System.Drawing.Size(129, 45);
-            this.Sortee.TabIndex = 13;
-            this.Sortee.Text = "Sorte";
-            this.Sortee.Click += new System.EventHandler(this.sortee);
-            // 
             // Entree
             // 
             this.Entree.AnimationHoverSpeed = 0.07F;
@@ -577,8 +549,8 @@
             this.view_data.Location = new System.Drawing.Point(0, 0);
             this.view_data.Name = "view_data";
             this.view_data.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.view_data.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.view_data.Size = new System.Drawing.Size(995, 441);
             this.view_data.TabIndex = 0;
             this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
@@ -708,15 +680,43 @@
             // 
             this.menu_container.Controls.Add(this.valide);
             this.menu_container.Controls.Add(this.gunaGradientButton6);
+            this.menu_container.Controls.Add(this.Sortie);
             this.menu_container.Controls.Add(this.Entree);
             this.menu_container.Controls.Add(this.used_items_button);
             this.menu_container.Controls.Add(this.gunaGradientButton4);
-            this.menu_container.Controls.Add(this.Sortee);
             this.menu_container.Dock = System.Windows.Forms.DockStyle.Top;
             this.menu_container.Location = new System.Drawing.Point(0, 0);
             this.menu_container.Name = "menu_container";
             this.menu_container.Size = new System.Drawing.Size(995, 93);
             this.menu_container.TabIndex = 20;
+            // 
+            // Sortie
+            // 
+            this.Sortie.AnimationHoverSpeed = 0.07F;
+            this.Sortie.AnimationSpeed = 0.03F;
+            this.Sortie.BackColor = System.Drawing.Color.Transparent;
+            this.Sortie.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.Sortie.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.Sortie.BorderColor = System.Drawing.Color.Transparent;
+            this.Sortie.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Sortie.FocusedColor = System.Drawing.Color.Empty;
+            this.Sortie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sortie.ForeColor = System.Drawing.Color.White;
+            this.Sortie.Image = global::ProjectV1.Properties.Resources.Close_Square;
+            this.Sortie.ImageSize = new System.Drawing.Size(20, 20);
+            this.Sortie.Location = new System.Drawing.Point(178, 35);
+            this.Sortie.Name = "Sortie";
+            this.Sortie.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.Sortie.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(76)))), ((int)(((byte)(172)))));
+            this.Sortie.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Sortie.OnHoverForeColor = System.Drawing.Color.White;
+            this.Sortie.OnHoverImage = null;
+            this.Sortie.OnPressedColor = System.Drawing.Color.Black;
+            this.Sortie.Radius = 5;
+            this.Sortie.Size = new System.Drawing.Size(129, 45);
+            this.Sortie.TabIndex = 13;
+            this.Sortie.Text = "Sortie";
+            this.Sortie.Click += new System.EventHandler(this.sortee);
             // 
             // articlee
             // 
@@ -749,7 +749,6 @@
         private Guna.UI.WinForms.GunaGradientButton add_button;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse1;
-        private Guna.UI.WinForms.GunaGradientButton Sortee;
         private Guna.UI.WinForms.GunaGradientButton Entree;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse2;
         private System.Windows.Forms.Panel View;
@@ -782,5 +781,6 @@
         private System.ComponentModel.BackgroundWorker update_data;
         private Guna.UI.WinForms.GunaTextBox reference_intrene;
         private System.Windows.Forms.Panel menu_container;
+        private Guna.UI.WinForms.GunaGradientButton Sortie;
     }
 }
