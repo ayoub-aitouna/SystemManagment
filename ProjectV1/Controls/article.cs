@@ -34,6 +34,8 @@ namespace ProjectV1
 
         List<article_model> selectedRows = new List<article_model>();
         sql.sqlcn remplire = new sql.sqlcn();
+        private string View_select_Comand = " select * from Artical where Quontitier != 0";
+
         public articlee()
         {
             InitializeComponent();
@@ -49,20 +51,13 @@ namespace ProjectV1
             
             Menu_chosen(Entree);
             progresbar.Visible = false;
-            _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
-
-            List<article_model> data = loaddata("select * from Artical");
-            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
-            foreach (var item in data)
+            if (!viewData_worker.IsBusy)
             {
-                coll.Add(item.Nom);
+                viewData_worker.RunWorkerAsync(View_select_Comand);
             }
-            desination.AutoCompleteMode = AutoCompleteMode.Suggest;
-            desination.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            desination.AutoCompleteCustomSource = coll;
-            Units.Unit units = new Units.Unit();
-            units.StyleDatagridview(view_data,1);
-            setview_data(data);
+            _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
+            _units.StyleDatagridview(view_data, 1);
+            
 
         }
 
@@ -157,7 +152,7 @@ namespace ProjectV1
         {
             hideAll(View);
            
-            runViewAsync("select * from Artical", gunaGradientButton4,0);
+            runViewAsync(View_select_Comand, gunaGradientButton4,0);
             view_data.Enabled = false;
             progresbar.Show();
             
@@ -337,6 +332,8 @@ namespace ProjectV1
             sqlcn SqlConnection = new sqlcn();
             return SqlConnection.View(query);
 
+          
+
         }
 
         /*
@@ -438,10 +435,10 @@ namespace ProjectV1
                 while (datareader.Read())
                 {
                 article_model item = new article_model();
-                    item.Id = (int)datareader.GetValue(0);
-                item.Bon_entrer = (int)datareader.GetValue(1);
-                    item.Barcode1 = (String)datareader.GetValue(2);
-                    item.Nom = (String)datareader.GetValue(3);
+                    item.Id = (int)datareader.GetValue(0);        
+                    item.Barcode1 = (String)datareader.GetValue(1);
+                item.Bon_entrer = (int)datareader.GetValue(2);
+                item.Nom = (String)datareader.GetValue(3);
                     item.Description_inter = (String)datareader.GetValue(4);
                 item.Fourniseur = (string)datareader.GetValue(5);
                     item.Descroption_fabrication = (String)datareader.GetValue(6);
@@ -472,10 +469,27 @@ namespace ProjectV1
         {
           //  ArrayList arguments = e.Argument as 
             progresbar.Hide();
-            view_data.Enabled = true;         
-            setview_data((List<article_model>)e.Result);
-            MessageBox.Show("le traitement est terminé");
-           
+            view_data.Enabled = true;
+            List<article_model> data = e.Result as List<article_model>;
+            setview_data(data);
+            AutoCompleteStringCollection coll = new AutoCompleteStringCollection();
+            AutoCompleteStringCollection Barcodecoll = new AutoCompleteStringCollection();
+
+            foreach (var item in data)
+            {
+                coll.Add(item.Nom);
+                Barcodecoll.Add(item.Barcode1);
+            }
+            desination.AutoCompleteMode = AutoCompleteMode.Suggest;
+            desination.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            desination.AutoCompleteCustomSource = coll;
+
+
+            barcode.AutoCompleteMode = AutoCompleteMode.Suggest;
+            barcode.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            barcode.AutoCompleteCustomSource = Barcodecoll;
+
+
         }
         /*
          * start an async task to add data to database 
@@ -627,17 +641,16 @@ namespace ProjectV1
                         article_model model = new article_model();
                         model.Id = int.Parse(a[0].Value.ToString());
                         model.Barcode1 = a[1].Value.ToString();
-                        model.Bon_entrer = int.Parse( a[3].Value.ToString());
-                        model.Nom = a[4].Value.ToString();
-                        model.Description_inter = a[5].Value.ToString();
-                        model.Fourniseur = a[6].Value.ToString();
-                        model.Descroption_fabrication = a[7].Value.ToString();
-                        model.Code_fabrication = a[8].Value.ToString();
-                        model.Prix = double.Parse(a[9].Value.ToString());
-                        model.Quontitier1 = int.Parse(a[10].Value.ToString());
-                        model.Date_entre = DateTime.Parse(a[11].Value.ToString());
-                        model.Img = (byte[])a[9].Value;
-                     
+                        model.Bon_entrer = int.Parse(a[2].Value.ToString());
+                        model.Nom = a[3].Value.ToString();
+                        model.Description_inter = a[4].Value.ToString();
+                        model.Fourniseur = a[5].Value.ToString();
+                        model.Descroption_fabrication = a[6].Value.ToString();
+                        model.Code_fabrication = a[7].Value.ToString();
+                        model.Prix = double.Parse(a[8].Value.ToString());
+                        model.Quontitier1 = int.Parse(a[9].Value.ToString());
+                        model.Date_entre = DateTime.Parse(a[10].Value.ToString());
+                        model.Img = (byte[])a[11].Value;                    
                         selectedRows.Add(model);
 
                     }
@@ -664,7 +677,7 @@ namespace ProjectV1
                             model.Date_sortie = DateTime.Parse(a[9].Value.ToString());
                             model.Matricul = a[9].Value.ToString();
                             model.Img = (byte[])a[10].Value;
-                            model.Bon_entrer =int.Parse( a[11].Value.ToString());
+                            model.Bon_entrer = int.Parse(a[11].Value.ToString());
                             // selectedRows.Add(model);
                         }
                     }
@@ -673,9 +686,9 @@ namespace ProjectV1
 
                         //throw;
                     }
-                   // throw;
+                    // throw;
                 }
-             
+
 
             }
             else
@@ -685,7 +698,8 @@ namespace ProjectV1
 
         }
 
-      
+
+
 
         private void entree_print_Document_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -708,7 +722,7 @@ namespace ProjectV1
             progresbar.Show();
             if (!ArticleSorieView.IsBusy)
             {
-                ArticleSorieView.RunWorkerAsync("select * from Artical_Sortee");
+                ArticleSorieView.RunWorkerAsync("select * from Artical_Sortee INNER JOIN Artical on Artical.ref = Artical_Sortee.Id_Article");
             }
            
 
@@ -747,18 +761,20 @@ namespace ProjectV1
             {
                 Articl_sortie item = new Articl_sortie();
                 item.Id = (int)datareader.GetValue(0);
-                item.Barcode1 = (String)datareader.GetValue(1);
-                item.Nom = (String)datareader.GetValue(2);
-                item.Description_inter = (String)datareader.GetValue(3);
-                item.Descroption_fabrication = (String)datareader.GetValue(4);
-                item.Code_fabrication = (String)datareader.GetValue(5);
-                item.Prix = (double)datareader.GetValue(6);
-                item.Quontitier1 = (int)datareader.GetValue(7);
-                item.Date_entre = (DateTime)datareader.GetValue(8);
-                item.Date_sortie = (DateTime)datareader.GetValue(9);
-                item.Matricul = (String)datareader.GetValue(10);
-                item.Codeclient = (string)datareader.GetValue(11);
-                item.Img = (Byte[])datareader.GetValue(12);
+                item.Codeclient = (int)datareader.GetValue(2);
+                item.Date_sortie = (DateTime)datareader.GetValue(3);
+                item.Matricul = (String)datareader.GetValue(4);
+                item.Quontitier1 = (int)datareader.GetValue(5);
+
+                item.Barcode1 = (String)datareader.GetValue(7);
+                item.Bon_entrer = (int)datareader.GetValue(8);
+                item.Nom = (String)datareader.GetValue(9);
+                item.Description_inter = (String)datareader.GetValue(11);
+                item.Descroption_fabrication = (String)datareader.GetValue(12);
+                item.Code_fabrication = (String)datareader.GetValue(13);
+                item.Prix = (double)datareader.GetValue(14);
+                item.Date_entre = (DateTime)datareader.GetValue(16);
+                item.Img = (Byte[])datareader.GetValue(17);
                 data.Add(item);
                 // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }

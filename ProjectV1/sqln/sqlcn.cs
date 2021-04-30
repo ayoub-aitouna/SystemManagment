@@ -222,7 +222,16 @@ namespace ProjectV1.sql
             if (param !=null)
             {
                 macommende.Parameters.AddRange(param);
-                i =  macommende.ExecuteNonQuery();
+                try
+                {
+                    i = macommende.ExecuteNonQuery();
+                }
+                catch (Exception)
+                {
+
+                    return -1;
+                }
+                
                 cnn.Close();
             }
             return i;
@@ -304,10 +313,9 @@ namespace ProjectV1.sql
             {
 
                 equipement_model item = new equipement_model();
-                item.Ref = int.Parse(datareader.GetValue(0).ToString());
+                item.Matrucil = datareader.GetValue(0).ToString();
                 item.Nom_equipment = datareader.GetValue(1).ToString();
-                item.Matrucil = datareader.GetValue(2).ToString();
-                item.CODE = int.Parse(datareader.GetValue(3).ToString());
+                item.CODE = int.Parse(datareader.GetValue(2).ToString());
            
       
                 data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));

@@ -20,7 +20,7 @@ namespace ProjectV1.model
         DateTime date_entre;
         DateTime date_sortie;
         String matricul;
-        string codeclient;
+        int codeclient;
         Byte[] img;
 
 
@@ -29,7 +29,7 @@ namespace ProjectV1.model
            
         }
 
-        public Articl_sortie(int id, int bonentrer,string barcode, string nom, string description_inter, string descroption_fabrication, string code_fabrication, double prix, int quontitier, DateTime date_entre, DateTime date_sortie, string matricul,string codeclient, byte[] img)
+        public Articl_sortie(int id, int bonentrer,string barcode, string nom, string description_inter, string descroption_fabrication, string code_fabrication, double prix, int quontitier, DateTime date_entre, DateTime date_sortie, string matricul, int codeclient, byte[] img)
         {
             this.id = id;
             this.bon_entrer = bonentrer;
@@ -201,7 +201,7 @@ namespace ProjectV1.model
                 matricul = value;
             }
         }
-        public string Codeclient
+        public int Codeclient
         {
             get
             {

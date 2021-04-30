@@ -19,16 +19,43 @@ namespace ProjectV1.Controls
 
         private void dashboard_button_Click(object sender, EventArgs e)
         {
-
+            showData(true);
         }
 
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
+            showData(true);
 
         }
 
         private void gunaGradientButton3_Click(object sender, EventArgs e)
         {
+            showData(true);
+
+        }
+
+        private void showData(bool b)
+        {
+            if (b)
+            {
+                data.Show();
+                elemets.Hide();
+            }
+            else
+            {
+                elemets.Show();
+                data.Hide();
+            }
+        }
+
+        private void Rapport_Load(object sender, EventArgs e)
+        {
+            showData(false);
+        }
+
+        private void retourne_Click(object sender, EventArgs e)
+        {
+            showData(false);
 
         }
     }

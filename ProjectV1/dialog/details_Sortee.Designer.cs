@@ -68,7 +68,7 @@
             this.CancelAll = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.Codeclient = new Guna.UI.WinForms.GunaTextBox();
+            this.ClientId = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipsePanel1.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
@@ -301,7 +301,7 @@
             this.gunaDateTimePicker1.Radius = 15;
             this.gunaDateTimePicker1.Size = new System.Drawing.Size(219, 40);
             this.gunaDateTimePicker1.TabIndex = 2;
-            this.gunaDateTimePicker1.Text = "26/04/2021";
+            this.gunaDateTimePicker1.Text = "4/26/2021";
             this.gunaDateTimePicker1.Value = new System.DateTime(2021, 4, 26, 4, 33, 58, 985);
             // 
             // gunaElipsePanel1
@@ -580,25 +580,25 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Client";
             // 
-            // Codeclient
+            // ClientId
             // 
-            this.Codeclient.BackColor = System.Drawing.Color.Transparent;
-            this.Codeclient.BaseColor = System.Drawing.Color.White;
-            this.Codeclient.BorderColor = System.Drawing.Color.DarkGray;
-            this.Codeclient.BorderSize = 1;
-            this.Codeclient.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Codeclient.FocusedBaseColor = System.Drawing.Color.White;
-            this.Codeclient.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.Codeclient.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.Codeclient.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Codeclient.Location = new System.Drawing.Point(722, 315);
-            this.Codeclient.Name = "Codeclient";
-            this.Codeclient.PasswordChar = '\0';
-            this.Codeclient.Radius = 15;
-            this.Codeclient.SelectedText = "";
-            this.Codeclient.Size = new System.Drawing.Size(233, 40);
-            this.Codeclient.TabIndex = 24;
-            this.Codeclient.TextOffsetX = 10;
+            this.ClientId.BackColor = System.Drawing.Color.Transparent;
+            this.ClientId.BaseColor = System.Drawing.Color.White;
+            this.ClientId.BorderColor = System.Drawing.Color.DarkGray;
+            this.ClientId.BorderSize = 1;
+            this.ClientId.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ClientId.FocusedBaseColor = System.Drawing.Color.White;
+            this.ClientId.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.ClientId.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.ClientId.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.ClientId.Location = new System.Drawing.Point(722, 315);
+            this.ClientId.Name = "ClientId";
+            this.ClientId.PasswordChar = '\0';
+            this.ClientId.Radius = 15;
+            this.ClientId.SelectedText = "";
+            this.ClientId.Size = new System.Drawing.Size(233, 40);
+            this.ClientId.TabIndex = 24;
+            this.ClientId.TextOffsetX = 10;
             // 
             // details_Sortee
             // 
@@ -606,7 +606,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1033, 450);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.Codeclient);
+            this.Controls.Add(this.ClientId);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
@@ -694,6 +694,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI.WinForms.GunaTextBox matricule;
         private System.Windows.Forms.Label label12;
-        private Guna.UI.WinForms.GunaTextBox Codeclient;
+        private Guna.UI.WinForms.GunaTextBox ClientId;
     }
 }
