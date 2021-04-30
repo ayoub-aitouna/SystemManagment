@@ -312,6 +312,7 @@
             this.user_Login1.Name = "user_Login1";
             this.user_Login1.Size = new System.Drawing.Size(1060, 588);
             this.user_Login1.TabIndex = 5;
+            this.user_Login1.Load += new System.EventHandler(this.user_Login1_Load);
             // 
             // equipe1
             // 

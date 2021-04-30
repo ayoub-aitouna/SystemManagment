@@ -105,7 +105,7 @@ namespace ProjectV1
             item.Adress = adress_fourniseur.Text;
             item.Numerophone = numero_fourniseur.Text;
             item.Email = email_fourniseur.Text;
-
+            item.Fax = fax.Text;
 
             if (!back_forniseur__add.IsBusy)
             {
@@ -126,7 +126,7 @@ namespace ProjectV1
 
 
             model.fourniseur_model item = (model.fourniseur_model)e.Argument;
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@code", SqlDbType.Int);
             param[0].Value = item.Code_fourniseur;
 
@@ -142,6 +142,8 @@ namespace ProjectV1
 
             param[4] = new SqlParameter("@Email", SqlDbType.VarChar, 40);
             param[4].Value = item.Email;
+            param[5] = new SqlParameter("@fax", SqlDbType.VarChar, 40);
+            param[5].Value = item.Fax;
 
             remplire.openconx();
 
@@ -226,6 +228,7 @@ namespace ProjectV1
             model.Email = a[3].Value.ToString();
             model.Adress = a[4].Value.ToString();
             model.Numerophone = a[5].Value.ToString();
+            model.Fax = a[6].Value.ToString();
             if (!update.IsBusy)
             {
                 update.RunWorkerAsync(model);

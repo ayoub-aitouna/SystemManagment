@@ -49,19 +49,19 @@
             // 
             this.view_data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.view_data.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.view_data.Location = new System.Drawing.Point(0, 141);
+            this.view_data.Location = new System.Drawing.Point(0, 239);
             this.view_data.Name = "view_data";
-            this.view_data.Size = new System.Drawing.Size(1076, 446);
+            this.view_data.Size = new System.Drawing.Size(1076, 348);
             this.view_data.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(65, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(102, 15);
+            this.label1.Size = new System.Drawing.Size(107, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Nom d\'utilisateur";
             // 
@@ -96,7 +96,7 @@
             this.Password.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.Password.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.Password.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.Password.Location = new System.Drawing.Point(564, 17);
+            this.Password.Location = new System.Drawing.Point(41, 90);
             this.Password.Name = "Password";
             this.Password.PasswordChar = '\0';
             this.Password.Radius = 20;
@@ -109,10 +109,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(588, 7);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(65, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 15);
+            this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 19;
             this.label2.Text = "le mot de passe";
             // 
@@ -120,10 +120,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 69);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 145);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 15);
+            this.label3.Size = new System.Drawing.Size(34, 16);
             this.label3.TabIndex = 19;
             this.label3.Text = "rôle ";
             // 
@@ -143,20 +143,21 @@
             "Administrateur",
             "utilisateur",
             "directeur "});
-            this.type.Location = new System.Drawing.Point(12, 9);
+            this.type.Location = new System.Drawing.Point(3, 8);
             this.type.Name = "type";
             this.type.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.type.OnHoverItemForeColor = System.Drawing.Color.White;
             this.type.Radius = 10;
             this.type.Size = new System.Drawing.Size(376, 26);
             this.type.TabIndex = 3;
+            this.type.SelectedIndexChanged += new System.EventHandler(this.type_SelectedIndexChanged);
             // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.gunaElipsePanel1.Controls.Add(this.type);
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(41, 80);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(41, 156);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 20;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(400, 45);
@@ -176,7 +177,7 @@
             this.upload.ForeColor = System.Drawing.Color.White;
             this.upload.Image = global::ProjectV1.Properties.Resources.Vector;
             this.upload.ImageSize = new System.Drawing.Size(20, 20);
-            this.upload.Location = new System.Drawing.Point(564, 80);
+            this.upload.Location = new System.Drawing.Point(870, 7);
             this.upload.Name = "upload";
             this.upload.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.upload.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -204,7 +205,7 @@
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.Image = global::ProjectV1.Properties.Resources.Close_Square;
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(804, 80);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(870, 80);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));

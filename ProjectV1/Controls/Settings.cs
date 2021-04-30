@@ -95,5 +95,10 @@ namespace ProjectV1.Controls
                 view.RunWorkerAsync("select * from logine");
             }
         }
+
+        private void type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

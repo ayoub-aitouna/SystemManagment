@@ -144,7 +144,7 @@ namespace ProjectV1.sql
             macommende.CommandType = CommandType.Text;
             macommende.CommandText = @"UPDATE Client SET  code = @code,  nom = @nom,  phone = @phone,adress=@adress,Email=@Email
                                         WHERE ref=" + item.Ref;
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@code", SqlDbType.VarChar, 40);
             param[0].Value = item.Code_client;
 
@@ -156,6 +156,9 @@ namespace ProjectV1.sql
             param[3].Value = item.Adress_client;
             param[4] = new SqlParameter("@Email", SqlDbType.VarChar, 40);
             param[4].Value = item.Email_client;
+
+            param[5] = new SqlParameter("@fax", SqlDbType.VarChar, 40);
+            param[5].Value = item.Fax;
 
             macommende.Parameters.AddRange(param);
             cnn.Close();
@@ -191,6 +194,10 @@ namespace ProjectV1.sql
 
             param[4] = new SqlParameter("@Email", SqlDbType.VarChar, 40);
             param[4].Value = item.Email;
+
+
+            param[5] = new SqlParameter("@fax", SqlDbType.VarChar, 40);
+            param[5].Value = item.Fax;
 
             macommende.Parameters.AddRange(param);
             cnn.Close();
@@ -239,15 +246,19 @@ namespace ProjectV1.sql
 
                 article_model item = new article_model();
                 item.Id = (int)datareader.GetValue(0);
-                item.Barcode1 = (String)datareader.GetValue(1);
-                item.Nom = (String)datareader.GetValue(2);
-                item.Description_inter = (String)datareader.GetValue(3);
-                item.Descroption_fabrication = (String)datareader.GetValue(4);
-                item.Code_fabrication = (String)datareader.GetValue(5);
-                item.Prix = (double)datareader.GetValue(6);
-                item.Quontitier1 = (int)datareader.GetValue(7);
-                item.Date_entre = (DateTime)datareader.GetValue(8);
-                item.Img = (Byte[])datareader.GetValue(9);
+                item.Bon_entrer = (int)datareader.GetValue(1);
+                item.Barcode1 = (String)datareader.GetValue(2);
+                item.Nom = (String)datareader.GetValue(3);
+                
+                item.Description_inter = (String)datareader.GetValue(4);
+                item.Fourniseur = (string)datareader.GetValue(5);
+                item.Descroption_fabrication = (String)datareader.GetValue(6);
+                item.Code_fabrication = (String)datareader.GetValue(7);
+                item.Prix = (double)datareader.GetValue(8);
+                item.Quontitier1 = (int)datareader.GetValue(9);
+                item.Date_entre = (DateTime)datareader.GetValue(10);
+                item.Img = (Byte[])datareader.GetValue(11);
+
                 data.Add(item);
                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
@@ -329,7 +340,7 @@ namespace ProjectV1.sql
                 item.Numerophone =datareader.GetValue(3).ToString();
                 item.Adress = datareader.GetValue(4).ToString();
                 item.Email = datareader.GetValue(5).ToString();
-
+                item.Fax = datareader.GetValue(6).ToString();
 
                 data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
@@ -361,6 +372,7 @@ namespace ProjectV1.sql
                 item.Adress_client = datareader.GetValue(3).ToString();
                 item.Numerophone_client = datareader.GetValue(4).ToString();
                 item.Email_client = datareader.GetValue(5).ToString();
+                item.Fax= datareader.GetValue(6).ToString();
 
 
                 data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));

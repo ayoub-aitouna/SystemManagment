@@ -9,11 +9,13 @@ namespace ProjectV1.model
    public class article_model
     {
         int id;
+        int bon_entre;
         String Barcode;
         string nom;
         String description_inter;
         String descroption_fabrication;
         String code_fabrication;
+        string fourniseur;
         double prix;
         int Quontitier;
         DateTime date_entre;
@@ -22,7 +24,7 @@ namespace ProjectV1.model
         {
 
         }
-        public article_model(int id , String Barcode, string nom,
+        public article_model(int id ,int bon_entre , string fourniseur,String Barcode, string nom,
         String description_inter,
         String descroption_fabrication,
         String code_fabrication,
@@ -41,6 +43,8 @@ namespace ProjectV1.model
             this.Quontitier = Quontitier;
             this.date_entre = date_entre;
             this.img = img;
+            this.bon_entre = bon_entre;
+            this.fourniseur = fourniseur;
 
         }
         public int Id
@@ -53,6 +57,18 @@ namespace ProjectV1.model
             set
             {
                 id = value;
+            }
+        }
+        public int Bon_entrer
+        {
+            get
+            {
+                return bon_entre;
+            }
+
+            set
+            {
+                bon_entre = value;
             }
         }
 
@@ -68,7 +84,18 @@ namespace ProjectV1.model
                 Barcode = value;
             }
         }
+        public string Fourniseur
+        {
+            get
+            {
+                return fourniseur;
+            }
 
+            set
+            {
+                fourniseur = value;
+            }
+        }
         public string Nom
         {
             get

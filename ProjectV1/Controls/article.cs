@@ -92,12 +92,12 @@ namespace ProjectV1
 
                     article_model item = new article_model();
                     item.Barcode1 = barcode.Text;
-                    item.Nom = desination.Text;
+                if (desination.Text != "") { item.Nom = desination.Text; }
                     item.Description_inter = reference_intrene.Text;
                     item.Descroption_fabrication = reference_fabricant.Text;
                     item.Code_fabrication = code_ean.Text;
-                    if (prix.Text != "") item.Prix = Double.Parse(prix.Text);
-                    item.Quontitier1 = int.Parse(quantitier.Text);
+                     item.Prix = Double.Parse(prix.Text);
+                if (quantitier.Text != "") { item.Quontitier1 = int.Parse(quantitier.Text); } 
                     item.Date_entre = DateTime.Parse(date.Value.ToShortDateString());
                     item.Img = imag;
                     if (!add_data_worker.IsBusy)
@@ -113,7 +113,7 @@ namespace ProjectV1
         private bool checkInputs(Control C)
         {
             bool _check = false;
-            foreach (Control item in Add.Controls)
+            foreach (Control item in bon_entre.Controls)
             {   
                 if (item.GetType() == typeof(GunaTextBox))
                 {
@@ -222,7 +222,7 @@ namespace ProjectV1
         private void sortee(object sender, EventArgs e)
         {
             Menu_chosen(Sortie);
-            hideAll(Add);
+            hideAll(bon_entre);
             changeToSorteMode(true);
             _units.mode(Units.Unit.Mode_Sortee1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
 
@@ -288,7 +288,7 @@ namespace ProjectV1
                                                 + "' OR code_fabrication like '" + code_ean.Text + "' OR prix like '" + prix.Text+"'");
             }
             hideAll(View);
-            _units.Controls_clear(Add);
+            _units.Controls_clear(bon_entre);
 
 
         }
@@ -307,7 +307,7 @@ namespace ProjectV1
 
             viewData_worker.RunWorkerAsync("select * from Artical where nom like '" + desination.Text + "'");
             hideAll(View);
-            _units.Controls_clear(Add);
+            _units.Controls_clear(bon_entre);
 
         }
 
@@ -320,12 +320,12 @@ namespace ProjectV1
          */
         private void Entree_Click(object sender, EventArgs e)
         {
-            hideAll(Add);
+            hideAll(bon_entre);
             Menu_chosen(Entree);
             changeToSorteMode(false);
             _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
 
-            _units.Controls_clear(Add);
+            _units.Controls_clear(bon_entre);
         }
 
         /*
@@ -439,15 +439,17 @@ namespace ProjectV1
                 {
                 article_model item = new article_model();
                     item.Id = (int)datareader.GetValue(0);
-                    item.Barcode1 = (String)datareader.GetValue(1);
-                    item.Nom = (String)datareader.GetValue(2);
-                    item.Description_inter = (String)datareader.GetValue(3);
-                    item.Descroption_fabrication = (String)datareader.GetValue(4);
-                    item.Code_fabrication = (String)datareader.GetValue(5);
-                    item.Prix = (double)datareader.GetValue(6);
-                    item.Quontitier1 = (int)datareader.GetValue(7);
-                    item.Date_entre = (DateTime)datareader.GetValue(8);        
-                    item.Img = (Byte[])datareader.GetValue(9);
+                item.Bon_entrer = (int)datareader.GetValue(1);
+                    item.Barcode1 = (String)datareader.GetValue(2);
+                    item.Nom = (String)datareader.GetValue(3);
+                    item.Description_inter = (String)datareader.GetValue(4);
+                item.Fourniseur = (string)datareader.GetValue(5);
+                    item.Descroption_fabrication = (String)datareader.GetValue(6);
+                    item.Code_fabrication = (String)datareader.GetValue(7);
+                    item.Prix = (double)datareader.GetValue(8);
+                    item.Quontitier1 = (int)datareader.GetValue(9);
+                    item.Date_entre = (DateTime)datareader.GetValue(10);        
+                    item.Img = (Byte[])datareader.GetValue(11);
                     data.Add(item);
                     // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
                 }
@@ -482,34 +484,42 @@ namespace ProjectV1
         {
             
             article_model item = (article_model)e.Argument;
-            SqlParameter[] param = new SqlParameter[9];
+            SqlParameter[] param = new SqlParameter[11];
             param[0] = new SqlParameter("@barcode", SqlDbType.VarChar, 40);
             param[0].Value = item.Barcode1;
 
-            param[1] = new SqlParameter("@nom", SqlDbType.VarChar, 40);
-            param[1].Value = item.Nom;
+            param[1] = new SqlParameter("@bon_entrer", SqlDbType.Int);
+            param[1].Value = item.Bon_entrer;
 
-            param[2] = new SqlParameter("@description_inter", SqlDbType.VarChar, 40);
-            param[2].Value = item.Description_inter;
+            param[2] = new SqlParameter("@nom", SqlDbType.VarChar, 40);
+            param[2].Value = item.Nom;
 
-            param[3] = new SqlParameter("@descroption_fabrication", SqlDbType.VarChar, 40);
-            param[3].Value = item.Descroption_fabrication;
+            param[3] = new SqlParameter("@description_inter", SqlDbType.VarChar, 40);
+            param[3].Value = item.Description_inter;
 
-            param[4] = new SqlParameter("@code_fabrication", SqlDbType.Int);
+            param[4] = new SqlParameter("@fourniseur", SqlDbType.VarChar, 40);
+            param[4].Value = item.Barcode1;
+
+            param[5] = new SqlParameter("@descroption_fabrication", SqlDbType.VarChar, 40);
+            param[5].Value = item.Descroption_fabrication;
+
+            param[6] = new SqlParameter("@code_fabrication", SqlDbType.Int);
           
-            param[4].Value = int.Parse(item.Code_fabrication == "" ? "0" : item.Code_fabrication);
+            param[6].Value = int.Parse(item.Code_fabrication == "" ? "0" : item.Code_fabrication);
 
-            param[5] = new SqlParameter("@prix", SqlDbType.Int);
-            param[5].Value = item.Prix;
+            param[7] = new SqlParameter("@prix", SqlDbType.Int);
+            param[7].Value = item.Prix;
 
-            param[6] = new SqlParameter("@Quontitier", SqlDbType.Int);
-            param[6].Value = item.Quontitier1;
+            param[8] = new SqlParameter("@Quontitier", SqlDbType.Int);
+            param[8].Value = item.Quontitier1;
 
-            param[7] = new SqlParameter("@date_entre", SqlDbType.Date);
-            param[7].Value = item.Date_entre;
+            param[9] = new SqlParameter("@date_entre", SqlDbType.Date);
+            param[9].Value = item.Date_entre;
 
-            param[8] = new SqlParameter("@img", SqlDbType.Image);
-            param[8].Value = item.Img;
+            param[10] = new SqlParameter("@img", SqlDbType.Image);
+            param[10].Value = item.Img;
+
+           
 
             remplire.openconx();
             //foreach (var item in param)
@@ -546,7 +556,7 @@ namespace ProjectV1
                 add_success dialog = new add_success(data);       
                 dialog.ShowDialog();
             }
-            _units.Controls_clear(Add);
+            _units.Controls_clear(bon_entre);
 
         }
 
@@ -555,7 +565,7 @@ namespace ProjectV1
             Menu_chosen(gunaGradientButton6);
             _units.mode(Units.Unit.Mode_search1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
             changeToSorteMode(true);
-            hideAll(Add);
+            hideAll(bon_entre);
 
         }
 
@@ -617,14 +627,17 @@ namespace ProjectV1
                         article_model model = new article_model();
                         model.Id = int.Parse(a[0].Value.ToString());
                         model.Barcode1 = a[1].Value.ToString();
-                        model.Nom = a[2].Value.ToString();
-                        model.Description_inter = a[3].Value.ToString();
-                        model.Descroption_fabrication = a[4].Value.ToString();
-                        model.Code_fabrication = a[5].Value.ToString();
-                        model.Prix = double.Parse(a[6].Value.ToString());
-                        model.Quontitier1 = int.Parse(a[7].Value.ToString());
-                        model.Date_entre = DateTime.Parse(a[8].Value.ToString());
+                        model.Bon_entrer = int.Parse( a[3].Value.ToString());
+                        model.Nom = a[4].Value.ToString();
+                        model.Description_inter = a[5].Value.ToString();
+                        model.Fourniseur = a[6].Value.ToString();
+                        model.Descroption_fabrication = a[7].Value.ToString();
+                        model.Code_fabrication = a[8].Value.ToString();
+                        model.Prix = double.Parse(a[9].Value.ToString());
+                        model.Quontitier1 = int.Parse(a[10].Value.ToString());
+                        model.Date_entre = DateTime.Parse(a[11].Value.ToString());
                         model.Img = (byte[])a[9].Value;
+                     
                         selectedRows.Add(model);
 
                     }
@@ -650,7 +663,8 @@ namespace ProjectV1
                             model.Date_sortie = DateTime.Parse(a[9].Value.ToString());
                             model.Date_sortie = DateTime.Parse(a[9].Value.ToString());
                             model.Matricul = a[9].Value.ToString();
-                            model.Img = (byte[])a[11].Value;
+                            model.Img = (byte[])a[10].Value;
+                            model.Bon_entrer =int.Parse( a[11].Value.ToString());
                             // selectedRows.Add(model);
                         }
                     }
@@ -743,7 +757,8 @@ namespace ProjectV1
                 item.Date_entre = (DateTime)datareader.GetValue(8);
                 item.Date_sortie = (DateTime)datareader.GetValue(9);
                 item.Matricul = (String)datareader.GetValue(10);
-                item.Img = (Byte[])datareader.GetValue(11);
+                item.Codeclient = (string)datareader.GetValue(11);
+                item.Img = (Byte[])datareader.GetValue(12);
                 data.Add(item);
                 // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
@@ -756,6 +771,21 @@ namespace ProjectV1
             view_data.Enabled = true;
             setview_data((List<Articl_sortie>)e.Result);
             MessageBox.Show("le traitement est terminé");
+        }
+
+        private void Add_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void desination_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     public interface Icloseall

@@ -15,13 +15,15 @@ namespace ProjectV1.model
         string email;
         string adress;
         string numerophone;
-        public fourniseur_model(int code,string nom,string email,string adres,string numerophone)
+        string fax;
+        public fourniseur_model(int code,string nom,string email,string adres,string numerophone,string fax)
         {
             this.code_fourniseur = code;
             this.nom = nom;
             this.email = email;
             this.adress = adres;
             this.numerophone = numerophone;
+            this.fax = fax;
 
         }
         public fourniseur_model()
@@ -41,6 +43,7 @@ namespace ProjectV1.model
                 _ref = value;
             }
         }
+        
         public int Code_fourniseur
         {
             get
@@ -50,6 +53,17 @@ namespace ProjectV1.model
             set
             {
               code_fourniseur = value ;
+            }
+        }
+        public String Fax
+        {
+            get
+            {
+                return fax;
+            }
+            set
+            {
+                fax = value;
             }
         }
         public String Nom

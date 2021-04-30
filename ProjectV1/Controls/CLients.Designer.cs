@@ -38,13 +38,14 @@
             this.gunaGradientButton6 = new Guna.UI.WinForms.GunaGradientButton();
             this.label5 = new System.Windows.Forms.Label();
             this.ajoute = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.faxclient = new Guna.UI.WinForms.GunaTextBox();
             this.btn_ajoute = new Guna.UI.WinForms.GunaGradientButton();
             this.email_client = new Guna.UI.WinForms.GunaTextBox();
             this.numero_client = new Guna.UI.WinForms.GunaTextBox();
             this.nom_client = new Guna.UI.WinForms.GunaTextBox();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
-            this.Entree = new Guna.UI.WinForms.GunaGradientButton();
             this.continaire = new System.Windows.Forms.Panel();
             this.panel_view = new System.Windows.Forms.Panel();
             this.view_data = new System.Windows.Forms.DataGridView();
@@ -61,7 +62,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(50, 238);
+            this.label4.Location = new System.Drawing.Point(50, 212);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 33;
@@ -71,7 +72,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(50, 168);
+            this.label3.Location = new System.Drawing.Point(50, 142);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 34;
@@ -81,17 +82,17 @@
             // 
             this.nom.AutoSize = true;
             this.nom.BackColor = System.Drawing.Color.Transparent;
-            this.nom.Location = new System.Drawing.Point(50, 98);
+            this.nom.Location = new System.Drawing.Point(50, 72);
             this.nom.Name = "nom";
-            this.nom.Size = new System.Drawing.Size(27, 13);
+            this.nom.Size = new System.Drawing.Size(74, 13);
             this.nom.TabIndex = 35;
-            this.nom.Text = "nom";
+            this.nom.Text = "Réseau social";
             // 
             // code
             // 
             this.code.AutoSize = true;
             this.code.BackColor = System.Drawing.Color.Transparent;
-            this.code.Location = new System.Drawing.Point(50, 28);
+            this.code.Location = new System.Drawing.Point(50, 2);
             this.code.Name = "code";
             this.code.Size = new System.Drawing.Size(32, 13);
             this.code.TabIndex = 36;
@@ -108,7 +109,7 @@
             this.adress_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.adress_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.adress_client.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.adress_client.Location = new System.Drawing.Point(26, 175);
+            this.adress_client.Location = new System.Drawing.Point(26, 149);
             this.adress_client.Name = "adress_client";
             this.adress_client.PasswordChar = '\0';
             this.adress_client.Radius = 10;
@@ -128,7 +129,7 @@
             this.code_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.code_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.code_client.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.code_client.Location = new System.Drawing.Point(26, 35);
+            this.code_client.Location = new System.Drawing.Point(26, 9);
             this.code_client.Name = "code_client";
             this.code_client.PasswordChar = '\0';
             this.code_client.Radius = 10;
@@ -169,7 +170,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(50, 308);
+            this.label5.Location = new System.Drawing.Point(50, 282);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 32;
@@ -177,6 +178,8 @@
             // 
             // ajoute
             // 
+            this.ajoute.Controls.Add(this.label1);
+            this.ajoute.Controls.Add(this.faxclient);
             this.ajoute.Controls.Add(this.btn_ajoute);
             this.ajoute.Controls.Add(this.label5);
             this.ajoute.Controls.Add(this.label4);
@@ -195,6 +198,36 @@
             this.ajoute.TabIndex = 39;
             this.ajoute.Paint += new System.Windows.Forms.PaintEventHandler(this.ajoute_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(50, 338);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Fax";
+            // 
+            // faxclient
+            // 
+            this.faxclient.BackColor = System.Drawing.Color.Transparent;
+            this.faxclient.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.faxclient.BorderColor = System.Drawing.Color.Silver;
+            this.faxclient.BorderSize = 0;
+            this.faxclient.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.faxclient.FocusedBaseColor = System.Drawing.Color.White;
+            this.faxclient.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.faxclient.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.faxclient.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.faxclient.Location = new System.Drawing.Point(26, 345);
+            this.faxclient.Name = "faxclient";
+            this.faxclient.PasswordChar = '\0';
+            this.faxclient.Radius = 10;
+            this.faxclient.SelectedText = "";
+            this.faxclient.Size = new System.Drawing.Size(356, 50);
+            this.faxclient.TabIndex = 44;
+            this.faxclient.TextOffsetX = 10;
+            // 
             // btn_ajoute
             // 
             this.btn_ajoute.AnimationHoverSpeed = 0.07F;
@@ -209,7 +242,7 @@
             this.btn_ajoute.ForeColor = System.Drawing.Color.White;
             this.btn_ajoute.Image = ((System.Drawing.Image)(resources.GetObject("btn_ajoute.Image")));
             this.btn_ajoute.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_ajoute.Location = new System.Drawing.Point(53, 400);
+            this.btn_ajoute.Location = new System.Drawing.Point(53, 404);
             this.btn_ajoute.Name = "btn_ajoute";
             this.btn_ajoute.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btn_ajoute.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -234,7 +267,7 @@
             this.email_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.email_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.email_client.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.email_client.Location = new System.Drawing.Point(26, 315);
+            this.email_client.Location = new System.Drawing.Point(26, 289);
             this.email_client.Name = "email_client";
             this.email_client.PasswordChar = '\0';
             this.email_client.Radius = 10;
@@ -254,7 +287,7 @@
             this.numero_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.numero_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.numero_client.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numero_client.Location = new System.Drawing.Point(26, 245);
+            this.numero_client.Location = new System.Drawing.Point(26, 219);
             this.numero_client.Name = "numero_client";
             this.numero_client.PasswordChar = '\0';
             this.numero_client.Radius = 10;
@@ -274,7 +307,7 @@
             this.nom_client.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.nom_client.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.nom_client.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nom_client.Location = new System.Drawing.Point(26, 105);
+            this.nom_client.Location = new System.Drawing.Point(26, 79);
             this.nom_client.Name = "nom_client";
             this.nom_client.PasswordChar = '\0';
             this.nom_client.Radius = 10;
@@ -332,34 +365,6 @@
             this.progresbar.TabIndex = 35;
             this.progresbar.Value = 20;
             // 
-            // Entree
-            // 
-            this.Entree.AnimationHoverSpeed = 0.07F;
-            this.Entree.AnimationSpeed = 0.03F;
-            this.Entree.BackColor = System.Drawing.Color.Transparent;
-            this.Entree.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Entree.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Entree.BorderColor = System.Drawing.Color.Transparent;
-            this.Entree.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Entree.FocusedColor = System.Drawing.Color.Empty;
-            this.Entree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Entree.ForeColor = System.Drawing.Color.White;
-            this.Entree.Image = ((System.Drawing.Image)(resources.GetObject("Entree.Image")));
-            this.Entree.ImageSize = new System.Drawing.Size(20, 20);
-            this.Entree.Location = new System.Drawing.Point(26, 15);
-            this.Entree.Name = "Entree";
-            this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.Entree.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Entree.OnHoverForeColor = System.Drawing.Color.White;
-            this.Entree.OnHoverImage = null;
-            this.Entree.OnPressedColor = System.Drawing.Color.Black;
-            this.Entree.Radius = 5;
-            this.Entree.Size = new System.Drawing.Size(129, 45);
-            this.Entree.TabIndex = 33;
-            this.Entree.Text = "Entrée";
-            this.Entree.Click += new System.EventHandler(this.Entree_Click);
-            // 
             // continaire
             // 
             this.continaire.Controls.Add(this.ajoute);
@@ -388,7 +393,6 @@
             this.view_data.Size = new System.Drawing.Size(995, 452);
             this.view_data.TabIndex = 0;
             this.view_data.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.view_data_CellValueChanged);
-          
             // 
             // background_ajoute
             // 
@@ -414,7 +418,6 @@
             this.Controls.Add(this.continaire);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.progresbar);
-            this.Controls.Add(this.Entree);
             this.Name = "CLients";
             this.Size = new System.Drawing.Size(995, 524);
             this.Load += new System.EventHandler(this.CLients_Load);
@@ -444,12 +447,13 @@
         private Guna.UI.WinForms.GunaTextBox nom_client;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
         private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
-        private Guna.UI.WinForms.GunaGradientButton Entree;
         private System.Windows.Forms.Panel continaire;
         private System.Windows.Forms.Panel panel_view;
         private System.Windows.Forms.DataGridView view_data;
         private System.ComponentModel.BackgroundWorker background_ajoute;
         private System.ComponentModel.BackgroundWorker background_view;
         private System.ComponentModel.BackgroundWorker update;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaTextBox faxclient;
     }
 }

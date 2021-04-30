@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fourni));
-            this.Entree = new Guna.UI.WinForms.GunaGradientButton();
             this.progresbar = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.cherche = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.ajoute = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.fax = new Guna.UI.WinForms.GunaTextBox();
             this.btn_ajoute = new Guna.UI.WinForms.GunaGradientButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,34 +57,6 @@
             this.panel_view.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.view_data)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Entree
-            // 
-            this.Entree.AnimationHoverSpeed = 0.07F;
-            this.Entree.AnimationSpeed = 0.03F;
-            this.Entree.BackColor = System.Drawing.Color.Transparent;
-            this.Entree.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Entree.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
-            this.Entree.BorderColor = System.Drawing.Color.Transparent;
-            this.Entree.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Entree.FocusedColor = System.Drawing.Color.Empty;
-            this.Entree.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Entree.ForeColor = System.Drawing.Color.White;
-            this.Entree.Image = ((System.Drawing.Image)(resources.GetObject("Entree.Image")));
-            this.Entree.ImageSize = new System.Drawing.Size(20, 20);
-            this.Entree.Location = new System.Drawing.Point(26, 16);
-            this.Entree.Name = "Entree";
-            this.Entree.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
-            this.Entree.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
-            this.Entree.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Entree.OnHoverForeColor = System.Drawing.Color.White;
-            this.Entree.OnHoverImage = null;
-            this.Entree.OnPressedColor = System.Drawing.Color.Black;
-            this.Entree.Radius = 5;
-            this.Entree.Size = new System.Drawing.Size(129, 45);
-            this.Entree.TabIndex = 14;
-            this.Entree.Text = "Entrée";
-            this.Entree.Click += new System.EventHandler(this.Entree_Click);
             // 
             // progresbar
             // 
@@ -164,6 +137,8 @@
             // 
             // ajoute
             // 
+            this.ajoute.Controls.Add(this.label1);
+            this.ajoute.Controls.Add(this.fax);
             this.ajoute.Controls.Add(this.btn_ajoute);
             this.ajoute.Controls.Add(this.label5);
             this.ajoute.Controls.Add(this.label4);
@@ -181,6 +156,36 @@
             this.ajoute.TabIndex = 32;
             this.ajoute.Paint += new System.Windows.Forms.PaintEventHandler(this.ajoute_Paint);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(50, 344);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(24, 13);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Fax";
+            // 
+            // fax
+            // 
+            this.fax.BackColor = System.Drawing.Color.Transparent;
+            this.fax.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.fax.BorderColor = System.Drawing.Color.Silver;
+            this.fax.BorderSize = 0;
+            this.fax.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.fax.FocusedBaseColor = System.Drawing.Color.White;
+            this.fax.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.fax.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.fax.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.fax.Location = new System.Drawing.Point(26, 351);
+            this.fax.Name = "fax";
+            this.fax.PasswordChar = '\0';
+            this.fax.Radius = 10;
+            this.fax.SelectedText = "";
+            this.fax.Size = new System.Drawing.Size(356, 50);
+            this.fax.TabIndex = 44;
+            this.fax.TextOffsetX = 10;
+            // 
             // btn_ajoute
             // 
             this.btn_ajoute.AnimationHoverSpeed = 0.07F;
@@ -195,7 +200,7 @@
             this.btn_ajoute.ForeColor = System.Drawing.Color.White;
             this.btn_ajoute.Image = ((System.Drawing.Image)(resources.GetObject("btn_ajoute.Image")));
             this.btn_ajoute.ImageSize = new System.Drawing.Size(20, 20);
-            this.btn_ajoute.Location = new System.Drawing.Point(53, 400);
+            this.btn_ajoute.Location = new System.Drawing.Point(53, 407);
             this.btn_ajoute.Name = "btn_ajoute";
             this.btn_ajoute.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.btn_ajoute.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -213,7 +218,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(50, 308);
+            this.label5.Location = new System.Drawing.Point(50, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 32;
@@ -223,7 +228,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Location = new System.Drawing.Point(50, 238);
+            this.label4.Location = new System.Drawing.Point(50, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 33;
@@ -233,7 +238,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(50, 168);
+            this.label3.Location = new System.Drawing.Point(50, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 34;
@@ -243,17 +248,17 @@
             // 
             this.nom.AutoSize = true;
             this.nom.BackColor = System.Drawing.Color.Transparent;
-            this.nom.Location = new System.Drawing.Point(50, 98);
+            this.nom.Location = new System.Drawing.Point(50, 71);
             this.nom.Name = "nom";
-            this.nom.Size = new System.Drawing.Size(27, 13);
+            this.nom.Size = new System.Drawing.Size(59, 13);
             this.nom.TabIndex = 35;
-            this.nom.Text = "nom";
+            this.nom.Text = "Designition";
             // 
             // code
             // 
             this.code.AutoSize = true;
             this.code.BackColor = System.Drawing.Color.Transparent;
-            this.code.Location = new System.Drawing.Point(50, 28);
+            this.code.Location = new System.Drawing.Point(50, 15);
             this.code.Name = "code";
             this.code.Size = new System.Drawing.Size(32, 13);
             this.code.TabIndex = 36;
@@ -270,7 +275,7 @@
             this.email_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.email_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.email_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.email_fourniseur.Location = new System.Drawing.Point(26, 315);
+            this.email_fourniseur.Location = new System.Drawing.Point(26, 288);
             this.email_fourniseur.Name = "email_fourniseur";
             this.email_fourniseur.PasswordChar = '\0';
             this.email_fourniseur.Radius = 10;
@@ -290,7 +295,7 @@
             this.numero_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.numero_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.numero_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.numero_fourniseur.Location = new System.Drawing.Point(26, 245);
+            this.numero_fourniseur.Location = new System.Drawing.Point(26, 218);
             this.numero_fourniseur.Name = "numero_fourniseur";
             this.numero_fourniseur.PasswordChar = '\0';
             this.numero_fourniseur.Radius = 10;
@@ -310,7 +315,7 @@
             this.adress_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.adress_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.adress_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.adress_fourniseur.Location = new System.Drawing.Point(26, 175);
+            this.adress_fourniseur.Location = new System.Drawing.Point(26, 148);
             this.adress_fourniseur.Name = "adress_fourniseur";
             this.adress_fourniseur.PasswordChar = '\0';
             this.adress_fourniseur.Radius = 10;
@@ -330,7 +335,7 @@
             this.nom_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.nom_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.nom_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.nom_fourniseur.Location = new System.Drawing.Point(26, 105);
+            this.nom_fourniseur.Location = new System.Drawing.Point(26, 78);
             this.nom_fourniseur.Name = "nom_fourniseur";
             this.nom_fourniseur.PasswordChar = '\0';
             this.nom_fourniseur.Radius = 10;
@@ -350,7 +355,7 @@
             this.code_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.code_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.code_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.code_fourniseur.Location = new System.Drawing.Point(26, 35);
+            this.code_fourniseur.Location = new System.Drawing.Point(26, 22);
             this.code_fourniseur.Name = "code_fourniseur";
             this.code_fourniseur.PasswordChar = '\0';
             this.code_fourniseur.Radius = 10;
@@ -411,7 +416,6 @@
             this.Controls.Add(this.cherche);
             this.Controls.Add(this.gunaGradientButton4);
             this.Controls.Add(this.progresbar);
-            this.Controls.Add(this.Entree);
             this.Name = "fourni";
             this.Size = new System.Drawing.Size(995, 524);
             this.Load += new System.EventHandler(this.fourni_Load);
@@ -425,8 +429,6 @@
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaGradientButton Entree;
         private Guna.UI.WinForms.GunaCircleProgressBar progresbar;
         private Guna.UI.WinForms.GunaGradientButton cherche;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton4;
@@ -448,5 +450,7 @@
         private System.Windows.Forms.Panel panel_view;
         private System.Windows.Forms.DataGridView view_data;
         private System.ComponentModel.BackgroundWorker update;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaTextBox fax;
     }
 }

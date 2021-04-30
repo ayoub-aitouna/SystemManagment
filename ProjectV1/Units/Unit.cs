@@ -80,13 +80,13 @@ namespace ProjectV1.Units
             switch (_mode_)
             {
                 case MOde_entree:
-                    btn.Text = "Entree";
+                    btn.Text = "Ajouter";
                     ClearEvents(btn, events);
                     btn.Click += events[0];
                     break;
 
                 case Mode_search:
-                    btn.Text = "Researche";
+                    btn.Text = "Chercher";
                     ClearEvents(btn, events);
                     btn.Click += events[1];
                     break;
@@ -105,17 +105,17 @@ namespace ProjectV1.Units
             switch (_mode_)
             {
                 case MOde_entree:
-                    btn.Text = "Entree";
+                    btn.Text = "Valider";
                     ClearEvents(btn, events);
                     btn.Click += events[0];
                     break;
                 case Mode_Sortee:
-                    btn.Text = "Sortee";
+                    btn.Text = "Valider";
                     ClearEvents(btn, events);
                     btn.Click += events[1];
                     break;
                 case Mode_search:
-                    btn.Text = "Researche";
+                    btn.Text = "Chercher";
                     ClearEvents(btn, events);
                     btn.Click += events[2];
                     break;

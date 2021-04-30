@@ -9,6 +9,7 @@ namespace ProjectV1.model
     class Articl_sortie
     {
         int id;
+        int bon_entrer;
         String Barcode;
         string nom;
         String description_inter;
@@ -19,6 +20,7 @@ namespace ProjectV1.model
         DateTime date_entre;
         DateTime date_sortie;
         String matricul;
+        string codeclient;
         Byte[] img;
 
 
@@ -27,9 +29,10 @@ namespace ProjectV1.model
            
         }
 
-        public Articl_sortie(int id, string barcode, string nom, string description_inter, string descroption_fabrication, string code_fabrication, double prix, int quontitier, DateTime date_entre, DateTime date_sortie, string matricul, byte[] img)
+        public Articl_sortie(int id, int bonentrer,string barcode, string nom, string description_inter, string descroption_fabrication, string code_fabrication, double prix, int quontitier, DateTime date_entre, DateTime date_sortie, string matricul,string codeclient, byte[] img)
         {
             this.id = id;
+            this.bon_entrer = bonentrer;
             this.Barcode = barcode;
             this.nom = nom;
             this.description_inter = description_inter;
@@ -41,6 +44,7 @@ namespace ProjectV1.model
             this.date_sortie = date_sortie;
             this.matricul = matricul;
             this.img = img;
+            this.codeclient = codeclient;
         }
 
         public int Id
@@ -53,6 +57,18 @@ namespace ProjectV1.model
             set
             {
                 id = value;
+            }
+        }
+        public int Bon_entrer
+        {
+            get
+            {
+                return bon_entrer;
+            }
+
+            set
+            {
+                bon_entrer = value;
             }
         }
 
@@ -183,6 +199,18 @@ namespace ProjectV1.model
             set
             {
                 matricul = value;
+            }
+        }
+        public string Codeclient
+        {
+            get
+            {
+                return codeclient;
+            }
+
+            set
+            {
+                codeclient = value;
             }
         }
 

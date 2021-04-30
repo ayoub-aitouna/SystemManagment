@@ -147,6 +147,11 @@ namespace ProjectV1
         {
             hideAll(rapport1, rapport_button);
         }
+
+        private void user_Login1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
     public interface IUserSuccessfullyAuthenticated
     {

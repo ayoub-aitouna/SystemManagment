@@ -16,5 +16,20 @@ namespace ProjectV1.Controls
         {
             InitializeComponent();
         }
+
+        private void dashboard_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaGradientButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaGradientButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

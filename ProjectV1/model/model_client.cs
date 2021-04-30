@@ -14,14 +14,15 @@ namespace ProjectV1.model
         string email_client;
         string adress_client;
         string numerophone_client;
-        public model_client(int code, string nom, string email, string adres, string numerophone)
+        string fax;
+        public model_client(int code, string nom, string email, string adres, string numerophone,string fax)
         {
             this.code_client = code;
             this.nom_client = nom;
             this.email_client = email;
             this.adress_client = adres;
             this.numerophone_client = numerophone;
-
+            this.fax = fax;
         }
         public model_client()
         {
@@ -49,6 +50,17 @@ namespace ProjectV1.model
             set
             {
                 code_client = value;
+            }
+        }
+        public String Fax
+        {
+            get
+            {
+                return fax;
+            }
+            set
+            {
+                fax = value;
             }
         }
         public String Nom_client

@@ -80,7 +80,7 @@ namespace ProjectV1.dialog
         {
             sqlcn sqlConnection = new sqlcn();
             
-            SqlParameter[] param = new SqlParameter[11];
+            SqlParameter[] param = new SqlParameter[12];
             param[0] = new SqlParameter("@barcode", SqlDbType.VarChar, 40);
             param[0].Value = item.Barcode1;
 
@@ -115,7 +115,11 @@ namespace ProjectV1.dialog
             param[10] = new SqlParameter("@matricul", SqlDbType.VarChar, 40);
             param[10].Value = matricule.Text.ToString();
 
-            e.Result = sqlConnection.ExuteCommende("r_Artical_Sortee",param);
+            param[11] = new SqlParameter("@clientcode", SqlDbType.VarChar, 40);
+            param[11].Value = Codeclient.Text.ToString();
+
+
+            e.Result = sqlConnection.ExuteCommende("r_Artical_Sortee", param);
 
         }
 
@@ -155,9 +159,10 @@ namespace ProjectV1.dialog
             return btmp;
         }
 
-       
+        private void matricule_TextChanged(object sender, EventArgs e)
+        {
 
-      
+        }
     }
 
 }

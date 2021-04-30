@@ -62,7 +62,7 @@ namespace ProjectV1.Controls
             item.Adress_client = adress_client.Text;
             item.Numerophone_client = numero_client.Text;
             item.Email_client = email_client.Text;
-
+            item.Fax = faxclient.Text;
 
             if (!background_ajoute.IsBusy)
             {
@@ -74,7 +74,7 @@ namespace ProjectV1.Controls
         private void background_ajoute_DoWork(object sender, DoWorkEventArgs e)
         {
             model.model_client item = (model.model_client)e.Argument;
-            SqlParameter[] param = new SqlParameter[5];
+            SqlParameter[] param = new SqlParameter[6];
             param[0] = new SqlParameter("@code", SqlDbType.Int);
             param[0].Value = item.Code_client;
 
@@ -90,6 +90,9 @@ namespace ProjectV1.Controls
 
             param[4] = new SqlParameter("@Email", SqlDbType.VarChar, 40);
             param[4].Value = item.Email_client;
+
+            param[5] = new SqlParameter("@fax", SqlDbType.VarChar, 40);
+            param[5].Value = item.Fax;
 
             remplire.openconx();
 
@@ -217,6 +220,7 @@ namespace ProjectV1.Controls
             model.Email_client = a[3].Value.ToString();
             model.Adress_client = a[4].Value.ToString();
             model.Numerophone_client = a[5].Value.ToString();
+            model.Fax = a[6].Value.ToString();
             if (!update.IsBusy)
             {
                 update.RunWorkerAsync(model);
