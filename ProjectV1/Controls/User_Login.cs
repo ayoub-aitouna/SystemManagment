@@ -40,16 +40,16 @@ namespace ProjectV1.Controls
         {
             itm.User = username.Text;
        
-            if (Is_Hashed)
-            {
+            //if (Is_Hashed)
+            //{
                 itm.Pasword = pasword.Text;
              
-            }
-            else
-            {
-                itm.Pasword = hash.Hashing(pasword.Text);
+            //}
+            //else
+            //{
+            //    itm.Pasword = hash.Hashing(pasword.Text);
 
-            }
+            //}
          
             progresbar.Show();
             if (!backlogin.IsBusy)
@@ -108,7 +108,7 @@ namespace ProjectV1.Controls
             }
             else
             {
-                MessageBox.Show("votre nom d'utilisateur ou mot de passe sont incorrects\n"+hash.Hashing(pasword.Text));
+                MessageBox.Show("votre nom d'utilisateur ou mot de passe sont incorrects\n");
               
             }
 

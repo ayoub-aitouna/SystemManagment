@@ -45,11 +45,11 @@
             // remamber
             // 
             this.remamber.AutoSize = true;
-            this.remamber.Font = new System.Drawing.Font("Roboto", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remamber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remamber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.remamber.Location = new System.Drawing.Point(823, 366);
             this.remamber.Name = "remamber";
-            this.remamber.Size = new System.Drawing.Size(108, 18);
+            this.remamber.Size = new System.Drawing.Size(113, 19);
             this.remamber.TabIndex = 52;
             this.remamber.Text = "Remamber me ";
             this.remamber.UseVisualStyleBackColor = true;
@@ -78,11 +78,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Roboto", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
             this.label1.Location = new System.Drawing.Point(918, 179);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 33);
+            this.label1.Size = new System.Drawing.Size(104, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "LOGIN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -158,6 +158,7 @@
             this.username.SelectedText = "";
             this.username.Size = new System.Drawing.Size(356, 50);
             this.username.TabIndex = 2;
+            this.username.Text = "user";
             this.username.TextOffsetX = 10;
             // 
             // pasword
@@ -178,6 +179,7 @@
             this.pasword.SelectedText = "";
             this.pasword.Size = new System.Drawing.Size(356, 50);
             this.pasword.TabIndex = 3;
+            this.pasword.Text = "pass";
             this.pasword.TextOffsetX = 10;
             this.pasword.Enter += new System.EventHandler(this.pasword_Enter);
             // 

@@ -13,33 +13,36 @@ namespace ProjectV1.sql
 {
     class sqlcn
     {
-        private static String connetionString = @"Data Source=den1.mssql8.gear.host;Initial Catalog=asass;User ID=asass;Password=Dg39ZO9g6_9?";
-        SqlConnection cnn;
+        private static String connetionString = @"Data Source=.;Initial Catalog=SystemManagment;Integrated Security=True";
+
+
         SqlDataReader datareader;
+
           //SqlConnection macn = new SqlConnection("Data Source = DESKTOP-FA5E9KJ; Initial Catalog = db_artical; Integrated Security = True");
-        SqlConnection macn = new SqlConnection(connetionString);
+        SqlConnection cnn = new SqlConnection(connetionString);
 
         //open connection 
         public void openconx()
         {
-            if (macn.State !=ConnectionState.Open)
-           
-                macn.Open();
+          
+                if (cnn.State != ConnectionState.Open)
+
+                    cnn.Open();   
             
         }
         //close connection 
         public void closecnx()
         {
-            if (macn.State !=ConnectionState.Closed)
-            
-                macn.Close();
+            if (cnn.State !=ConnectionState.Closed)
+
+                cnn.Close();
             
         }
         //reder data
         public  DataTable Selectdata(string stored_procedure,SqlParameter[] param)
         {
             SqlCommand macommende = new SqlCommand();
-            macommende.Connection = macn;
+            macommende.Connection = cnn;
             
             macommende.CommandType = CommandType.StoredProcedure;
             macommende.CommandText = stored_procedure;
@@ -61,8 +64,7 @@ namespace ProjectV1.sql
         public void update(article_model item)
         {
             SqlCommand macommende = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
             macommende.Connection = cnn;
 
             macommende.CommandType = CommandType.Text;
@@ -99,18 +101,16 @@ namespace ProjectV1.sql
             param[8].Value = item.Img;
 
             macommende.Parameters.AddRange(param);
-            cnn.Close();
-            cnn.Open();
+            
 
             macommende.ExecuteNonQuery();
 
-            cnn.Close();
+         
         }
         public void update(equipement_model item)
         {
             SqlCommand macommende = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
             macommende.Connection = cnn;
 
             macommende.CommandType = CommandType.Text;
@@ -127,18 +127,16 @@ namespace ProjectV1.sql
             param[2].Value = item.Matrucil;
           
             macommende.Parameters.AddRange(param);
-            cnn.Close();
-            cnn.Open();
+         
 
             macommende.ExecuteNonQuery();
 
-            cnn.Close();
+           
         }
         public void update(model_client item)
         {
             SqlCommand macommende = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
             macommende.Connection = cnn;
 
             macommende.CommandType = CommandType.Text;
@@ -161,18 +159,16 @@ namespace ProjectV1.sql
             param[5].Value = item.Fax;
 
             macommende.Parameters.AddRange(param);
-            cnn.Close();
-            cnn.Open();
+           
 
             macommende.ExecuteNonQuery();
 
-            cnn.Close();
+           
         }
         public void update(fourniseur_model item)
         {
             SqlCommand macommende = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
             macommende.Connection = cnn;
 
             macommende.CommandType = CommandType.Text;
@@ -200,20 +196,18 @@ namespace ProjectV1.sql
             param[5].Value = item.Fax;
 
             macommende.Parameters.AddRange(param);
-            cnn.Close();
-            cnn.Open();
+          
 
             macommende.ExecuteNonQuery();
 
-            cnn.Close();
+           
         }
         //methode insert ,delet ,update
         public int ExuteCommende(string stored_procedure, SqlParameter[] param)
         {
             int i=0;
             SqlCommand macommende = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
             macommende.Connection = cnn;
 
             macommende.CommandType = CommandType.StoredProcedure;
@@ -232,7 +226,7 @@ namespace ProjectV1.sql
                     return -1;
                 }
                 
-                cnn.Close();
+              
             }
             return i;
          
@@ -242,9 +236,7 @@ namespace ProjectV1.sql
             List<article_model> data = new List<article_model>();
           
             SqlCommand req = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
-
+            openconx();
             req.Connection = cnn;
             req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
             req.CommandText = cmnd;
@@ -272,7 +264,7 @@ namespace ProjectV1.sql
                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
 
-            cnn.Close();
+    
 
             return data;
         }
@@ -282,15 +274,14 @@ namespace ProjectV1.sql
            
 
             SqlCommand req = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
 
             req.Connection = cnn;
             req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
             req.CommandText = cmnd;
             req.Parameters.Clear();
             return req.ExecuteReader();
-            cnn.Close();
+   
           
           
 
@@ -301,8 +292,7 @@ namespace ProjectV1.sql
             List<equipement_model> data = new List<equipement_model>();
 
             SqlCommand req = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
 
             req.Connection = cnn;
             req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
@@ -321,7 +311,7 @@ namespace ProjectV1.sql
                 data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
 
-            cnn.Close();
+    
 
             return data;
         }
@@ -330,9 +320,7 @@ namespace ProjectV1.sql
             List<fourniseur_model> data = new List<fourniseur_model>();
 
             SqlCommand req = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
-
+            openconx();
             req.Connection = cnn;
             req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
             req.CommandText = cmnd;
@@ -353,7 +341,7 @@ namespace ProjectV1.sql
                 data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
 
-            cnn.Close();
+    
 
             return data;
         }
@@ -362,8 +350,7 @@ namespace ProjectV1.sql
             List<model_client> data = new List<model_client>();
 
             SqlCommand req = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
 
             req.Connection = cnn;
             req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
@@ -386,7 +373,7 @@ namespace ProjectV1.sql
                 data.Add(item);                // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
 
-            cnn.Close();
+    
 
             return data;
         }
@@ -395,8 +382,7 @@ namespace ProjectV1.sql
             List<loginclasse> data = new List<loginclasse>();
 
             SqlCommand req = new SqlCommand();
-            cnn = new SqlConnection(connetionString);
-            cnn.Open();
+            openconx();
 
             req.Connection = cnn;
             req.CommandType = CommandType.Text; // Changer le type de la requete en text (non pas procedure)
@@ -416,7 +402,7 @@ namespace ProjectV1.sql
                 // data.Add(new article_model((int)datareader.GetValue(0), (String)datareader.GetValue(1),(String) datareader.GetValue(2),(String) datareader.GetValue(3), (String)datareader.GetValue(4), (String)datareader.GetValue(5),(float) datareader.GetValue(6), (int)datareader.GetValue(7), (DateTime)datareader.GetValue(8),(byte[]) datareader.GetValue(9)));
             }
 
-            cnn.Close();
+         
 
             return data;
         }

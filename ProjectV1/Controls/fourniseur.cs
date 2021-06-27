@@ -116,8 +116,6 @@ namespace ProjectV1
 
         private void gunaGradientButton6_Click(object sender, EventArgs e)
         {
-            hideAll(ajoute);
-            units.mode(Units.Unit.Mode_search1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click_1), new EventHandler(this.search_event));
 
         }
 
@@ -250,6 +248,13 @@ namespace ProjectV1
             fourniseur_model model = ((fourniseur_model)e.Result);
             add_success add_Success = new add_success(model);
             add_Success.ShowDialog();
+        }
+
+        private void gunaGradientButton1_Click_2(object sender, EventArgs e)
+        {
+
+            hideAll(ajoute);
+            units.mode(Units.Unit.Mode_search1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click_1), new EventHandler(this.search_event));
         }
     }
 }

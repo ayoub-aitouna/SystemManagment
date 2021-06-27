@@ -122,7 +122,7 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(92, 331);
+            this.label10.Location = new System.Drawing.Point(92, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 22;
@@ -139,7 +139,7 @@
             this.fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.fourniseur.Location = new System.Drawing.Point(68, 336);
+            this.fourniseur.Location = new System.Drawing.Point(68, 210);
             this.fourniseur.Name = "fourniseur";
             this.fourniseur.PasswordChar = '\0';
             this.fourniseur.Radius = 20;
@@ -217,7 +217,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(92, 267);
+            this.label5.Location = new System.Drawing.Point(92, 342);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 15;
@@ -240,7 +240,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(92, 201);
+            this.label4.Location = new System.Drawing.Point(92, 276);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(104, 13);
             this.label4.TabIndex = 15;
@@ -290,7 +290,7 @@
             this.date.Radius = 19;
             this.date.Size = new System.Drawing.Size(155, 40);
             this.date.TabIndex = 19;
-            this.date.Text = "4/11/2021";
+            this.date.Text = "11/04/2021";
             this.date.Value = new System.DateTime(2021, 4, 11, 22, 17, 2, 539);
             // 
             // quantitier
@@ -345,7 +345,7 @@
             this.reference_intrene.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.reference_intrene.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.reference_intrene.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.reference_intrene.Location = new System.Drawing.Point(68, 274);
+            this.reference_intrene.Location = new System.Drawing.Point(68, 349);
             this.reference_intrene.Name = "reference_intrene";
             this.reference_intrene.PasswordChar = '\0';
             this.reference_intrene.Radius = 20;
@@ -365,7 +365,7 @@
             this.reference_fabricant.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.reference_fabricant.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.reference_fabricant.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.reference_fabricant.Location = new System.Drawing.Point(68, 208);
+            this.reference_fabricant.Location = new System.Drawing.Point(68, 283);
             this.reference_fabricant.Name = "reference_fabricant";
             this.reference_fabricant.PasswordChar = '\0';
             this.reference_fabricant.Radius = 20;

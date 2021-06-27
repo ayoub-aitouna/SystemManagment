@@ -74,7 +74,7 @@ namespace ProjectV1
         {
             if (prix.Text==""|| quantitier.Text==""|| desination.Text==""|| pictureBox1.Image == null)
             {
-                MessageBox.Show("error de input");
+                MessageBox.Show("Il faut remplire Quantitier , designation ,prix et image");
             }
             else
             {
@@ -217,6 +217,7 @@ namespace ProjectV1
         private void sortee(object sender, EventArgs e)
         {
             Menu_chosen(Sortie);
+            label9.Text = "bon_sortie";
             hideAll(bon_entre);
             changeToSorteMode(true);
             _units.mode(Units.Unit.Mode_Sortee1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
@@ -316,6 +317,7 @@ namespace ProjectV1
         private void Entree_Click(object sender, EventArgs e)
         {
             hideAll(bon_entre);
+            label9.Text = "Bon_Entré";
             Menu_chosen(Entree);
             changeToSorteMode(false);
             _units.mode(Units.Unit.MOde_entree1, add_button, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event), new EventHandler(this.sortee_event));
@@ -388,15 +390,34 @@ namespace ProjectV1
             progresbar.Show();
             article_model model = new article_model();
             model.Id = int.Parse(a[0].Value.ToString());
-            model.Barcode1 = a[1].Value.ToString();
-            model.Nom = a[2].Value.ToString();
-            model.Description_inter = a[3].Value.ToString();
-            model.Descroption_fabrication = a[4].Value.ToString();
-            model.Code_fabrication = a[5].Value.ToString();
-            model.Prix = double.Parse(a[6].Value.ToString());
-            model.Quontitier1 = int.Parse(a[7].Value.ToString());
-            model.Date_entre = DateTime.Parse(a[8].Value.ToString());
-            model.Img = (byte[])a[9].Value;
+            model.Bon_entrer = int.Parse(a[1].Value.ToString());
+            model.Barcode1 = a[2].Value.ToString();
+            model.Fourniseur = a[3].Value.ToString();
+            model.Nom = a[4].Value.ToString();
+            model.Description_inter = a[5].Value.ToString();
+            model.Descroption_fabrication = a[6].Value.ToString();
+            model.Code_fabrication = a[7].Value.ToString();
+            model.Prix = int.Parse(a[8].Value.ToString());
+            model.Quontitier1 = int.Parse(a[9].Value.ToString());
+            model.Date_entre = DateTime.Parse(a[10].Value.ToString());
+
+            model.Img = (byte[])a[11].Value;
+
+
+
+            //article_model item = new article_model();
+            //item.Id = (int)datareader.GetValue(0);
+            //item.Barcode1 = (String)datareader.GetValue(1);
+            //item.Bon_entrer = (int)datareader.GetValue(2);
+            //item.Nom = (String)datareader.GetValue(3);
+            //item.Description_inter = (String)datareader.GetValue(4);
+            //item.Fourniseur = (string)datareader.GetValue(5);
+            //item.Descroption_fabrication = (String)datareader.GetValue(6);
+            //item.Code_fabrication = (String)datareader.GetValue(7);
+            //item.Prix = (double)datareader.GetValue(8);
+            //item.Quontitier1 = (int)datareader.GetValue(9);
+            //item.Date_entre = (DateTime)datareader.GetValue(10);
+            //item.Img = (Byte[])datareader.GetValue(11);
 
             if (!update_data.IsBusy)
             {

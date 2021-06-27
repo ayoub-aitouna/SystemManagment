@@ -52,6 +52,7 @@
             this.panel_view = new System.Windows.Forms.Panel();
             this.view_data = new System.Windows.Forms.DataGridView();
             this.update = new System.ComponentModel.BackgroundWorker();
+            this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.ajoute.SuspendLayout();
             this.continer.SuspendLayout();
             this.panel_view.SuspendLayout();
@@ -150,9 +151,9 @@
             this.ajoute.Controls.Add(this.adress_fourniseur);
             this.ajoute.Controls.Add(this.nom_fourniseur);
             this.ajoute.Controls.Add(this.code_fourniseur);
-            this.ajoute.Location = new System.Drawing.Point(0, -3);
+            this.ajoute.Location = new System.Drawing.Point(0, -11);
             this.ajoute.Name = "ajoute";
-            this.ajoute.Size = new System.Drawing.Size(995, 527);
+            this.ajoute.Size = new System.Drawing.Size(995, 535);
             this.ajoute.TabIndex = 32;
             this.ajoute.Paint += new System.Windows.Forms.PaintEventHandler(this.ajoute_Paint);
             // 
@@ -258,7 +259,7 @@
             // 
             this.code.AutoSize = true;
             this.code.BackColor = System.Drawing.Color.Transparent;
-            this.code.Location = new System.Drawing.Point(50, 15);
+            this.code.Location = new System.Drawing.Point(50, 11);
             this.code.Name = "code";
             this.code.Size = new System.Drawing.Size(32, 13);
             this.code.TabIndex = 36;
@@ -355,7 +356,7 @@
             this.code_fourniseur.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.code_fourniseur.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.code_fourniseur.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.code_fourniseur.Location = new System.Drawing.Point(26, 22);
+            this.code_fourniseur.Location = new System.Drawing.Point(26, 18);
             this.code_fourniseur.Name = "code_fourniseur";
             this.code_fourniseur.PasswordChar = '\0';
             this.code_fourniseur.Radius = 10;
@@ -408,10 +409,39 @@
             this.update.DoWork += new System.ComponentModel.DoWorkEventHandler(this.update_DoWork);
             this.update.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.update_RunWorkerCompleted);
             // 
+            // gunaGradientButton1
+            // 
+            this.gunaGradientButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton1.AnimationSpeed = 0.03F;
+            this.gunaGradientButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton1.BaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.gunaGradientButton1.BaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(66)))), ((int)(((byte)(132)))));
+            this.gunaGradientButton1.BorderColor = System.Drawing.Color.Transparent;
+            this.gunaGradientButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
+            this.gunaGradientButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(53, 15);
+            this.gunaGradientButton1.Name = "gunaGradientButton1";
+            this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton1.OnHoverImage = null;
+            this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton1.Radius = 5;
+            this.gunaGradientButton1.Size = new System.Drawing.Size(129, 45);
+            this.gunaGradientButton1.TabIndex = 45;
+            this.gunaGradientButton1.Text = "Entrer";
+            this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click_2);
+            // 
             // fourni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gunaGradientButton1);
             this.Controls.Add(this.continer);
             this.Controls.Add(this.cherche);
             this.Controls.Add(this.gunaGradientButton4);
@@ -452,5 +482,6 @@
         private System.ComponentModel.BackgroundWorker update;
         private System.Windows.Forms.Label label1;
         private Guna.UI.WinForms.GunaTextBox fax;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
     }
 }

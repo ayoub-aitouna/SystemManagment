@@ -186,8 +186,7 @@ namespace ProjectV1.Controls
 
         private void Entree_Click(object sender, EventArgs e)
         {
-           hideAll(ajoute);              
-           units.mode(Units.Unit.MOde_entree1, btn_ajoute,new EventHandler(this.gunaGradientButton1_Click),new EventHandler(this.search_event));
+           
         }
 
         private void update_DoWork(object sender, DoWorkEventArgs e)
@@ -227,6 +226,10 @@ namespace ProjectV1.Controls
             }
         }
 
-    
+        private void gunaGradientButton1_Click_1(object sender, EventArgs e)
+        {
+            hideAll(ajoute);
+            units.mode(Units.Unit.MOde_entree1, btn_ajoute, new EventHandler(this.gunaGradientButton1_Click), new EventHandler(this.search_event));
+        }
     }
 }
